@@ -1,0 +1,196 @@
+﻿<!-- MAIN CONTENT -->
+<div id="content" ng-controller="DashboardCtrl">
+
+    <!-- widget grid -->
+    <div id="widget-grid" widget-grid>
+
+
+        <!-- end row -->
+        <!-- row -->
+
+        <div class="row">
+
+            <article class="col-sm-12 col-sm-offset-2 col-sm-8">
+                <!-- new widget -->
+                <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue">
+                    <header>
+                        <div class="basic_top_mar text-center">
+                            <span class="widget-icon"> <i class="fa fa-cog"></i> </span>
+                            <h2> User Accounts IOCL</h2>
+                        </div>
+                    </header>
+                    <!-- widget div-->
+                    <form name="UserIoclForm">
+                        <div class="smart-form client-form">
+                            <div class="widget-body">
+                                <!-- content goes here -->
+                                <fieldset>
+                                    <section>
+                                        <div class="row">
+                                            <div class="col col-6">
+                                                <label class="label">Role<span class="errorMessage" style="color:red;">*</span></label>
+                                                <label class="input">
+                                                    <i class="icon-append fa fa-shield"></i>
+                                                    <select class="cleanSelect form-control" id="sel1" ng-options="r.RoleCode as r.RoleDesc for r in getRoleValue" ng-model="IoclPushpam.RoleCode" required>
+                                                        <option value="" selected>--Select Role--</option>
+                                                    </select>
+                                                    <!--<b class="tooltip tooltip-top-right"><i class="fa fa-shield txt-color-teal"></i> Please enter valid Distributor Code</b>-->
+                                                </label>
+                                            </div>
+                                            <div class="col col-6">
+                                                <label class="label">Default Language<span class="errorMessage" style="color:red;">*</span></label>
+                                                <label class="input">
+                                                    <i class="icon-append fa fa-shield"></i>
+                                                    <select class="cleanSelect form-control" id="lng" ng-options="l.LangCode as l.LangDesc for l in getLanguageValue" ng-model="IoclPushpam.LangCode" required>
+                                                        <option value="" selected>--Select Language--</option>
+                                                    </select>
+
+                                                    <!--<b class="tooltip tooltip-top-right"><i class="fa fa-id-badge txt-color-teal" aria-hidden="true"></i> Please enter valid Distributor Code</b>-->
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </section>
+
+                                    <div class="clearfix"></div>
+                                    <section>
+                                        <div class="row">
+                                            <div class="col col-6">
+                                                <label class="label">First Name<span class="errorMessage" style="color:red;">*</span></label>
+                                                <input type="text" class="form-control" ng-model="IoclPushpam.FirstName" alphaonly="alphaonly" required />
+                                            </div>
+                                            <div class="col col-6">
+                                                <label class="label">Last Name<span class="errorMessage" style="color:red;">*</span></label>
+                                                <input type="text" class="form-control" ng-model="IoclPushpam.LastName" alphaonly="alphaonly" required />
+                                            </div>
+                                        </div>
+                                    </section>
+
+                                    <section>
+                                        <div class="row">
+                                            <div class="col col-6">
+                                                <label class="label">Gender<span class="errorMessage" style="color:red;">*</span></label>
+                                                <select class="form-control" ng-model="IoclPushpam.Gender" ng-options="g.GenderCode as g.GenderType for g in getGender" title="Select your gender" required>
+                                                    <option value="" selected> -- Select Gender -- </option>
+                                                </select>
+                                            </div>
+                                            <div class="col col-6">
+                                                <label class="label">Birth Date<span class="errorMessage" style="color:red;">*</span></label>
+                                                <input type="text" id="birthdate" class="form-control" name="bday" ng-model="IoclPushpam.BirthDate" title="Select your birth date" birthdatepicker required />
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <section>
+                                        <div class="row">
+                                            <div class="col col-6">
+                                                <label class="label">Mobile No.<span class="errorMessage" style="color:red;">*</span></label>
+                                                <input type="text" class="form-control" id="mbn" ng-model="IoclPushpam.MobileNo" ng-pattern="/^(?:\s*\d{10}\s*(?:,|$))+$/" minlength="10" maxlength="10" title="Enter your mobile number"
+                                                       oninvalid="this.setCustomValidity('Enter 10 digits mobile number')" onchange="setCustomValidity('')" oninput="setCustomValidity(' ')" numericonly required />
+                                            </div>
+                                            <div class="col col-6">
+                                                <label class="label">Mobile No. (Optional)</label>
+                                                <input type="text" class="form-control" id="mbno" ng-model="IoclPushpam.MobileNoe" ng-pattern="/^(?:\s*\d{10}\s*(?:,|$))+$/" minlength="10" maxlength="10" title="Enter your mobile number"
+                                                       oninvalid="this.setCustomValidity('Enter 10 digits mobile number')" onchange="setCustomValidity('')" oninput="setCustomValidity(' ')" numericonly />
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <section>
+                                        <div class="row">
+                                            <div class="col col-6 ">
+                                                <label class="checkbox-inline">
+                                                    <!--<input name="remember" ng-true-value="'y'" ng-false-value="'n'" ng-model="vm.myChkModel" type="checkbox" ng-click="IsLoginCred(vm.myChkModel)" ng-checked="{{checked1}}">-->
+                                                    <input name="remember" id="enablecheckid" ng-true-value="'y'" ng-false-value="'n'" ng-model="enableCheck" type="checkbox" ng-click="IsLoginCred(enableCheck)" ng-checked="{{checked1}}"> Enable Login Credentials
+                                                </label>
+                                            </div>
+                                            <div class="col col-6 ">
+                                                <label class="checkbox-inline">
+                                                    <input type="checkbox" id="smsid" ng-model="IoclPushpam.AlertSMS"  ng-true-value="'Y'" ng-false-value="'N'" value="SMS"> SMS Alert
+                                                </label>
+                                                <label class="checkbox-inline">
+                                                    <input type="checkbox" id="emailid" ng-model="IoclPushpam.AlertMail" ng-checked="{{mailalertcheck}}" ng-click="IsEmail(IoclPushpam.AlertMail)" ng-true-value="'Y'" ng-false-value="'N'" value="EMAIL"> Email Alert
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <section class="clearfix " ng-show="value">
+                                        <div class="row">
+                                            <div class="col col-4">
+                                                <label class="label">Email Address<span class="errorMessage" style="color:red;">*</span></label>
+                                                <input type="email" id="emailid" name="emailid" class="form-control" ng-model="IoclPushpam.EmailAddress"  ng-blur="myFunction()" pattern='[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$' />
+                                            </div>
+                                            <div class="col col-4" ng-show="isPasswordShow">
+                                                <label class="label">New Password<span class="errorMessage" style="color:red;">*</span></label>
+                                                <label class="input">
+                                                    <input type="{{inputTypeOne}}" id="pass1" class="form-control" minlength="6" ng-model="IoclPushpam.UserPwd" alphanumericonly />
+                                                    <span class="showPass glyphicon {{classNameOne}} form-control-feedback " ng-click="HideShowPasswordOne()"
+                                                          style="cursor: pointer; pointer-events: all;">
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="col col-4" ng-show="isPasswordShow">
+                                                <label class="label">Re-enter Password<span class="errorMessage" style="color:red;">*</span></label>
+                                                <label class="input">
+                                                    <input type="{{inputTypeTwo}}" id="pass2" class="form-control" ng-model="IoclPushpam.ConfirmUserPwd" minlength="6" alphanumericonly ng-change="ConfirmPassword(IoclPushpam)" />
+                                                    <span class="showPass glyphicon {{classNameTwo}} form-control-feedback " ng-click="HideShowPasswordTwo()"
+                                                          style="cursor: pointer; pointer-events: all;">
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <section>
+                                        <div class="row">
+                                            <div class="col col-6 ">
+                                                <label class="checkbox-inline">
+                                                    <input name="remember" ng-model="IoclPushpam.IsActive" ng-true-value="'Y'" ng-false-value="'N'" ng-checked="{{checkisactive}}" type="checkbox"> Is Active?
+                                                </label>
+                                                <label class="checkbox-inline">
+                                                    <input name="remember" ng-model="IoclPushpam.IsSendAllMail" ng-true-value="'Y'" ng-false-value="'N'" type="checkbox">Allow PAN India Data?
+                                                </label>
+                                            </div>
+                                            <div class="col col-6">
+                                                <div class="errorMessage">
+                                                    <div class="errorMsg" id="errormsg" ng-show="CheckIsLoginCred">{{errorMessage}}</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </fieldset>
+                                <footer>
+                                    <div class="row ">
+                                        <div class="col-sm-10" ng-show="divshow">
+                                            <button class="pull-right btn btn-primary pad-btn" type="submit" value="{{submit}}" ng-click="ConfirmPassword(IoclPushpam)||CheckOperationalUsersData(IoclPushpam,UserIoclForm.$valid)">
+                                                <i class="glyphicon glyphicon-send"></i> &nbsp;&nbsp;{{submit}}
+                                            </button>
+                                        </div>
+                                        <div class="col-sm-2" ng-show="divshow">
+                                            <a class="btn btn-default pad-btn-mar" ui-sref="app.dashboard.user_account_iocl_grid">
+                                                <i class="glyphicon glyphicon-arrow-left"></i> &nbsp;&nbsp;Back
+                                            </a>
+                                        </div>
+                                        <div class="col-sm-10 " ng-show="divhide">
+                                            <button type="button" name="" class="pull-right btn btn-primary">
+                                                <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i> Loading
+                                            </button>
+                                        </div>
+                                    </div>
+                                </footer>
+                                <!-- end content -->
+                            </div>
+
+                        </div>
+                    </form>
+                    <!-- end widget div -->
+                </div>
+                <!-- end widget -->
+
+            </article>
+
+        </div>
+
+        <!-- end row -->
+
+    </div>
+    <!-- end widget grid -->
+
+</div>
+<!-- END MAIN CONTENT -->

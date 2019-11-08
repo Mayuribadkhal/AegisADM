@@ -1,0 +1,227 @@
+﻿<!-- MAIN CONTENT -->
+<div id="content">
+
+    <!-- widget grid -->
+    <form name="myForm">
+
+        <section id="widget-grid" widget-grid>
+
+
+            <!-- end row -->
+            <!-- row -->
+
+            <div class="row">
+
+                <article class="col-sm-12">
+
+                    <!-- new widget -->
+                    <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue">
+                        <header>
+                            <div class="basic_top_mar text-center">
+                                <span class="widget-icon"> <i class="fa fa-database"></i> </span>
+                                <h2>Verify Payment </h2>
+                            </div>
+                        </header>
+                        <!-- widget div-->
+                        <div>
+                            <div class="widget-body">
+                                <!-- content goes here -->
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <div class="form-group">
+                                            <label><strong>Distributor Code : </strong></label>
+                                            <label> {{Distcode}}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label><strong>Distributor Name : </strong></label>
+                                            <label> {{DistName}}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label><strong>Order No. : </strong> {{verify.OrderNo}}</label>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3`">
+                                        <div class="form-group">
+                                            <label><strong>Order Date : </strong> {{verify.OrderDt}}</label>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <label><strong>Address: </strong>{{verify.DelvDistAddress}}</label>
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-6">
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <label style="margin-bottom: 10px;"><strong>Payment Details</strong></label>
+
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <label for="sel1">Payment Mode<span style="color:red">*</span></label>
+                                                            <!-- <input type="text" id="sel1" class="form-control" placeholder="Enter Payment Mode" ng-model="verify.PayModeType" />-->
+                                                            <select class="form-control" id="sel1" ng-options="s.PayMode as s.PayDesc for s in allpaymode" ng-model="verify.PayMode" required>
+                                                                <option value="" selected>--Select Payment Mode--</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-8">
+                                                        <div class="form-group">
+                                                            <label>Bank Name<span style="color:red">*</span></label>
+                                                            <select class="form-control" id="sel2" ng-options="d.BankCode as d.BankName for d in allbank" ng-model="verify.BankCode">
+                                                                <option value="" selected>--Select Bank--</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <label>Transaction Ref. No.<span style="color:red">*</span></label>
+                                                            <input type="text" id="sel3" class="form-control" placeholder="Enter Reference No." ng-model="verify.TranRefNo" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4 ">
+                                                        <div class="form-group">
+                                                            <label>Transaction Ref. Date<span style="color:red">*</span></label>
+                                                            <input type="text" id="sel4" class="form-control" placeholder="dd-MMM-yyyy" ng-model="verify.TranDate" datepicker />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4 ">
+                                                        <div class="form-group">
+                                                            <label>Transactional Charges<span style="color:red">*</span></label>
+
+                                                            <select class="form-control" id="sel9" ng-model="verify.TrCharges" required>
+                                                                <option value="" selected>--Select Transactional Charges--</option>
+                                                                <option value="I">Inclusive</option>
+                                                                <option value="E">Exclusive</option>
+                                                                <option value="N">Not Applicable</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <label>Payment Type</label>
+                                                            <input type="text" id="sel10" class="form-control" placeholder="Enter Status" ng-model="verify.StatusCode" />
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <label>Tax Percentage</label>
+                                                            <input type="text" step="0.01" id="sel7" class="form-control" style="text-align: right;" placeholder="Enter Tax Percentage" ng-model="verify.TaxPer" numericfloat decimal-places />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4 ">
+                                                        <div class="form-group">
+                                                            <label>Tax Amount</label>
+                                                            <input type="text" step="0.01" id="sel8" class="form-control" style="text-align: right;" placeholder="Enter Tax Amount" ng-model="verify.TaxAmt" numericfloat decimal-places />
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="row">
+
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <label>Net Payable</label>
+                                                            <input type="text" id="sel5" step="0.01" class="form-control" style="text-align: right;" placeholder="Enter Net Payable" ng-model="verify.OrgAmount" numericfloat decimal-places />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <label>Transfer Amount<span style="color:red">*</span></label>
+                                                            <input type="text" step="0.01" id="sel6" class="form-control" style="text-align: right;" placeholder="Enter Transfer Amount" ng-model="verify.TranAmt" numericfloat decimal-places />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4 ">
+                                                        <div class="form-group">
+                                                            <label>Adjustment(+/-)</label>
+                                                            <input type="text" step="0.01" id="sel12" style="text-align: right;" class="form-control" placeholder="Enter Difference Amount" ng-model="verify.DiscountAmt" numericfloat decimal-places />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <label>Remark</label>
+                                                        <textarea class="form-control" placeholder="Enter Remark" ng-model="verify.Remark" rows="1" ng-required="isReject"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <div class="checkbox">
+                                                            <label><input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'" ng-model="verify.IsPaymentVerify" required>Payment received and verified.</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="checkbox pull-right">
+                                                            <a style="text-decoration: underline;" ng-click="UpdatePayment()"> Update Payment</a>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr class="hr_basic" />
+                                                <div class="row ">
+                                                    <div class="col-sm-12">
+                                                        <a class="btn btn-default pull-right" ui-sref="app.dashboard.make_payment_grid" ng-show="divshow">
+                                                            <i class="glyphicon glyphicon-arrow-left"></i> &nbsp;&nbsp;Back
+                                                        </a>
+                                                        <button type="submit" class="pull-right btn btn-danger back-red" ng-click="rejectOrder()" ng-show="divshow" style="margin-right:10px;">
+                                                            <i class="fa fa-ban fa-lg"></i>  &nbsp;Reject
+                                                        </button>
+                                                        <button class="pull-right btn btn-primary" type="submit" value="{{submit}}" ng-click="VerifyPaymnet(myForm.$valid,verify)" ng-show="divshow" style="margin-right:10px;">
+                                                            <i class="glyphicon glyphicon-send"></i> &nbsp;&nbsp;Submit
+                                                        </button>
+                                                        <button type="button" name="" class="pull-right btn btn-primary" ng-show="divhide">
+                                                            <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i> Loading
+                                                        </button>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+
+                                                <label style="margin-bottom: 10px;"><strong>Order Details</strong></label><label class="pull-right net-pay" for="comment" style="color: #A52A2A; "><span class="glyphicon glyphicon-info-sign "></span> Net payable <strong>{{verify.OrgAmount}}</strong> including transport charges:<strong>{{TC}}</strong></label>
+                                                <div ui-grid="gridOptions1" ui-grid-pagination ui-grid-exporter ui-grid-selection class="grid"></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- end widget div -->
+                        </div>
+                        <!-- end widget -->
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- end row -->
+
+        </section>
+        <!-- end widget grid -->
+    </form>
+</div>
+<!-- END MAIN CONTENT -->

@@ -1,0 +1,169 @@
+﻿<!-- MAIN CONTENT -->
+<div id="content" ng-controller="DashboardCtrl">
+    <form name="myForm">
+        <!-- widget grid -->
+        <section id="widget-grid" widget-grid>
+
+
+            <!-- end row -->
+            <!-- row -->
+
+            <div class="row">
+
+                <article class="col-sm-12 col-sm-offset-2 col-sm-8">
+
+                    <!-- new widget -->
+
+                    <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue" ng-controller="TodoCtrl">
+                        <header>
+                            <div class="basic_top_mar text-center">
+                                <span class="widget-icon"> <i class="fa fa-database"></i> </span>
+                                <h2>Manage Dispatch  </h2>
+                            </div>
+                        </header>
+                        <!-- widget div-->
+                        <div>
+                            <div class="widget-body">
+                                <!-- content goes here -->
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label><strong>Distributor Code : </strong></label>
+                                            <label> {{Distcode}}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label><strong>Distributor Name : </strong></label>
+                                            <label> {{DistName}}</label>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>Order No.</label>
+                                            <input type="text" class="form-control" placeholder="Enter Order No." ng-model="OrderNo" id="id1" />
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>Order Date</label>
+                                            <input type="text" class="form-control" placeholder="Enter Order Date" ng-model="OrderDt" id="id2" />
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>OPF No.</label>
+                                            <input type="text" class="form-control" placeholder="Enter OPF No." ng-model="OpfNo" id="id3" />
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>OPF Date</label>
+                                            <input type="text" class="form-control" placeholder="Enter Distributor Name" ng-model="OpfDate" id="id4" />
+
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <div class="row">
+
+
+                                    <div class="col-sm-9">
+                                        <div class="form-group">
+                                            <label>Select Transport<span style="color:red">*</span></label>
+                                            <select class="form-control" id="sel1" ng-options="t.TransportCode as t.TransportDesc for t in transport" ng-model="dispatch.TransportCode" ng-change="Gettransportmobno(dispatch)" required>
+                                                <option value="" selected>--Select Transport--</option>
+
+                                            </select>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>Mobile No.</label>
+                                            <input type="text" id="mobno" class="form-control" placeholder="Enter Mobile No." ng-model="dispatch.MobileNo" required />
+
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>Docket No.<span style="color:red">*</span></label>
+                                            <input type="text" class="form-control" placeholder="Enter Docket No." ng-model="dispatch.DocketNo" required />
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>Courier Date<span style="color:red">*</span></label>
+                                            <label class="input">
+                                                <i class="icon-append fa fa-calendar"></i>
+                                                <input type="text" class="form-control" id="fd" placeholder="Enter Dispatch Date" ng-model="dispatch.DispatchDate" dispatchdatepicker required />
+                                            </label>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Remark</label>
+                                            <textarea class="form-control" placeholder="Enter Remark" ng-model="dispatch.Remark" rows="1" ng-required="isReject"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="hr_basic" />
+                                <div class="row ">
+                                    <div class="col-sm-12" >
+                                        <a class="btn btn-default pull-right" ui-sref="app.dashboard.dispatch_grid " ng-show="divshow" >
+                                            <i class="glyphicon glyphicon-arrow-left"></i> &nbsp;&nbsp;Back
+                                        </a>
+                                        <button type="submit" class="btn btn-danger back-red pull-right" ng-click="rejectOrder()" ng-show="divshow" style="margin-right:10px;">
+                                            <i class="fa fa-ban fa-lg"></i>  &nbsp;Reject
+                                        </button>
+                                   
+                                        <button class="pull-right btn btn-primary" type="submit" value="{{submit}}" ng-click="Dispatch(myForm.$valid,OpfNo,dispatch)" ng-show="divshow" style="margin-right:10px;">
+                                            <i class="glyphicon glyphicon-send"></i> &nbsp;&nbsp;Submit
+                                        </button>
+                                        <button type="button" name="" class="pull-right btn btn-primary" ng-show="divhide">
+                                            <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i> Loading
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- end content -->
+                            </div>
+
+                        </div>
+                        <!-- end widget div -->
+                    </div>
+                    <!-- end widget -->
+
+                </article>
+
+            </div>
+
+            <!-- end row -->
+
+        </section>
+        <!-- end widget grid -->
+    </form>
+  
+
+</div>
+<!-- END MAIN CONTENT -->

@@ -1,0 +1,180 @@
+﻿<!-- MAIN CONTENT -->
+<div id="content">
+
+    <!-- widget grid -->
+    <section id="widget-grid" widget-grid>
+
+        <form name="myForm">
+            <!-- end row -->
+            <!-- row -->
+
+            <div class="row">
+                <article class="col-sm-12 col-sm-offset-2 col-sm-8">
+                    <!-- new widget -->
+                    <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue">
+                        <header>
+                            <div class="basic_top_mar text-center">
+                                <span class="widget-icon"> <i class="fa fa-database"></i> </span>
+                                <h2>Manage Distributor Payment Gateway Details</h2>
+                            </div>
+                        </header>
+                        <!-- widget div-->
+                        <div>
+                            <div class="widget-body">
+                                <!-- content goes here -->
+                                <div class="row">
+                                    <div class="col-sm-3 ">
+                                        <div class="form-group text-center">
+                                            <label><strong>Distributor Code : </strong></label></br>
+                                            <label>{{ConnetDistCode}}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group text-center">
+                                            <label><strong>Distributor Name : </strong></label></br>
+                                            <label>{{ConnectDistName}}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group text-center">
+                                            <label><strong>Distributor City : </strong></label></br>
+                                            <label>{{ConnetDistCity}}</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="sel1">Payment Gateway<span class="errorMessage" style="color:red;">*</span></label>
+                                            <select class="form-control" id="sel1" ng-options="p.PgType as p.PgDesc for p in getpgway" ng-model="DistPay.PgType" ng-change="onpgatewaychange(DistPay.PgType)" required>
+                                                <option value="" selected>--Select Payment Gayeway--</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="sel1">Pay Mode<span class="errorMessage" style="color:red;">*</span></label>
+                                            <select class="form-control" id="sel1" ng-options="pm.PayModeType as pm.PayModeDesc for pm in getpmode" ng-model="DistPay.PayModeType" required>
+                                                <option value="" selected>--Select Pay Mode--</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <!--<div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group" ng-show="div1">
+                                            <label for="sel1">Select Operator<span class="errorMessage" style="color:red;">*</span></label>
+                                            <select class="form-control" id="sel1" ng-model="DistPay.RoleCode" ng-change=" getUser(DistPay.RoleCode)" required>
+                                                <option value="" selected>--Select Operator--</option>
+                                                <option value="DELB">Delivery Boy</option>
+                                                <option value="MECH">Mechanical</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-sm-6">
+                                        <div class="form-group" ng-show="div1">
+                                            <label for="sel1">Select User<span class="errorMessage" style="color:red;">*</span></label>
+                                            <select class="form-control" id="sel1" ng-options="pm.UserCode as pm.FirstName for pm in Users" ng-model="DistPay.UserCode" required>
+                                                <option value="" selected>--Select User--</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                </div>-->
+
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group" ng-show="div1">
+                                            <label for="sel1">{{par1}}<span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" class="form-control" id="pmode" placeholder="Enter Parameter 1" ng-model="DistPay.Parameter1" ng-required="abc" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group" ng-show="div2">
+                                            <label for="sel1">{{par2}}<span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" class="form-control" id="pmode" placeholder="Enter Parameter 2" ng-model="DistPay.Parameter2" ng-required="xyz" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6" ng-show="div3">
+                                        <div class="form-group">
+                                            <label for="sel1">{{par3}}<span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" class="form-control" id="pmode" placeholder="Enter Parameter 3" ng-model="DistPay.Parameter3" ng-required="pqr" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6" ng-show="div4">
+                                        <div class="form-group">
+                                            <label for="sel1">{{par4}}<span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" class="form-control" id="pmode" placeholder="Enter Parameter 4" ng-model="DistPay.Parameter4" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6" ng-show="div5">
+                                        <div class="form-group">
+                                            <label for="sel1">{{par5}}<span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" class="form-control" id="pmode" placeholder="Enter Parameter 5" ng-model="DistPay.Parameter5" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="form-group">
+                                            <br />
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" value="" ng-true-value="'Y'" ng-false-value="'N'" ng-model="DistPay.IsActive">Is Active?
+                                            </label>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <hr class="hr_basic" />
+                                <div class="row ">
+                                    <div class="col-sm-10" ng-show="divshow">
+                                        <button id="btn1" class="pull-right btn btn-primary" type="submit" value="{{submit}}" ng-click="SaveDistPayDetails(myForm.$valid,DistPay)">
+                                            <i class="glyphicon glyphicon-send"></i> &nbsp;&nbsp;{{submit}}
+                                        </button>
+                                    </div>
+                                    <div class="col-sm-10" ng-show="divhide">
+                                        <button type="button" class="pull-right btn btn-primary">
+                                            <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i> Loading
+                                        </button>
+                                    </div>
+                                    <div class="col-sm-1" ng-show="divshow">
+                                        <a class="btn btn-default" ui-sref="app.dashboard.distributor_payment_gateway_grid">
+                                            <i class="glyphicon glyphicon-arrow-left"></i> &nbsp;&nbsp;Back
+                                        </a>
+                                    </div>
+
+                                </div>
+
+                                <!-- end content -->
+                            </div>
+
+                        </div>
+                        <!-- end widget div -->
+                    </div>
+                    <!-- end widget -->
+
+                </article>
+
+            </div>
+
+            <!-- end row -->
+        </form>
+    </section>
+    <!-- end widget grid -->
+
+</div>
+<!-- END MAIN CONTENT -->

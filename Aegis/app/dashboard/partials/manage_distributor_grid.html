@@ -1,0 +1,198 @@
+﻿<!-- MAIN CONTENT -->
+<div id="content">
+    <!-- widget grid -->
+    <section id="widget-grid" widget-grid>
+        <!-- end row -->
+        <!-- row -->
+        <div class="row">
+            <article class="col-sm-12">
+                <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue">
+                    <header>
+                        <div class="basic_top_mar text-center">
+                            <span class="widget-icon"> <i class="glyphicon glyphicon-user"></i> </span>
+                            <h2>Manage Distributor</h2>
+                        </div>
+                    </header>
+                    <!-- widget div-->
+                    <div>
+                        <div class="widget-body">
+                            <!-- content goes here -->
+
+                            <div class="row small-btn">
+
+
+                                <div class="col-sm-2 small_cls">
+                                    <div class="form-group">
+                                        <label>From Date</label>
+                                        <input type="date" class="form-control" placeholder="Enter Consumer Number" />
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-2 small_cls">
+                                    <div class="form-group">
+                                        <label>To Date</label>
+                                        <input type="date" class="form-control" placeholder="Enter Consumer Number" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-1  text-center renew-margin">
+
+
+                                    <label>OR</label>
+
+                                </div>
+                                <div class="col-sm-2 small_cls">
+                                    <div class="form-group">
+                                        <label>Distributor Code</label>
+                                        <input type="text" class="form-control" placeholder="Enter Distributor Code " />
+                                    </div>
+                                </div>
+                                <!--
+                                <div class="col-sm-1 min_select">
+                                    <div class="form-group">
+                                        <label>Status</label>
+                                        <select class="form-control">
+                                            <option>Select</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-2 ">
+                                    <div class="form-group">
+                                        <label>Inserted By</label>
+                                        <select class="form-control">
+                                            <option>-- Select -- </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                    -->
+
+                                <div class="col-sm-2 small_cls">
+                                    <div class="form-group">
+                                        <label>&nbsp;</label>
+                                        <a class="btn btn-block btn-primary report_btn get_details"><i class="fa fa-search"></i> Get Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row small-btn hidden_row well well_search" ng-show="value">
+                                <div class="col-sm-2 small_cls">
+                                    <div class="form-group">
+                                        &nbsp;
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="hr-notop" />
+                            <article>
+
+
+                                <!-- Widget ID (each widget will need unique ID)-->
+                                <div class="jarviswidget jarviswidget-color-blueDark jarviswidget-sortable" id="wid-id-1" data-widget-editbutton="false" role="widget">
+                                    <!-- widget options:
+                                    usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+                                    data-widget-colorbutton="false"
+                                    data-widget-editbutton="false"
+                                    data-widget-togglebutton="false"
+                                    data-widget-deletebutton="false"
+                                    data-widget-fullscreenbutton="false"
+                                    data-widget-custombutton="false"
+                                    data-widget-collapsed="true"
+                                    data-widget-sortable="false"
+
+                                    -->
+                                    <!-- widget div-->
+                                    <div role="content">
+
+                                        <!-- widget edit box -->
+                                        <div class="jarviswidget-editbox">
+                                            <!-- This area used as dropdown edit box -->
+
+                                        </div>
+                                        <!-- end widget edit box -->
+                                        <!-- widget content -->
+                                        <div class="widget-body no-padding">
+
+                                            <div id="datatable_fixed_column_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                                                <div class="dt-toolbar"><div class="col-xs-12 col-sm-6 hidden-xs"><div id="datatable_fixed_column_filter" class="dataTables_filter"><label><span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span><input type="search" class="form-control" placeholder="" aria-controls="datatable_fixed_column"></label></div></div><div class="col-sm-6 col-xs-12 hidden-xs"><div class="toolbar"></div></div></div><table id="datatable_fixed_column" class="table table-striped table-bordered dataTable no-footer" width="100%" role="grid" aria-describedby="datatable_fixed_column_info" style="width: 100%;">
+
+                                                    <thead>
+                                                        <tr role="row">
+                                                            <th class="hasinput" style="width:17%" rowspan="1" colspan="1">
+                                                                <input type="text" class="form-control" placeholder="Filter Name">
+                                                            </th>
+                                                            <th class="hasinput" style="width:18%" rowspan="1" colspan="1">
+                                                                <div class="input-group">
+                                                                    <input class="form-control" placeholder="Filter Position" type="text">
+                                                                    <span class="input-group-addon">
+                                                                        <span class="onoffswitch">
+                                                                            <input type="checkbox" name="start_interval" class="onoffswitch-checkbox" id="st3">
+                                                                            <label class="onoffswitch-label" for="st3">
+                                                                                <span class="onoffswitch-inner" data-swchon-text="YES" data-swchoff-text="NO"></span>
+                                                                                <span class="onoffswitch-switch"></span>
+                                                                            </label>
+                                                                        </span>
+                                                                    </span>
+                                                                </div>
+
+
+                                                            </th>
+                                                            <th class="hasinput" style="width:16%" rowspan="1" colspan="1">
+                                                                <input type="text" class="form-control" placeholder="Filter Office">
+                                                            </th>
+                                                            <th class="hasinput" style="width:17%" rowspan="1" colspan="1">
+                                                                <input type="text" class="form-control" placeholder="Filter Age">
+                                                            </th>
+                                                            <th class="hasinput icon-addon" rowspan="1" colspan="1">
+                                                                <input id="dateselect_filter" type="text" placeholder="Filter Date" class="form-control datepicker hasDatepicker" data-dateformat="yy/mm/dd">
+                                                                <label for="dateselect_filter" class="glyphicon glyphicon-calendar no-margin padding-top-15" rel="tooltip" title="" data-original-title="Filter Date"></label>
+                                                            </th>
+                                                            <th class="hasinput" style="width:16%" rowspan="1" colspan="1">
+                                                                <input type="text" class="form-control" placeholder="Filter Salary">
+                                                            </th>
+                                                        </tr>
+                                                        <tr role="row"><th data-class="expand" class="expand sorting_asc" tabindex="0" aria-controls="datatable_fixed_column" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 211px;">Name</th><th class="sorting" tabindex="0" aria-controls="datatable_fixed_column" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 225px;">Position</th><th data-hide="phone" class="sorting" tabindex="0" aria-controls="datatable_fixed_column" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 197px;">Office</th><th data-hide="phone" class="sorting" tabindex="0" aria-controls="datatable_fixed_column" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 211px;">Age</th><th data-hide="phone,tablet" class="sorting" tabindex="0" aria-controls="datatable_fixed_column" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 201px;">Start date</th><th data-hide="phone,tablet" class="sorting" tabindex="0" aria-controls="datatable_fixed_column" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 198px;">Salary</th></tr>
+                                                    </thead>
+
+                                                    <tbody>
+
+                                                        <tr role="row" class="odd">
+                                                            <td class="expand sorting_1"><span class="responsiveExpander"></span>Airi Satou</td>
+                                                            <td>Accountant</td>
+                                                            <td>Tokyo</td>
+                                                            <td>33</td>
+                                                            <td>2008/11/28</td>
+                                                            <td><a ui-sref="app.dashboard.manage_distributor" class="btn btn-primary">Manage</a></td>
+                                                        </tr>
+
+                                                    </tbody>
+
+                                                </table><div class="dt-toolbar-footer"><div class="col-sm-6 col-xs-12 hidden-xs"><div class="dataTables_info" id="datatable_fixed_column_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div></div><div class="col-xs-12 col-sm-6"><div class="dataTables_paginate paging_simple_numbers" id="datatable_fixed_column_paginate"><ul class="pagination"><li class="paginate_button previous disabled" id="datatable_fixed_column_previous"><a href="#" aria-controls="datatable_fixed_column" data-dt-idx="0" tabindex="0">Previous</a></li><li class="paginate_button active"><a href="#" aria-controls="datatable_fixed_column" data-dt-idx="1" tabindex="0">1</a></li><li class="paginate_button "><a href="#" aria-controls="datatable_fixed_column" data-dt-idx="2" tabindex="0">2</a></li><li class="paginate_button "><a href="#" aria-controls="datatable_fixed_column" data-dt-idx="3" tabindex="0">3</a></li><li class="paginate_button "><a href="#" aria-controls="datatable_fixed_column" data-dt-idx="4" tabindex="0">4</a></li><li class="paginate_button "><a href="#" aria-controls="datatable_fixed_column" data-dt-idx="5" tabindex="0">5</a></li><li class="paginate_button "><a href="#" aria-controls="datatable_fixed_column" data-dt-idx="6" tabindex="0">6</a></li><li class="paginate_button next" id="datatable_fixed_column_next"><a href="#" aria-controls="datatable_fixed_column" data-dt-idx="7" tabindex="0">Next</a></li></ul></div></div></div>
+                                            </div>
+
+                                        </div>
+                                        <!-- end widget content -->
+
+                                    </div>
+                                    <!-- end widget div -->
+
+                                </div>
+                                <!-- end widget -->
+
+                            </article>
+
+                            <!-- end s1 tab pane -->
+                            <!-- end content -->
+                        </div>
+
+                    </div>
+                    <!-- end widget div -->
+                </div>
+                <!-- end widget -->
+
+            </article>
+
+        </div>
+        <!-- end row -->
+    </section>
+    <!-- end widget grid -->
+</div>
+<!-- END MAIN CONTENT -->

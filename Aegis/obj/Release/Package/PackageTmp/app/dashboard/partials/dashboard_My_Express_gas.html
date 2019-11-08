@@ -1,0 +1,155 @@
+﻿<!-- MAIN CONTENT --> <div id="content">
+    <!--<div class="row">
+        <big-breadcrumbs items="['Dashboard', 'My Dashboard']" class="col-xs-12 col-sm-7 col-md-7 col-lg-4"></big-breadcrumbs>
+        <div data-smart-include="app/layout/partials/sub-header.tpl.html"></div>
+    </div>-->
+    <!-- widget grid --> <section id="widget-grid" widget-grid>
+        <!-- row --> <div class="row">
+            <article class="col-sm-12">
+                <div jarvis-widget id="live-feeds-widget" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-fullscreenbutton="false" data-widget-colorbutton="false" data-widget-deletebutton="false">
+                    <!-- widget options:
+                    usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+                    data-widget-colorbutton="false"
+                    data-widget-editbutton="false"
+                    data-widget-togglebutton="false"
+                    data-widget-deletebutton="false"
+                    data-widget-fullscreenbutton="false"
+                    data-widget-custombutton="false"
+                    data-widget-collapsed="true"
+                    data-widget-sortable="false"
+
+                    -->
+                    <div class="ezy-head"> <div class="pull-left"> <span class="widget-icon"> <i class="glyphicon glyphicon-stats txt-color-darken"></i> </span> <h2 class="black"> Live Feeds As On &nbsp;<span class="relative dateSelect"> <input type="text" id="dashDate" ng-model="date1" name="d" class="input-xs" datepicker required> <button type="submit" class="btn btn-xs btn-primary" ng-click="getAllCountonbtn(date1)"> GO </button> <button ng-show="Getdivhide" type="button" name="" class="btn btn-xs btn-primary"> <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i> </button> </span> </h2> </div> <div class=""> <ul class="nav nav-tabs pull-right in" id="myTab">
+                         <li class="noleft active"> <a data-toggle="tab" href="#s1" ng-click="getAllCount(date1)"><i class="fa fa-clock-o"></i> <span class="hidden-mobile hidden-tablet">Delivery Status</span></a> </li>
+                         <li> <a data-toggle="tab" href="#s2" ng-click="GetHierarchy()"><i class="fa fa-globe"></i> <span class="hidden-mobile hidden-tablet">Hierarchy</span></a> </li> 
+                        <!--<li> <a data-toggle="tab" href="#s3" ng-click="SyncDetailsGrid()"><i class="fa fa-refresh"></i> <span class="hidden-mobile hidden-tablet">Revenue</span></a> </li>--> </ul> </div> </div>
+                    <!--<header>
+                        <span class="widget-icon"> <i class="glyphicon glyphicon-stats txt-color-darken"></i> </span>
+
+                        <h2>Live Feeds </h2>
+
+                        <ul class="nav nav-tabs pull-right in" id="myTab">
+                            <li class="active">
+                                <a data-toggle="tab" href="#s1"><i class="fa fa-clock-o"></i> <span class="hidden-mobile hidden-tablet">Live Stats</span></a>
+                            </li>
+
+                            <li>
+                                <a data-toggle="tab" href="#s2"><i class="fa fa-facebook"></i> <span class="hidden-mobile hidden-tablet">Social Network</span></a>
+                            </li>
+
+                            <li>
+                                <a data-toggle="tab" href="#s3"><i class="fa fa-dollar"></i> <span class="hidden-mobile hidden-tablet">Revenue</span></a>
+                            </li>
+                        </ul>
+
+                    </header>-->
+                    <!-- widget div--> <div class="no-padding">
+                        <div class="widget-body">
+                            <!-- content --> <div id="myTabContent" class="tab-content">
+                                <div class="tab-pane fade active in padding-10 no-padding-bottom" id="s1">
+                                    <div class="row"> <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4"> <label><strong>Delivered/Undelivered(s)</strong></label> <div class="padding-10"> <div id="flotcontainer" class="chart-large has-legend-unique" deliver-undeliver flot-data="revenewData" flot-options="revenewDisplayOptions"></div> </div> </div> <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4"> <label><strong>DAC/MDAC/SmartCard(s)</strong></label> <div class="padding-10"> <div id="flotcontainer1" class="chart-large has-legend-unique" dac-mdac flot-data="revenewData1" flot-options="revenewDisplayOptions1"></div> </div> </div> <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4"> <label><strong>Payment Count(s)</strong></label> <div class="padding-10"> <div id="flotcontainer2" class="chart-large has-legend-unique" pay-report flot-data="revenewData2" flot-options="revenewDisplayOptions2"></div> </div> </div> </div> <div class="show-stat-microcharts" data-sparkline-container data-easy-pie-chart-container> <div class="dash_box no-padding col-xs-12 col-sm-3 col-md-3 col-lg-3"> <a class="dash_link"> <div class="dash-graph"> <canvas id="bar" class="chart chart-doughnut" chart-data="dataTotal" chart-labels="labels" chart-colors="Color" chart-options="options" chart-click="clickme" chart-hover="hoverme"></canvas> <span class="graph-val">{{refillper| number:1}}%</span> </div> <span class="easy-pie-title"> Refill Delivered </span> <ul class="smaller-stat hidden-sm pull-right"> <li> <span class="label bg-color-greenLight graph-details-val">{{TotalDeliveredCount1}}</span> </li> </ul> </a> </div> <div class="dash_box no-padding col-xs-12 col-sm-3 col-md-3 col-lg-3"> <a class="dash_link"> <div class="dash-graph"> <canvas id="bar" class="chart chart-doughnut" chart-data="dataTotal1" chart-labels="labels" chart-colors="Color" chart-options="options" chart-click="clickme" chart-hover="hoverme"></canvas> <span class="graph-val">{{cardper| number:1}}%</span> </div> <span class="easy-pie-title"> Card Delivery </span> <ul class="smaller-stat hidden-sm pull-right"> <li> <span class="label bg-color-greenLight graph-details-val">{{CardDeliveredCount1}}</span> </li> </ul> </a> </div> <div class="dash_box no-padding col-xs-12 col-sm-3 col-md-3 col-lg-3"> <a class="dash_link"> <div class="dash-graph"> <canvas id="bar" class="chart chart-doughnut" chart-data="dataTotal2" chart-labels="labels" chart-colors="Color" chart-options="options" chart-click="clickme" chart-hover="hoverme"></canvas> <span class="graph-val">{{DACper | number:1}}%</span> </div> <span class="easy-pie-title"> Total DAC </span> <ul class="smaller-stat hidden-sm pull-right"> <li> <span class="label bg-color-greenLight graph-details-val">{{DACDeliveredCount1}}</span> </li> </ul> </a> </div> <div class="dash_box no-padding col-xs-12 col-sm-3 col-md-3 col-lg-3"> <a class="dash_link" ng-click="goToUndeliverdOrders(date1)"> <div class="dash-graph"> <canvas id="bar" class="chart chart-doughnut" chart-data="dataTotal3" chart-labels="labels" chart-colors="Color" chart-options="options" chart-click="clickme" chart-hover="hoverme"></canvas> <span class="graph-val">{{undelper | number:1}}%</span> </div> <span class="easy-pie-title"> Undelivery Attempts </span> <ul class="smaller-stat hidden-sm pull-right"> <li> <span class="label bg-color-greenLight graph-details-val"> {{UndeliveredAttempts1}}</span> </li> </ul> </a> </div> </div> <div class="show-stat-microcharts dash_ clearfix" data-sparkline-container data-easy-pie-chart-container> <div class="dash_box no-padding col-xs-12 col-sm-3 col-md-3 col-lg-3"> <a class="dash_link"> <div class="dash-graph"> <canvas id="bar" class="chart chart-doughnut" chart-data="dataTotal4" chart-labels="labels" chart-colors="Color" chart-options="options" chart-click="clickme" chart-hover="hoverme"></canvas> <span class="graph-val">{{pendper | number:1}}%</span> </div> <span class="easy-pie-title"> Pending Delivery </span> <ul class="smaller-stat hidden-sm pull-right"> <li> <span class="label bg-color-greenLight graph-details-val">{{PendingDelivery1}}</span> </li> </ul> </a> </div> <div class="dash_box no-padding col-xs-12 col-sm-3 col-md-3 col-lg-3"> <a class="dash_link" ng-click="goToCashPay(date1)"> <div class="dash-graph"> <canvas id="bar" class="chart chart-doughnut" chart-data="dataTotal5" chart-labels="labels" chart-colors="Color" chart-options="options" chart-click="clickme" chart-hover="hoverme"></canvas> <span class="graph-val">{{cashper | number:1}}%</span> </div> <span class="easy-pie-title"> Cash Payment </span> <ul class="smaller-stat hidden-sm pull-right"> <li> <span class="label bg-color-greenLight graph-details-val">{{CashPayCount1}}</span> </li> </ul> </a> </div> <div class="dash_box no-padding col-xs-12 col-sm-3 col-md-3 col-lg-3"> <a class="dash_link" ng-click="goToDigitalPay(date1)"> <div class="dash-graph"> <canvas id="bar" class="chart chart-doughnut" chart-data="dataTotal6" chart-labels="labels" chart-colors="Color" chart-options="options" chart-click="clickme" chart-hover="hoverme"></canvas> <span class="graph-val">{{digper | number:1}}%</span> </div> <span class="easy-pie-title"> Digital Payment </span> <ul class="smaller-stat hidden-sm pull-right"> <li> <span class="label bg-color-greenLight graph-details-val">{{DigitalPayCount1}}</span> </li> </ul> </a> </div> <div class="dash_box no-padding col-xs-12 col-sm-3 col-md-3 col-lg-3"> <a class="dash_link" ng-click="goTotalPayReport(date1)"> <div class="dash-graph"> <canvas id="bar" class="chart chart-doughnut" chart-data="dataTotal7" chart-labels="labels" chart-colors="Color" chart-options="options" chart-click="clickme" chart-hover="hoverme"></canvas> <span class="graph-val">{{TotalPer | number:1}}%</span> </div> <span class="easy-pie-title"> Total Payments </span> <ul class="smaller-stat hidden-sm pull-right"> <li> <span class="label bg-color-greenLight graph-details-val">{{TotalPayment1}}</span> </li> </ul> </a> </div> </div><!-- End Row --> <div class="show-stat-microcharts dash_ bot_border_smgraph clearfix bot10" data-sparkline-container data-easy-pie-chart-container>
+                                        <div class="dash_box no-padding col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                                            <a class="dash_link" ng-click="goToAdvancePayment(date1)">
+                                                <div class="dash-icon-pos">
+                                                    <!--<canvas id="bar" class="chart chart-doughnut" chart-data="data" chart-labels="labels" chart-colors="Color" chart-thickness="thickness" chart-options="options" chart-click="clickme" chart-hover="hoverme"></canvas>
+                                                    <span class="graph-val"></span>-->
+                                                    <!--<img src="../../../styles/img/rupee-indian.png"  />-->
+                                                </div> <i class="fa fa-lg fa-fw fa-money dash-icon-pos"></i> <span class="easy-pie-title"> Advance Payments </span> <ul class="smaller-stat hidden-sm pull-right"> <li> <span class="label bg-color-greenLight" style="margin-top: -6px; color: white; font-weight: bold">{{AdvancePayments1}}</span> </li> </ul>
+                                            </a>
+                                        </div> <div class="dash_box no-padding col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                                            <a class="dash_link" ng-click="goToRefillBooking(date1)">
+                                                <div class="dash-icon-pos">
+                                                    <!--<canvas id="bar" class="chart chart-doughnut" chart-data="data" chart-labels="labels" chart-colors="Color" chart-options="options" chart-click="clickme" chart-hover="hoverme"></canvas>
+                                                    <span class="graph-val"></span>-->
+                                                    <!--<img src="../../../styles/img/searching-apps.png" />--> <!--<img src="../../../styles/img/refill.png" />-->
+                                                </div> <i class="fa fa-lg fa-fw fa-mobile dash-icon-pos" aria-hidden="true"></i> <span class="easy-pie-title"> App Bookings </span> <ul class="smaller-stat hidden-sm pull-right"> <li> <span class="label bg-color-greenLight" style="margin-top: -6px; color: white; font-weight: bold">{{AppBookings1}}</span> </li> </ul>
+                                            </a>
+                                        </div> <div class="dash_box no-padding col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                                            <a class="dash_link" ng-click="goToNewCard(date1)">
+                                                <div class="dash-icon-pos">
+                                                    <!--<canvas id="bar" class="chart chart-doughnut" chart-data="data" chart-labels="labels" chart-colors="Color" chart-options="options" chart-click="clickme" chart-hover="hoverme"></canvas>
+                                                    <span class="graph-val"></span>-->
+                                                    <!--<img src="../../../styles/img/payment-method.png" />--> <!--<img src="../../../styles/img/payment-method%20(1).png" />-->
+                                                </div> <i class="fa fa-lg fa-fw fa-credit-card dash-icon-pos" aria-hidden="true"></i> <span class="easy-pie-title"> New Cards </span> <ul class="smaller-stat hidden-sm pull-right"> <li> <span class="label bg-color-greenLight" style="margin-top: -6px; color: white; font-weight: bold">{{NewCards1}}</span> </li> </ul>
+                                            </a>
+                                        </div> <div class="dash_box no-padding col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                                            <a class="dash_link" href="" target="_self">
+                                                <div class="dash-icon-pos">
+                                                    <!--<canvas id="bar" class="chart chart-doughnut" chart-data="data" chart-labels="labels" chart-colors="Color" chart-options="options" chart-click="clickme" chart-hover="hoverme"></canvas>
+                                                    <span class="graph-val"></span>-->
+                                                    <!--<img src="../../../styles/img/delivery-man.png" />-->
+                                                </div> <i class="fa fa-lg fa-fw fa-male dash-icon-pos"></i> <span class="easy-pie-title"> On Field Boys </span> <ul class="smaller-stat hidden-sm pull-right"> <li> <span class="label bg-color-greenLight" style="margin-top: -6px; color: white; font-weight: bold">{{OnFieldDMan1}}</span> </li> </ul>
+                                            </a>
+                                        </div>
+                                    </div><!-- End Row -->
+                                    <!--<div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="text">
+                                                <h6 class="normal txt-color-red login-header-big">Delivery Boy Wise Analysis</h6>
+                                            </div>
+                                        </div>
+                                    </div>-->
+                                    <!--<div class="table-responsive">
+                                    <table class="table tbl">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center"><img class="img1 fleft img-circle" height="60" width="60" src="../../../styles/img/avatars/male.png" /></th>
+                                                <th class="text-center">Delivery<br /> Boy</th>
+                                                <th class="text-center">Refill<br> Delivered </th>
+                                                <th class="text-center">Card <br /> Delivery </th>
+                                                <th class="text-center">DAC</th>
+                                                <th class="text-center">Undelivery<br> Attempt</th>
+                                                <th class="text-center">Pending<br> Delivery</th>
+                                                <th class="text-center">Cash<br> Payment</th>
+                                                <th class="text-center">Digital<br> Payment</th>
+                                                <th class="text-center">Total<br> Payment</th>
+                                                <th class="text-center">App<br> Bookings</th>
+                                                <th class="text-center">New<br> Cards</th>
+                                                <th class="text-center">Battery<br> Level </th>
+                                                <th class="text-center">Graph</th>
+                                                <th class="text-center">Details</th>
+                                            </tr>
+                                        </thead>-->
+                                    <!--<tbody>
+                                        <tr ng-repeat="x in DBWSummary">
+                                            <td class="text-center"><img class="img1 fleft img-circle" height="60" width="60" ng-src="{{ImagesPath}}{{x.ImageName}}" /></td>
+                                            <td class="text-center">{{x.DManName}}</td>
+                                            <td class="text-center">{{x.TotalDeliveredCount}}</td>
+                                            <td class="text-center">{{x.CardDeliveredCount}}</td>
+                                            <td class="text-center">{{x.DACDeliveredCount}}</td>
+                                            <td class="text-center">{{x.UnDeliveredCount}}</td>
+                                            <td class="text-center">{{x.PendingCashMemo}}</td>
+                                            <td class="text-center"> {{x.CashPayment | number:2}}</td>
+                                            <td class="text-center">{{x.DigitalPayment | number:2}}</td>
+                                            <td class="text-center">{{x.TotalPayment | number:2}}</td>
+                                            <td class="text-center">{{x.AppBookings}}</td>
+                                            <td class="text-center">{{x.NewCards}}</td>
+                                            <td class="text-center"><img class="bat_image" src="styles/img/battery.png" /> <span style="margin-left:-10px;">{{x.BatteryLevel}}%</td>
+                                            <td class="text-center"><div id="pie" class="multi-pie" my-chart chartdata="x.data"></div></td>
+                                            <td class="text-center"><a data-ui-sref="app.dashboard.dashboard_xpress_gas_sub_details" class="btn btn-primary btn-xs" ng-click="getDeliveryBoyDetails(x.DManCode)"><i class="fa fa-eye" aria-hidden="true"></i> &nbsp;Details</a></td>
+                                        </tr>
+                                    </tbody>-->
+                                    <!--</table>
+                                    </div>-->
+                                    <!--  -->
+                                </div> <!-- end s1 tab pane -->
+                                <div class="tab-pane fade" id="s2">
+                                    <div class="bg-color-white" style="padding:15px;">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div ui-grid="gridOptions1" ui-grid-pagination ui-grid-exporter ui-grid-selection ui-grid-grouping class="grid grid-view">
+                                                </div>                                              
+                                            </div>
+                                        </div>
+                                    </div>
+                              </div> <!-- end s2 tab pane -->
+                             
+                            </div> <!-- end content -->
+                        </div>
+                    </div> <!-- end widget div -->
+                </div>
+            </article>
+        </div>
+    </section> <!-- end widget grid -->
+</div> <!-- END MAIN CONTENT --> 

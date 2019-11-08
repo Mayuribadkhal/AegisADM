@@ -1,0 +1,185 @@
+﻿<!-- MAIN CONTENT -->
+<div id="content" ng-controller="DashboardCtrl">
+
+    <!-- widget grid -->
+    <section id="widget-grid" widget-grid>
+
+
+        <!-- end row -->
+        <!-- row -->
+
+        <div class="row">
+
+            <article class="col-sm-12 col-sm-offset-2 col-sm-8">
+
+                <!-- new widget -->
+
+
+                <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue" ng-controller="TodoCtrl">
+                    <header>
+                        <div class="basic_top_mar text-center">
+                            <span class="widget-icon"> <i class="fa fa-database"></i> </span>
+                            <h2>Email Settings </h2>
+                        </div>
+                    </header>
+                    <!-- widget div-->
+                    <div>
+                        <div class="widget-body">
+                            <!-- content goes here -->
+
+
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="bottom15">
+                                        <label>Host Email</label>
+                                        <input type="email" name="emailid" class="form-control ng-pristine ng-untouched ng-empty ng-valid-email ng-invalid ng-invalid-required" ng-model="email.hostaddress" required="">
+
+                                    </div>
+                                </div>
+                            </div><br>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="bottom15">
+                                        <label>Password</label>
+                                        <input type="password" name="pwd" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" ng-model="email.emailpwd " required="">
+
+
+                                    </div>
+                                </div>
+                            </div><br>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <div class="bottom15">
+                                        <label>Port</label>
+                                        <input type="text" name="port" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-pattern" ng-model="email.portno" ng-pattern="/^[0-9]*$/" required="">
+
+                                    </div>
+                                </div>
+                                <div class="col-sm-9">
+                                    <div class="bottom15">
+                                        <label>SMTP Server</label>
+                                        <input type="text" name="smtp" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" ng-model="email.smtphost" required="">
+
+                                    </div>
+                                </div>
+                            </div><br>
+
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <label><input type="checkbox" id="cb1" ng-model="email.enablessl" ng-value-true="Y" ng-value-false="N" class="ng-pristine ng-untouched ng-valid ng-empty"> Enable SSL ? </label> &nbsp; &nbsp; &nbsp;
+                                    <label> <input type="checkbox" id="cb2" ng-model="email.usedefaultcr" ng-value-true="Y" ng-value-false="N" class="ng-pristine ng-untouched ng-valid ng-empty"> User Default Credentials ? </label>
+                                </div>
+                            </div><br>
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="bottom15">
+                                        <label>Email for testing</label>
+                                        <div class="input-group">
+                                            <input type="email" name="emailtest" class="form-control ng-pristine ng-untouched ng-valid ng-valid-email ng-valid-pattern ng-not-empty" ng-model="email.emailaddress" ng-pattern="/^(([^<>()\[\]\.,;:\s@\&quot;]+(\.[^<>()\[\]\.,;:\s@\&quot;]+)*)|(\&quot;.+\&quot;))@(([^<>()[\]\.,;:\s@\&quot;]+\.)+[^<>()[\]\.,;:\s@\&quot;]{1,})$/i"> <!---->
+                                            <span class="input-group-btn">
+                                                <a class="btn btn-warning" ng-click="postsmstest(myForm.$valid)"><i class="fa fa-paper-plane-o" aria-hidden="true"></i> &nbsp; Test</a>
+                                            </span>
+                                        </div>
+                                        <span class="error help-block ng-binding" style="color:red"></span>
+                                        <span class="error help-block ng-hide" style="color:red" ng-show="myForm.emailtest.$dirty &amp;&amp; myForm.emailtest.$invalid">
+                                            <span class="errorMsg ng-hide" ng-show="myForm.emailtest.$error.required">Test email is required.</span>
+                                            <span class="errorMsg ng-hide" ng-show="myForm.emailtest.$error.pattern">Invalid Test email address.</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                            <!-- /.row -->
+                            <!-- /.row -->
+                            <!--<div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label>Host Email</label>
+                    <input type="email" class="form-control" placeholder="Enter Host Email">
+                </div>
+            </div>
+
+
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="comment">Password</label>
+                    <input type="password" class="form-control" placeholder="Enter Password" />
+                </div>
+
+
+            </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>Port</label>
+                        <input type="text" class="form-control" placeholder="Enter Port">
+                    </div>
+                </div>
+
+
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label>SMTP Server</label>
+                    <input type="text" class="form-control" placeholder="Enter SMTP Server">
+                </div>
+            </div>
+                </div>
+
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="sel1">Email For Testing</label>
+                    <input type="text" class="form-control" placeholder="Enter Product QTY" />
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <label><input type="checkbox" /> Enable SSL ? </label> &nbsp; &nbsp; &nbsp;
+                <label> <input type="checkbox" /> User Default Credentials ? </label>
+
+
+            </div>
+        </div>-->
+
+
+
+
+                            <hr class="hr_basic" />
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <button class="pull-right btn btn-primary" type="submit">
+                                        <i class="glyphicon glyphicon-send"></i> &nbsp;&nbsp;Submit
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                                <!-- end content -->
+                            </div>
+
+                    </div>
+                    <!-- end widget div -->
+                </div>
+                <!-- end widget -->
+
+            </article>
+
+        </div>
+
+        <!-- end row -->
+
+    </section>
+    <!-- end widget grid -->
+
+</div>
+<!-- END MAIN CONTENT -->

@@ -1,0 +1,105 @@
+﻿<!-- MAIN CONTENT -->
+<div id="content" ng-controller="DashboardCtrl">    
+    <!-- widget grid -->
+    <section id="widget-grid" widget-grid>
+        <form name="frmCitrusTap">
+            <!-- end row -->
+            <!-- row -->
+            <div class="row">
+                <article class="col-sm-12 col-sm-offset-2 col-sm-8">
+                    <!-- new widget -->
+                    <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue" ng-controller="TodoCtrl">
+                        <header>
+                            <div class="basic_top_mar text-center">
+                                <span class="widget-icon"> <i class="fa fa-database"></i> </span>
+                                <h2>Citrus Onboarding</h2>
+                            </div>
+                        </header>
+                        <!-- widget div-->
+                        <div>
+                            <div class="widget-body">
+                                <!-- content goes here -->
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Distributor Code<span style="color:red;">*</span></label>
+                                            <input type="text" class="form-control" placeholder="Enter Distributor Code" minlength="6" maxlength="7" ng-model="CitrusTap.DistCode"  oninput="setCustomValidity('')" onkeydown="setCustomValidity(' ')" numericonly required /><!--oninvalid="setCustomValidity('Please enter valid Distributor code')"-->
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Distributor Name<span style="color:red;">*</span></label>
+                                            <input type="text" class="form-control" placeholder="Enter Distributor Name" ng-model="CitrusTap.DistName" alphaonly required />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Secrect Key<span style="color:red;">*</span></label>
+                                            <input type="text" class="form-control" placeholder="Enter Secret Key" ng-model="CitrusTap.SecrectKey" required />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Access Key<span style="color:red;">*</span></label>
+                                            <input type="text" class="form-control" placeholder="Enter Access Key" ng-model="CitrusTap.AccessKey" required />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Vanity URL<span style="color:red;">*</span></label>
+                                            <input type="url" class="form-control" placeholder="Enter Url" ng-model="CitrusTap.VanityUrl" required />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2 ">
+                                        <div class="form-group text-center">
+                                            <label for="sel1">&nbsp;</label>
+                                            <label class="checkbox">
+                                                <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'" ng-model="CitrusTap.Isactive" ng-disabled="{{disabled}}"> Is Active?
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="hr_basic" />
+                                <div class="row ">
+                                    <div class="col-sm-10">
+                                        <button class="pull-right btn btn-primary" type="submit" value="{{submit}}" ng-click="postputCitrusTap(frmCitrusTap.$valid,CitrusTap)">
+                                            <i class="glyphicon glyphicon-send"></i> &nbsp;&nbsp;{{submit}}
+                                        </button>
+                                    </div>
+
+                                    <div class="col-sm-1">
+                                        <a class="btn btn-default" ui-sref="app.dashboard.citrus_onboard_grid">
+                                            <i class="glyphicon glyphicon-arrow-left"></i> &nbsp;&nbsp;Back
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-10 " ng-show="divhide">
+                                        <button type="button" name="" class="pull-right btn btn-primary">
+                                            <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i> Loading
+                                        </button>
+                                    </div>
+
+                                </div>
+
+                                <!-- end content -->
+                            </div>
+
+                        </div>
+                        <!-- end widget div -->
+                    </div>
+                    <!-- end widget -->
+
+                </article>
+
+            </div>
+
+            <!-- end row -->
+        </form>
+    </section>
+    <!-- end widget grid -->
+
+</div>
+<!-- END MAIN CONTENT -->

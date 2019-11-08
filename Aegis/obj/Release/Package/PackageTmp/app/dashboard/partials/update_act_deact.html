@@ -1,0 +1,103 @@
+﻿<!-- MAIN CONTENT -->
+<div id="content">
+
+    <!-- widget grid -->
+    <section id="widget-grid" widget-grid>
+        <form name="myForm">
+
+            <!-- end row -->
+            <!-- row -->
+
+            <div class="row">
+
+                <article class="col-sm-12 col-sm-offset-3 col-sm-6">
+
+                    <!-- new widget -->
+
+
+                    <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue">
+                        <header>
+                            <div class="basic_top_mar text-center">
+                                <span class="widget-icon"> <i class="fa fa-database"></i> </span>
+                                <h2>Update Distributor </h2>
+                            </div>
+                        </header>
+                        <!-- widget div-->
+                        <div>
+                            <div class="widget-body" style="min-height:200px!important;">
+                                <!-- content goes here -->
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>Distributor Code<span class="errorMessage" style="color:red;">*</span></label>
+
+                                            <input type="text" class="form-control" placeholder="Enter Distributor Code" ng-model="dist.DistCode" disabled required />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <div class="form-group">
+                                            <label>Distributor Name<span class="errorMessage" style="color:red;">*</span></label>
+
+                                            <input type="text" class="form-control" placeholder="Enter Distributor Name" ng-model="dist.DistName" disabled required />
+                                        </div>
+                                    </div>
+                             
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label for="sel1">Status<span class="errorMessage" style="color:red;">*</span></label>
+                                            <select class="form-control" id="sel1" ng-options="s.IsActive as s.Value for s in dropdown" ng-model="dist.IsActive" required>
+                                                <option value="" selected>--Select Application--</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+
+                                <hr class="hr_basic" />
+                             
+                                <div class="row ">
+                                   
+                                    <div class="col-sm-10" >
+                                        <button class="pull-right btn btn-primary" type="submit" value="{{submit}}" ng-click="UpdateDistributor(myForm.$valid)">
+                                            <i class="glyphicon glyphicon-send"></i> &nbsp;&nbsp;Submit
+                                        </button>
+                                    </div>
+
+                                    <div class="col-sm-1" >
+                                        <a class="btn btn-default" ui-sref="app.dashboard.update_distributor">
+                                            <i class="glyphicon glyphicon-arrow-left"></i> &nbsp;&nbsp;Back
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-10 " ng-show="divhide">
+                                        <button type="button" name="" class="pull-right btn btn-primary">
+                                            <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i> Loading
+                                        </button>
+                                    </div>
+
+                                </div>
+
+                                <!-- end content -->
+                            </div>
+
+                        </div>
+                        <!-- end widget div -->
+                    </div>
+                    <!-- end widget -->
+
+                </article>
+
+            </div>
+
+            <!-- end row -->
+        </form>
+    </section>
+    <!-- end widget grid -->
+
+</div>
+<!-- END MAIN CONTENT -->

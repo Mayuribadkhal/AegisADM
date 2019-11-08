@@ -1,0 +1,81 @@
+﻿<!-- MAIN CONTENT -->
+<div id="content">
+
+    <!-- widget grid -->
+    <section id="widget-grid" widget-grid>
+
+
+        <!-- end row -->
+        <!-- row -->
+
+        <div class="row">
+
+            <article class="col-sm-12 col-sm-offset-3 col-sm-6">
+                <!-- new widget -->
+                <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue">
+                    <header>
+                        <div class="basic_top_mar text-center">
+                            <span class="widget-icon"> <i class="fa fa-building"></i> </span>
+                            <h2>Cylinder Provider</h2>
+                        </div>
+                    </header>
+                    <!-- widget div-->
+                    <div>
+                        <form name="cydlForm">
+                            <div class="widget-body">
+                                <!-- content goes here -->
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Provider Name<span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" id="rolecodeid" class="form-control" placeholder="Enter Provider Name" ng-model="Cydl.ProviderName" alphaonly required />
+                                        </div>
+                                    </div>
+                              
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" value="" ng-true-value="'Y'" ng-false-value="'N'" ng-model="Cydl.IsActive">Is Active?
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>                                
+                                <hr class="hr_basic" />
+                                <div class="row ">
+                                    <div class="col-sm-10" ng-show="divshow">
+                                        <button class="pull-right btn btn-primary" type="submit" ng-click="PostCydlProviderData(cydlForm.$valid,Cydl)">
+                                            <i class="glyphicon glyphicon-send"></i> &nbsp;&nbsp;Submit
+                                        </button>
+                                    </div>
+                                    <div class="col-sm-1" ng-show="divshow">
+                                        <a class="btn btn-default" data-ui-sref="app.dashboard.cylinder_providers_grid">
+                                            <i class="glyphicon glyphicon-arrow-left"></i> &nbsp;&nbsp;Back
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-10" ng-show="divhide">
+                                        <button type="button" name="" class="pull-right btn btn-primary">
+                                            <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i> Loading
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- end content -->
+                            </div>
+                        </form>
+
+                    </div>
+                    <!-- end widget div -->
+                </div>
+                <!-- end widget -->
+
+            </article>
+
+        </div>
+
+        <!-- end row -->
+
+    </section>
+    <!-- end widget grid -->
+
+</div>
+<!-- END MAIN CONTENT -->

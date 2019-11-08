@@ -1,0 +1,121 @@
+﻿<!-- MAIN CONTENT --> <div id="content">
+    <!--<ul class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">HO</a></li>
+        <li>RO</li>
+    </ul>-->
+    <!--<div class="row">
+        <big-breadcrumbs items="['Dashboard', 'My Dashboard']" class="col-xs-12 col-sm-7 col-md-7 col-lg-4"></big-breadcrumbs>
+        <div data-smart-include="app/layout/partials/sub-header.tpl.html"></div>
+    </div>-->
+    <!-- widget grid --> <section id="widget-grid" widget-grid>
+        <!-- row --> <div class="row">
+            <article class="col-sm-12">
+
+                <div jarvis-widget id="live-feeds-widget" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-fullscreenbutton="false" data-widget-colorbutton="false" data-widget-deletebutton="false">
+                    <div class="row" style="border-bottom:none; ">
+                        <div class="col-sm-11 col-xs-12">
+                            <h3 class="text-center" style="margin:0;"><!--Total Digital Payments--><!--Deliveries Against Digital Payment-->Contribution in Digital Payments</h3>
+                        </div>
+                        <div class="col-sm-1 col-xs-12">
+                            <a ui-sref="app.dashboard.new_dashboard" ng-show="hidebackbtn"> <button type="submit" class="btn pull-right btn-block btn-default"><i class="glyphicon glyphicon-arrow-left"></i>Back</button></a>
+
+                        </div>
+                    </div>
+                    <div class="row" style="border-bottom:none; ">
+
+                        <div class="col-sm-2" ng-show="hidedropdown1">
+                            <div class="form-group">
+                                <label>Zone</label>
+                                <select class="form-control" ng-model="ZoneId" ng-options="z.ZoneId as z.ZoneDesc for z in Zonedata" ng-change="[GetRegion(),gethierarchy()]" title="Select your option">
+                                    <option value="" selected> --Select-- </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-2" ng-show="hidedropdown2">
+                            <div class="form-group">
+                                <label>Region</label>
+                                <select class="form-control" ng-model="RegionId" ng-options="r.RegionId as r.Region for r in Regiondata" ng-change="gethierarchy()" title="Select your option">
+                                    <option value="" selected> --Select-- </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-2" ng-show="hidedropdown3">
+                            <div class="form-group">
+                                <label>Sales Area</label>
+                                <select class="form-control" ng-model="HsId" ng-options="h.HsId as h.HsDesc for h in Heararchydata" title="Select your option">
+                                    <option value="" selected> --Select--</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-2 small_cls">
+                            <div class="form-group">
+                                <label>From Date<span style="color:red">*</span></label>
+                                <label class="input">
+                                    <i class="icon-append fa fa-calendar"></i>
+                                    <input type="text" id="fd" class="form-control" ng-model="Fromdate" onkeydown="return false" datepicker />
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm-2 small_cls">
+                            <div class="form-group">
+                                <label>To Date<span style="color:red">*</span></label>
+                                <label class="input">
+                                    <i class="icon-append fa fa-calendar"></i>
+                                    <input type="text" id="td" class="form-control" ng-model="Todate" onkeypress="return false" datepicker />
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm-1 small_cls" ng-show="divshow">
+                            <div class="form-group">
+                                <label>&nbsp;</label>
+                                <button type="submit" class="btn btn-block btn-primary report_btn get_details" ng-click="fromGetdetails()"><i class="fa fa-search"></i> Get Details</button>
+                            </div>
+                        </div>
+                        <div class="col-sm-2 small_cls" ng-hide="divshow">
+                            <div class="form-group">
+                                <label>&nbsp;</label>
+                                <button type="button" class="btn btn-block btn-primary report_btn get_details">
+                                    <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i> Loading
+                                </button>
+                            </div>
+                        </div>
+                        <!--<div class="col-sm-1 pull-right" ng-show="hidebackbtn">
+                            <div class="form-group">
+                                <label>&nbsp;</label>
+                                <a ui-sref="app.dashboard.new_dashboard"> <button type="submit" class="btn btn-block btn-default"><i class="glyphicon glyphicon-arrow-left"></i>Back</button></a>
+                            </div>
+                        </div>-->
+                    </div>
+                    <br>
+               
+                    <div class="row" style="border-bottom:none;">
+                        <div class="col-sm-offset-2 col-sm-8 col-xs-12" >
+
+
+                            <!--<h3 class="text-center">Total Digital Payments</h3>-->
+                            <div class=" x_content" ng-show="c1">
+                                <canvas id="bar" class="chart chart-bar"
+                                        chart-data="data" chart-labels="labels" chart-options="options" chart-colors="colors" chart-dataset-override="datasetOverride"></canvas>
+                            </div>
+                            <div ng-hide="c1">
+
+                                <div class="empty-hgt line_graph"><span>No Data Available</span></div>
+                            </div>
+                        </div>
+                        <br>
+
+                        <div class="row" style="padding-bottom:20px; ">
+                            <div class="col-sm-12 col-xs-12">
+                                <div ui-grid="gridOptions1" ui-grid-pagination ui-grid-exporter ui-grid-selection ui-grid-resize class="grid">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    </div>
+            </article>
+        </div>
+    </section> <!-- end widget grid -->
+</div> <!-- END MAIN CONTENT --> 

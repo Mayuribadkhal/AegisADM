@@ -1,0 +1,214 @@
+﻿<!-- MAIN CONTENT -->
+<div id="content">
+
+    <!-- widget grid -->
+    <section id="widget-grid" widget-grid>
+
+
+        <!-- end row -->
+        <!-- row -->
+
+        <div class="row">
+
+            <article class="col-sm-12 col-sm-offset-2 col-sm-8">
+                <!-- new widget -->
+                <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue">
+                    <header>
+                        <div class="basic_top_mar text-center">
+                            <span class="widget-icon"> <i class="fa fa-user"></i> </span>
+                            <h2>Payment Transaction </h2>
+                        </div>
+                    </header>
+                    <!-- widget div-->
+                    <div>
+                        <form name="myUserRole">
+                            <div class="widget-body">
+                                <!-- content goes here -->
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>Distributor Code <span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" id="rolecodeid" class="form-control" placeholder="Enter Distributor Code" ng-model="transaction.Distcode" ng-change="getDistHome();" numericonly required />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label for="sel1">Product<span class="errorMessage" style="color:red;">*</span></label>
+                                            <select class="form-control" ng-options="prod.ProdCode as prod.ProdName for prod in allprod" ng-model="transaction.ProductCode" ng-change="getProductDtls()" required>
+                                                <option value="" selected hidden>--Select Product--</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>Quantity <span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" id="rolecodeid" class="form-control" placeholder="Enter Quantity" ng-model="transaction.Quantity" ng-change="calculations();disabledText()" numericonly required />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>Amount</label>
+                                            <input type="text" ng-model="transaction.Amount" class="form-control" placeholder=" Enter Amount" ng-change="calculations();disabledText()" numericonly required />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3" ng-hide="ishide">
+                                        <div class="form-group">
+                                            <label>IGST ( % )</label>
+                                            <input type="text" ng-model="transaction.IgstRate" class="form-control" placeholder=" Enter IGST ( % )" numericonly  disabled/>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3" ng-hide="isshow">
+                                        <div class="form-group">
+                                            <label>IGST Amount</label>
+                                            <input type="text" ng-model="transaction.IgstAmt " class="form-control" placeholder=" Enter IGST Amount" numericonly disabled />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3" ng-show="isshow">
+                                        <div class="form-group">
+                                            <label>CGST ( % )</label>
+                                            <input type="text" ng-model="transaction.CgstRate " class="form-control" placeholder=" Enter CGST ( % )" numericonly  disabled />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3" ng-show="isshow">
+                                        <div class="form-group">
+                                            <label>SGST ( % )</label>
+                                            <input type="text" ng-model="transaction.SgstRate " class="form-control" placeholder=" Enter SGST ( % )" numericonly  disabled />
+                                        </div>
+                                    </div>                               
+                                </div>
+                                <div class="row">                              
+                                    <div class="col-sm-3 col-sm-offset-3" ng-show="isIGST">
+                                        <div class="form-group">
+                                            <label>IGST Amount</label>
+                                            <input type="text" ng-model="transaction.IgstAmt " class="form-control" placeholder=" Enter IGST Amount" numericonly disabled />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 " ng-hide="!ishide"></div>
+                                    <div class="col-sm-3" ng-show="isshow">
+                                        <div class="form-group">
+                                            <label>CGST Amount</label>
+                                            <input type="text" ng-model="transaction.CgstAmt " class="form-control" placeholder=" Enter CGST Amount" numericonly disabled>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3" ng-show="isshow">
+                                        <div class="form-group">
+                                            <label>SGST Amount</label>
+                                            <input type="text" ng-model="transaction.SgstAmt " class="form-control" placeholder=" Enter SGST Amount" numericonly disabled />
+                                        </div>
+                                    </div>
+                                    </div>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>Tax ( % ) <span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" id="rolecodeid" class="form-control" placeholder="Enter Tax ( % )" ng-model="transaction.TaxPer" disabled numericonly  />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>Tax Amount <span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" id="rolecodeid" class="form-control" placeholder="Enter Tax Amount" ng-model="transaction.TaxAmt" disabled numericonly  />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>Total Amount <span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" id="rolecodeid" class="form-control" placeholder="Enter Total Amount" ng-model="transaction.GrandTotal" capitalize="capitalize" numericonly required />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label for="sel1">Payment Type<span class="errorMessage" style="color:red;">*</span></label>
+                                            <select class="form-control" ng-model="transaction.PayType" required>
+                                                <option value="" selected hidden>--Select Type--</option>
+                                                <option value="DG"> Online </option>
+                                                <option value="MA"> Offline </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">                                  
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label for="sel1">Payment Gateway<span class="errorMessage" style="color:red;">*</span></label>
+                                            <select class="form-control" ng-options="pt.PgType as pt.PgDesc for pt in pgGateWay" ng-model="transaction.PGname" ng-change="disabledText()" required>
+                                                <option value="" selected hidden>--Select Gateway--</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Transaction Reference No. <span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" id="trid" class="form-control" placeholder="Enter Transaction Reference No." ng-model="transaction.TransRefNo" alphanumericonly />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>Transaction Date <span class="errorMessage" style="color:red;">*</span></label>
+                                            <label class="input">
+                                                <i class="icon-append fa fa-calendar"></i>
+                                                <input type="text" class="form-control" ng-model="transaction.TranDate" placeholder="DD-MMM-YYYY" onkeypress="return false" datepicker required>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>P.G. Tax <span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" id="trid1" class="form-control" placeholder="Enter Payment Gateway Tax" ng-model="transaction.PgTax" numericonly required/>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>P.G. Received Amount <span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" id="trid2" class="form-control" placeholder="Enter Received Amount" ng-model="transaction.RecAmt" numericonly required/>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4" style="margin-top:26px;">
+                                        <div class="form-group">
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" value="" ng-true-value="'Y'" ng-false-value="'N'" ng-model="transaction.IsActive">Is Active?
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="hr_basic" />
+                                <div class="row ">
+                                    <div class="col-sm-12" >
+                                        <a class="btn btn-default pull-right" style="margin-left:10px;" ui-sref="app.dashboard.transaction_grid" ng-show="divshow">
+                                            <i class="glyphicon glyphicon-arrow-left"></i> &nbsp;&nbsp;Back
+                                        </a>
+                                        <button class="pull-right btn btn-primary" type="submit" ng-show="divshow" ng-click="SavepayDetails(myUserRole.$valid)">
+                                            <i class="glyphicon glyphicon-send"></i> &nbsp;&nbsp;Submit
+                                        </button>
+                                        <button type="button" name="" class="pull-right btn btn-primary" ng-show="divhide">
+                                            <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i> Loading
+                                        </button>
+                                       
+                                    </div>
+                                 
+                                </div>
+
+                                <!-- end content -->
+                            </div>
+                        </form>
+
+                    </div>
+                    <!-- end widget div -->
+                </div>
+                <!-- end widget -->
+
+            </article>
+
+        </div>
+
+        <!-- end row -->
+
+    </section>
+    <!-- end widget grid -->
+
+</div>
+<!-- END MAIN CONTENT -->

@@ -1,0 +1,95 @@
+
+<header id="header" ng-app="appdash" ng-controller="HeaderController">
+    <div id="logo-group">
+
+        <!-- PLACE YOUR LOGO HERE -->
+        <span id="logo"> <img src="styles/img/aegislogo.gif" alt="Aegis"> </span>
+        <!-- END LOGO PLACEHOLDER -->
+        <!-- Note: The activity badge color changes when clicked and resets the number to 0
+        Suggestion: You may want to set a flag when this happens to tick off all checked messages / notifications -->
+        
+
+
+        <div smart-include="app/dashboard/activities/activities.html"></div>
+    </div>
+        <div class=" text-center ng-scope" style="width:54%;margin-top: 7px;">
+            <h5 class="header-title ng-binding">Welcome, {{username}}</h5>
+        </div>
+
+        <!--<span id="activity">
+            <span>Welcome, {{username}}</span>
+
+        </span>-->
+ 
+    <!-- pulled right: nav area -->
+    <div class="pull-right">
+        <div class="tollfree_wrapper">
+            <i class="fa fa-phone color-orange phone fleft tp_toll"></i> <div class="fright toll_number"> <span class="new_toll">Toll Free Number</span> <span class="toll_number num"> 00000000  </span></div>
+        </div>
+        <!-- collapse menu button -->
+        <div id="hide-menu" class="btn-header pull-right">
+            <span>
+                <a toggle-menu title="Collapse Menu">
+                    <i class="fa fa-reorder"></i>
+                </a>
+            </span>
+        </div>
+        <!-- end collapse menu -->
+        <!-- #MOBILE -->
+        <!-- Top menu profile link : this shows only when top menu is active -->
+        <ul id="mobile-profile-img" class="header-dropdown-list hidden-xs padding-5">
+            <li class="">
+                <a href="#" class="dropdown-toggle no-margin userdropdown" data-toggle="dropdown">
+                    <img ng-src={{userimg}} class="online" />
+                </a>
+                <ul class="dropdown-menu pull-right">
+                    <li>
+                        <a ui-sref="app.dashboard.change_password" class="padding-10 padding-top-5 padding-bottom-5">
+                            <i class="fa fa-user"></i>
+                            <u>C</u>hange Password
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a ui-sref="app.dashboard.photo_upload" class="padding-10 padding-top-5 padding-bottom-5">
+                            <i class="fa fa-camera"></i>
+                            <u>P</u>hoto Upload
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li ng-controller="AdminLoginController">
+                        <a class="padding-10 padding-top-5 padding-bottom-5" data-action="userLogout" ng-click="LogOut()">
+                            <i class="fa fa-sign-out fa-lg"></i> <strong><u>L</u>ogout</strong>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <!-- logout button -->
+        <div id="logout" class="btn-header transparent pull-right">
+            <span>
+                <a ui-sref="login" title="Sign Out" data-action="userLogout"
+                   data-logout-msg="You can improve your security further after logging out by closing this opened browser">
+                    <i class="fa fa-sign-out"></i>
+                </a>
+            </span>
+        </div>
+        <!-- end logout button -->
+        <!-- search mobile button (this is hidden till mobile view port) -->
+        <div id="search-mobile" class="btn-header transparent pull-right" data-search-mobile>
+            <span> <a href="#" title="Search"><i class="fa fa-search"></i></a> </span>
+        </div>
+        <!-- end search mobile button -->
+        <!-- fullscreen button -->
+        <div id="fullscreen" class="btn-header transparent pull-right">
+            <span> <a full-screen title="Full Screen"><i class="fa fa-arrows-alt"></i></a> </span>
+        </div>
+        <!-- end fullscreen button -->
+        <!-- multiple lang dropdown : find all flags in the flags page -->
+        <!-- end multiple lang -->
+
+    </div>
+    <!-- end pulled right: nav area -->
+
+</header>

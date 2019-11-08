@@ -1,0 +1,184 @@
+﻿<!-- MAIN CONTENT -->
+<div id="content">
+    <form name="myForm">
+        <!-- widget grid -->
+        <section id="widget-grid" widget-grid>
+            <!-- end row -->
+            <!-- row -->
+            <div class="row">
+                <article class="col-sm-10 col-sm-offset-1">
+                    <!-- new widget -->
+                    <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue">
+                        <header>
+                            <div class="basic_top_mar text-center">
+                                <span class="widget-icon"> <i class="fa fa-database"></i> </span>
+                                <h2>Manage Order Processing Form  </h2>
+                            </div>
+                        </header>
+                        <!-- widget div-->
+                        <div>
+                            <div class="widget-body">
+                                <!-- content goes here -->
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label><strong>Distributor Code : </strong></label>
+                                            <label> {{Distcode}}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <div class="form-group">
+                                            <label><strong>Distributor Name : </strong></label>
+                                            <label> {{DistName}}</label>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>OPF No.</label>
+                                            <input type="text" class="form-control" placeholder="Enter OPF No." ng-model="OpfNo" disabled />
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>OPF Date</label>
+                                            <input type="text" class="form-control" placeholder="Enter Distributor Name" ng-model="OpfDate" datepicker disabled />
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>Order No.</label>
+                                            <input type="text" class="form-control" placeholder="Enter Order No." ng-model="OrderNo" disabled />
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>Order Date</label>
+                                            <input type="text" class="form-control" placeholder="Enter Distributor Name" ng-model="OrderDt" datepicker disabled />
+
+
+                                        </div>
+                                    </div>
+                                    <!--<div class="col-sm-2">
+                                        <div class="form-group">
+                                            <label>Outword No.</label>
+                                            <input type="text" class="form-control" placeholder="Enter Outword No." ng-model="OutwordCode" disabled />
+
+
+                                        </div>
+                                    </div>-->
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <h6>Request Details</h6>
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <h6>Outward Details</h6>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <div ui-grid="gridOptions1" ui-grid-pagination ui-grid-exporter ui-grid-selection class="grid">
+                                        </div>
+
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <div ui-grid="gridOptions2" ui-grid-pagination ui-grid-exporter ui-grid-selection class="grid">
+                                        </div>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>Tally Bill No.<span style="color:red">*</span></label>
+                                            <input type="text" class="form-control" placeholder="Enter Tally Bill No." ng-model="opf.TallyBillNo" required ng-disabled="isUpdateDisable" />
+                                         </div>
+                                    </div>
+
+                                    <div class="col-sm-3 ">
+                                        <div class="form-group">
+                                            <label>Tally Date<span style="color:red">*</span></label>
+                                            <label class="input">
+                                                <i class="icon-append fa fa-calendar"></i>
+                                                <input type="text" id="td" class="form-control" ng-model="opf.TallyBillDt" placeholder="dd-MMM-yyyy" autocomplete="off" tallydatepicker required ng-disabled="isUpdateDisable" />
+                                             </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 ">
+                                        <div class="form-group">
+                                            <label>Tally Amount<span style="color:red">*</span></label>
+                                            <input type="text" step="0.01" class="form-control" placeholder="Enter Tally Amount" ng-model="opf.TallyAmount" pattern="([0-9]+\.)?[0-9]+" title="Amount never starts with 0" required pattern="/^\d+(\.\d+)?$/" title="Quantity never starts with 0" numericfloat decimal-places ng-disabled="isUpdateDisable" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label class="checkbox-inline mar-top">
+                                                <input type="checkbox" value="" ng-true-value="'Y'" ng-false-value="'N'" ng-model="opf.IsVerify" ng-disabled="isUpdateDisable" required>Verify?
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-9">
+                                        <div class="form-group">
+                                            <label>Remark<span ng-if="isReject" style="color:red">*</span></label>
+                                            <textarea class="form-control" placeholder="Enter Remark" ng-model="opf.Remark" rows="1" ng-required="isReject"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Select Invoice</label>
+                                        <input type="file" ngf-select ng-model="opf.InvoiceName"/><br>
+                                    </div>
+                                </div>
+                                <hr class="hr_basic" />
+                                <div class="row ">
+                                    <div class="col-sm-12" ng-show="divshow">
+                                        <a class="btn btn-default pull-right" ng-click="IsBack()" ng-show="divshow">
+                                            <i class="glyphicon glyphicon-arrow-left"></i> &nbsp;&nbsp;Back
+                                        </a>
+                                        <button type="submit" class="btn btn-danger back-red pull-right" ng-click="rejectOrder()" ng-show="divshow" style="margin-right:10px;" ng-disabled="isUpdateDisable">
+                                            <i class="fa fa-ban fa-lg"></i>  &nbsp;Reject
+                                        </button>
+                                        <button class="pull-right btn btn-primary" type="submit" value="{{submit}}" ng-click="verifyopf(myForm.$valid,OpfNo,opf)" ng-show="divshow" style="margin-right:10px;">
+                                            <i class="glyphicon glyphicon-send"></i> &nbsp;&nbsp;{{submit}}
+                                        </button>
+                                    </div>
+                                    <div class="col-sm-12" ng-show="divhide">
+                                        <button type="button" name="" class="pull-right btn btn-primary">
+                                            <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i> Loading
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- end content -->
+                            </div>
+
+                        </div>
+                        <!-- end widget div -->
+                    </div>
+                    <!-- end widget -->
+
+                </article>
+
+            </div>
+
+            <!-- end row -->
+
+        </section>
+        <!-- end widget grid -->
+    </form>
+   
+
+</div>
+<!-- END MAIN CONTENT -->

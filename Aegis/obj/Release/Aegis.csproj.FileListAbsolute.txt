@@ -1,0 +1,5 @@
+D:\PROJECTS\Aegis\Admin\Aegis\Aegis\bin\Aegis.dll.config
+D:\PROJECTS\Aegis\Admin\Aegis\Aegis\bin\Aegis.dll
+D:\PROJECTS\Aegis\Admin\Aegis\Aegis\bin\Aegis.pdb
+D:\PROJECTS\Aegis\Admin\Aegis\Aegis\obj\Release\Aegis.dll
+D:\PROJECTS\Aegis\Admin\Aegis\Aegis\obj\Release\Aegis.pdb

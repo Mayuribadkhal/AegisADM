@@ -1,0 +1,149 @@
+﻿<!-- MAIN CONTENT -->
+<div id="content" >
+    <form name="payfrm">
+        <!-- widget grid -->
+        <section id="widget-grid" widget-grid>
+            <div class="row">
+                <article class="col-sm-12 col-sm-offset-2 col-sm-8">
+                    <!-- new widget -->
+                    <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue">
+                        <header>
+                            <div class="basic_top_mar text-center">
+                                <span class="widget-icon"> <i class="fa fa-database"></i> </span>
+                                <h2>Push Digital Payment</h2>
+                            </div>
+                        </header>
+                        <!-- widget div-->
+                        <div>
+                            <div class="widget-body">
+                                <!-- content goes here -->
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label for="sel1">Distributor Code<span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" class="form-control" placeholder="Enter Distributor Code" ng-model="pushpay.DistCode" numericonly required />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label for="sel1">Transaction ID<span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" class="form-control" placeholder="Enter Transaction ID" ng-model="pushpay.TransactionID" alphanumericonly required />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label for="sel1">Token No.<span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" class="form-control" placeholder="Enter Token No." ng-model="pushpay.PayRefID" numericonly required />
+                                        </div>
+                                    </div>
+                               
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label for="sel1">Consumer No.<span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" class="form-control" placeholder="Enter Consumer No." ng-model="pushpay.ConsumerNo" minlength="4" maxlength="6" numericonly required />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label for="sel1">Transaction Date<span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" class="form-control" placeholder="Enter Date" ng-model="pushpay.TransactionDt" onkeypress="return false" datepicker required />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label for="sel1">Refill Amount<span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" class="form-control" placeholder="Enter Refill Amount" ng-model="pushpay.RefillAmount" numericfloat required />
+                                        </div>
+                                    </div>                              
+                                </div>                             
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label for="sel1">Tax Amount<span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" class="form-control" placeholder="Enter Tax Amount" ng-model="pushpay.TaxAmount" numericfloat required />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label for="sel1">Total Amount<span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" class="form-control" placeholder="Enter Total Amount" ng-model="pushpay.TotalAmount" numericfloat required />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label for="sel1">Payment Mode<span class="errorMessage" style="color:red;">*</span></label>
+                                            <select class="form-control" id="sel1" ng-options="pm.PayModeType as pm.PayModeDesc for pm in getpmode" ng-model="pushpay.PaymentMode" required>
+                                                <option value="" selected>--Select--</option>
+                                            </select>
+                                        </div>
+                                    </div>                     
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label for="sel1">Merchant<span class="errorMessage" style="color:red;">*</span></label>
+                                            <select class="form-control" ng-options="p.PgType as p.PgDesc for p in getpgway" ng-model="pushpay.MerchantType" required>
+                                                <option value="" selected>--Select--</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label for="sel1">Card Type</label>
+                                            <select class="form-control" id="sel1" ng-model="pushpay.CardType">
+                                                <option value="" selected>--Select--</option>
+                                                <option value="CC" selected>Credit Card</option>
+                                                <option value="DC" selected>Debit Card</option>
+                                            </select>
+                                        </div>
+                                    </div>  
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label for="sel1">App Type<span class="errorMessage" style="color:red;">*</span></label>
+                                            <select class="form-control" id="sel1" ng-model="pushpay.AppType" required>
+                                                <option value="" selected>--Select--</option>
+                                                <option value="ES" selected>Ezy Suvidha</option>
+                                                <option value="RD" selected>Refill Delivery</option>
+                                                <option value="SI" selected>SMS Invoicing</option>
+                                            </select>
+                                        </div>
+                                    </div>                                 
+                                </div>
+                                <hr class="hr_basic" />
+                                <div class="row ">
+                                    <div class="col-sm-10" ng-show="divshow">
+                                        <button class="pull-right btn btn-primary" type="submit" value="Submit" ng-click="PushPayment(payfrm.$valid,pushpay)">
+                                            <i class="glyphicon glyphicon-send"></i> &nbsp;&nbsp;{{submit}}
+                                        </button>
+                                    </div>
+                                    <div class="col-sm-10" ng-show="divhide">
+                                        <button type="button" name="" class="pull-right btn btn-primary">
+                                            <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i> Loading
+                                        </button>
+                                    </div>
+                                    <div class="col-sm-1" ng-show="divshow">
+                                        <a class="btn btn-default" ui-sref="app.dashboard.push_digital_payment_grid">
+                                            <i class="glyphicon glyphicon-arrow-left"></i> &nbsp;&nbsp;Back
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- end content -->
+                            </div>
+                        </div>
+                        <!-- end widget div -->
+                    </div>
+                    <!-- end widget -->
+
+                </article>
+
+            </div>
+
+            <!-- end row -->
+
+        </section>
+        <!-- end widget grid -->
+    </form>
+</div>
+<!-- END MAIN CONTENT -->

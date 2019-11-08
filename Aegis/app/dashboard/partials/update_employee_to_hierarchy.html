@@ -1,0 +1,136 @@
+﻿<!-- MAIN CONTENT -->
+<div id="content" >
+
+    <!-- widget grid -->
+    <form name="myForm">
+        <section id="widget-grid" widget-grid>
+
+
+            <!-- end row -->
+            <!-- row -->
+
+            <div class="row">
+
+                <article class="col-sm-12">
+                    <!-- new widget -->
+                    <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue">
+                        <header>
+                            <div class="basic_top_mar text-center">
+                                <i class="fa fa-credit-card"></i> &nbsp;<h2>Assign Employee To Hierarchy</h2>
+                            </div>
+                        </header>
+                        <!-- widget div-->
+                        <div>
+                            <div class="widget-body">
+                                <!-- content goes here -->
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <div class="form-group">
+                                            <label>Company<span style="color:red">*</span></label>
+                                            <select class="form-control" id="ddl11" ng-model="hr.HsFor" ng-change="getbindRole(hr.HsFor)" required>
+
+                                                <option value="" selected>--Select Company--</option>
+                                                <option value="PG">GoTech</option>
+                                                <option value="CO">GoGas</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="form-group">
+                                            <label>Role</label>                                          
+                                            <select class="form-control" id="sel1" ng-options="H.RoleCode as H.RoleDesc for H in getRoleVal" ng-model="hr.RoleCode" ng-change="GetEmp(hr.RoleCode,hr.HsFor)" required>
+                                                <option value="" selected>-- Employee Role--</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-sm-2 small_cls advanced_field small_field">
+                                        <!--<div class="form-group">
+                                            <label>&nbsp;</label>
+                                            <button type="submit" class="btn btn-block btn-primary report_btn get_details" ><i class="fa fa-search"></i> Get Details</button>
+
+                                        </div>-->
+                                    </div>
+
+                                    <!--<div class="col-sm-2 " ng-show="divhide">
+                                        <div class="form-group">
+                                            <label>&nbsp;</label>
+                                            <button type="button" name="" class=" btn btn-block btn-primary report_btn get_details">
+                                                <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i> Loading
+                                            </button>
+                                        </div>
+                                    </div>-->
+                                    <div class="col-sm-2 pull-right">
+                                        <a class="btn btn-primary pull-right" ng-click="next(hr.HsFor)" style="margin-top:25px;">Next</a>
+
+                                    </div>
+                                    <!--<div class="col-sm-2 pull-right">
+                                        <a data-ui-sref=" app.dashboard.add_remove_hierarchy" class="btn btn-primary pull-right" style="margin-top:25px;">Single</a>
+
+                                    </div>-->
+                                   
+                                </div>
+                                <hr class="hr-notop" />
+                                <article>
+                                    <!-- Widget ID (each widget will need unique ID)-->
+                                    <div class="jarviswidget jarviswidget-color-blueDark jarviswidget-sortable" id="wid-id-1" data-widget-editbutton="false" role="widget">
+                                    
+                                        <!-- widget div-->
+                                        <div role="content">
+
+                                            <!-- widget content -->
+                                            <div class="widget-body no-padding" style="border-top: 1px solid #ddd;">
+
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="table-responsive">
+                                                            <div ui-grid="gridOptions1" ui-grid-pagination ui-grid-selection ui-grid-exporter class="grid">
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                           
+                                            </div>
+                                            <!-- end widget content -->
+                                        
+                                        </div>
+                                        <!-- end widget div -->
+
+                                    </div>
+                                    <!-- end widget -->
+
+                                </article>
+                                <br />
+                                <!--<div class="row">
+                                    <div class="col-sm-2 pull-right" ng-show="divshow">
+                                        <button class="pull-right btn btn-primary" type="submit" value="{{submit}}" ng-click="SaveSelectedBulk(myForm.$valid,hr)">
+                                            <i class="glyphicon glyphicon-send"></i> {{submit}}
+                                        </button>
+                                        <button type="button" name="" class="pull-right btn btn-primary" ng-show="divload">
+                                            <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i> Loading
+                                        </button>
+                                    </div>
+                                </div>-->
+                                <!-- end content -->
+                            </div>
+
+                        </div>
+                        <!-- end widget div -->
+                    </div>
+                    <!-- end widget -->
+
+                </article>
+
+            </div>
+
+            <!-- end row -->
+
+        </section>
+    </form>
+    <!-- end widget grid -->
+
+</div>
+<!-- END MAIN CONTENT -->

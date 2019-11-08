@@ -1,0 +1,97 @@
+﻿<!-- MAIN CONTENT -->
+<div id="content" ng-controller="DashboardCtrl">
+    <form name="blockfrm">
+        <!-- widget grid -->
+        <section id="widget-grid" widget-grid>
+
+
+            <!-- end row -->
+            <!-- row -->
+
+            <div class="row">
+
+                <article class="col-sm-12 col-sm-offset-2 col-sm-8">
+
+                    <!-- new widget -->
+
+
+
+                    <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue" ng-controller="TodoCtrl">
+                        <header>
+                            <div class="basic_top_mar text-center">
+                                <span class="widget-icon"> <i class="fa fa-credit-card"></i> </span>
+                                <h2>Block Smart Card Reasons </h2>
+                            </div>
+                        </header>
+                        <!-- widget div-->
+                        <div>
+                            <div class="widget-body">
+                                <!-- content goes here -->
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <div class="form-group">
+                                            <label>Flag<span class="errorMessage" style="color:red;">*</span></label>
+
+                                            <input type="text" id="bflag" class="form-control" placeholder="Enter Flag" ng-model="block.BlockFlag" maxlength="2" minlength="2" alphaonly="alphaonly" capitalizes required />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="sel1">Description<span class="errorMessage" style="color:red;">*</span></label>
+                                            <textarea class="form-control" rows="1" id="comment" placeholder="Description" ng-model="block.BlockReason" required></textarea>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <div class="form-group">
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" value="" ng-true-value="'Y'" ng-false-value="'N'" ng-model="block.IsActive">Is Active?
+
+                                            </label>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <hr class="hr_basic" />
+                                <div class="row ">
+                                    <div class="col-sm-10" ng-show="divshow">
+                                        <button class="pull-right btn btn-primary" type="submit" value="{{submit}}" ng-click="saveBlockSmartCardDetails(blockfrm.$valid,block)">
+                                            <i class="glyphicon glyphicon-send"></i> &nbsp;&nbsp;{{submit}}
+                                        </button>
+                                    </div>
+                                    <div class="col-sm-1" ng-show="divshow">
+                                        <a class="btn btn-default" ui-sref="app.dashboard.block_smart_card_reasons_grid">
+                                            <i class="glyphicon glyphicon-arrow-left"></i> &nbsp;&nbsp;Back
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-10 " ng-show="divhide">
+                                        <button type="button" name="" class="pull-right btn btn-primary">
+                                            <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i> Loading
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- end content -->
+                            </div>
+
+                        </div>
+                        <!-- end widget div -->
+                    </div>
+                    <!-- end widget -->
+
+                </article>
+
+            </div>
+
+            <!-- end row -->
+
+        </section>
+        <!-- end widget grid -->
+    </form>
+</div>
+<!-- END MAIN CONTENT -->

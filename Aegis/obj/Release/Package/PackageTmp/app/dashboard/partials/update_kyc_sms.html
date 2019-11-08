@@ -1,0 +1,340 @@
+﻿<!-- MAIN CONTENT -->
+<div id="content">
+
+    <!-- widget grid -->
+    <section id="widget-grid" widget-grid>
+        <!-- end row -->
+        <!-- row -->
+        <div class="row">
+            <article class="col-sm-12">
+                <!-- new widget -->
+                <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue">
+                    <header>
+                        <div class="basic_top_mar text-center">
+                            <i class="fa fa-credit-card"></i> &nbsp;<h2>Update KYC SMS</h2>
+                        </div>
+                    </header>
+                    <!-- widget div-->
+                    <div>
+                        <div class="widget-body">
+                            <!-- content goes here -->
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <div class="form-group">
+                                        <label>Area</label>
+                                        <select class="form-control">
+                                            <option>-- Select -- </option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-2">
+                                    <div class="form-group">
+                                        <label>Name</label>
+                                        <select class="form-control">
+                                            <option>-- Select -- </option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-1">
+                                    <div class="form-group">
+                                        <label>Days</label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-1 small_field">
+                                    <div class="form-group">
+                                        <label>&nbsp;</label>
+                                        <a class="btn btn-block btn-primary get_details"><i class="fa fa-search"></i> Get Details</a>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2 ">
+                                    <div class="form-group">
+                                        <label>&nbsp;</label>
+                                        <div>
+                                            <a class="btn btn-primary get_details"><i class="fa fa-lg fa-money"></i> Buy Now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <header role="heading" class="clearfix sms_heading">
+                                        <i class="glyphicon glyphicon-stats txt-color-darken"></i><h2>Send Message </h2>
+                                        <ul class="nav nav-pills navbar-right">
+                                            <li class="active">
+                                                <a href="#1a" data-toggle="tab">Transactional <span class="text-blue"> 0 </span> </a>
+                                            </li>
+                                            <li>
+                                                <a href="#2a" data-toggle="tab">Promotional <span class="text-blue"> 0 </span> </a>
+                                            </li>
+                                        </ul>
+                                    </header>
+                                    <div class="tab-content clearfix">
+                                        <div class="tab-pane active message_body" id="1a">
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="well well-sm well-primary">
+                                                            <form class="form form-inline " role="form">
+                                                                <div class="form-group">
+                                                                    <select class="form-control">
+                                                                        <option>-- Select Language -- </option>
+                                                                        <option>Published</option>
+                                                                    </select>
+                                                                </div>
+
+
+                                                                <div class="form-group">
+                                                                    <button href="#temp" data-toggle="collapse" class="btn btn-success btn-sm">
+                                                                        <i class="fa fa-plus"></i> Available Templates (1)
+                                                                    </button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row collapse" id="temp">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label for="category"> Available Template</label>
+                                                            <textarea class="form-control" cols="3" rows="4" disabled></textarea>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <a class="btn btn-primary pull-right"> Copy Text </a>
+                                                            <div class="clearfix">
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label for="category"> Message Body</label>
+                                                            <textarea class="form-control" cols="3" rows="4"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="pull-left">
+                                                            Total Entered Character <span class="red">1</span>
+                                                        </div>
+                                                        <div class="pull-right">
+                                                            Total SMS Count <span class="red">0</span>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">
+                                                    Cancel
+                                                </button>
+                                                <button type="button" class="btn btn-primary">
+                                                    Send SMS
+                                                </button>
+                                            </div>
+
+                                        </div>
+                                        <div class="tab-pane message_body" id="2a">
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="well well-sm well-primary">
+                                                            <form class="form form-inline " role="form">
+                                                                <div class="form-group">
+                                                                    <select class="form-control">
+                                                                        <option>-- Select Language -- </option>
+                                                                        <option>Published</option>
+                                                                    </select>
+                                                                </div>
+
+
+                                                                <div class="form-group">
+                                                                    <button href="#temp1" data-toggle="collapse" class="btn btn-success btn-sm">
+                                                                        <i class="fa fa-plus"></i> Available Templates (1)
+                                                                    </button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row collapse" id="temp1">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label for="category"> Available Template</label>
+                                                            <textarea class="form-control" cols="3" rows="4" disabled></textarea>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <a class="btn btn-primary pull-right"> Copy Text </a>
+                                                            <div class="clearfix">
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label for="category"> Message Body</label>
+                                                            <textarea class="form-control" cols="3" rows="4"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="pull-left">
+                                                            Total Entered Character <span class="red">1</span>
+                                                        </div>
+                                                        <div class="pull-right">
+                                                            Total SMS Count <span class="red">0</span>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">
+                                                    Cancel
+                                                </button>
+                                                <button type="button" class="btn btn-primary">
+                                                    Send SMS
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <hr class="hr-notop" />
+                                    <article>
+
+
+                                        <!-- Widget ID (each widget will need unique ID)-->
+                                        <div class="jarviswidget jarviswidget-color-blueDark jarviswidget-sortable" id="wid-id-1" data-widget-editbutton="false" role="widget">
+                                            <!-- widget options:
+                                            usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+                                            data-widget-colorbutton="false"
+                                            data-widget-editbutton="false"
+                                            data-widget-togglebutton="false"
+                                            data-widget-deletebutton="false"
+                                            data-widget-fullscreenbutton="false"
+                                            data-widget-custombutton="false"
+                                            data-widget-collapsed="true"
+                                            data-widget-sortable="false"
+
+                                            -->
+                                            <!-- widget div-->
+                                            <div role="content">
+
+                                                <!-- widget edit box -->
+                                                <div class="jarviswidget-editbox">
+                                                    <!-- This area used as dropdown edit box -->
+
+                                                </div>
+                                                <!-- end widget edit box -->
+                                                <!-- widget content -->
+                                                <div class="widget-body no-padding">
+
+                                                    <div id="datatable_fixed_column_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                                                        <div class="dt-toolbar"><div class="col-xs-12 col-sm-6 hidden-xs"><div id="datatable_fixed_column_filter" class="dataTables_filter"><label><span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span><input type="search" class="form-control" placeholder="" aria-controls="datatable_fixed_column"></label></div></div><div class="col-sm-6 col-xs-12 hidden-xs"><div class="toolbar"></div></div></div><table id="datatable_fixed_column" class="table table-striped table-bordered dataTable no-footer" width="100%" role="grid" aria-describedby="datatable_fixed_column_info" style="width: 100%;">
+
+                                                            <thead>
+                                                                <tr role="row">
+                                                                    <th class="hasinput" style="width:50%" rowspan="1" colspan="1">
+                                                                        <input type="text" class="form-control" placeholder="Filter Name">
+                                                                    </th>
+                                                                    <th class="hasinput" style="width:50%" rowspan="1" colspan="1">
+                                                                        <input type="text" class="form-control" placeholder="Filter Salary">
+                                                                    </th>
+                                                                </tr>
+                                                                <tr role="row"><th data-class="expand" class="expand sorting_asc" tabindex="0" aria-controls="datatable_fixed_column" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 211px;">Name</th><th class="sorting" tabindex="0" aria-controls="datatable_fixed_column" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 225px;">Position</th></tr>
+                                                            </thead>
+
+                                                            <tbody>
+                                                                <tr role="row" class="odd">
+                                                                    <td class="expand sorting_1"><span class="responsiveExpander"></span>Airi Satou</td>
+                                                                    <td>Accountant</td>
+                                                                </tr>
+                                                                <tr role="row" class="even">
+                                                                    <td class="expand sorting_1"><span class="responsiveExpander"></span>Angelica Ramos</td>
+                                                                    <td>Chief Executive Officer (CEO)</td>
+                                                                </tr>
+                                                                <tr role="row" class="odd">
+                                                                    <td class="expand sorting_1"><span class="responsiveExpander"></span>Ashton Cox</td>
+                                                                    <td>Junior Technical Author</td>
+                                                                </tr>
+                                                                <tr role="row" class="even">
+                                                                    <td class="expand sorting_1"><span class="responsiveExpander"></span>Bradley Greer</td>
+                                                                    <td>Software Engineer</td>
+                                                                </tr>
+                                                                <tr role="row" class="odd">
+                                                                    <td class="expand sorting_1"><span class="responsiveExpander"></span>Brenden Wagner</td>
+                                                                    <td>Software Engineer</td>
+                                                                </tr>
+                                                                <tr role="row" class="even">
+                                                                    <td class="expand sorting_1"><span class="responsiveExpander"></span>Brielle Williamson</td>
+                                                                    <td>Integration Specialist</td>
+                                                                </tr>
+                                                                <tr role="row" class="odd">
+                                                                    <td class="expand sorting_1"><span class="responsiveExpander"></span>Bruno Nash</td>
+                                                                    <td>Software Engineer</td>
+                                                                </tr>
+                                                                <tr role="row" class="even">
+                                                                    <td class="expand sorting_1"><span class="responsiveExpander"></span>Caesar Vance</td>
+                                                                    <td>Pre-Sales Support</td>
+                                                                </tr>
+                                                                <tr role="row" class="odd">
+                                                                    <td class="expand sorting_1"><span class="responsiveExpander"></span>Cara Stevens</td>
+                                                                    <td>Sales Assistant</td>
+                                                                </tr>
+                                                                <tr role="row" class="even">
+                                                                    <td class="expand sorting_1"><span class="responsiveExpander"></span>Cedric Kelly</td>
+                                                                    <td>Senior Javascript Developer</td>
+                                                                </tr>
+                                                            </tbody>
+
+                                                        </table><div class="dt-toolbar-footer"><div class="col-sm-6 col-xs-12 hidden-xs"><div class="dataTables_info" id="datatable_fixed_column_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div></div><div class="col-xs-12 col-sm-6"><div class="dataTables_paginate paging_simple_numbers" id="datatable_fixed_column_paginate"><ul class="pagination"><li class="paginate_button previous disabled" id="datatable_fixed_column_previous"><a href="#" aria-controls="datatable_fixed_column" data-dt-idx="0" tabindex="0">Previous</a></li><li class="paginate_button active"><a href="#" aria-controls="datatable_fixed_column" data-dt-idx="1" tabindex="0">1</a></li><li class="paginate_button "><a href="#" aria-controls="datatable_fixed_column" data-dt-idx="2" tabindex="0">2</a></li><li class="paginate_button "><a href="#" aria-controls="datatable_fixed_column" data-dt-idx="3" tabindex="0">3</a></li><li class="paginate_button "><a href="#" aria-controls="datatable_fixed_column" data-dt-idx="4" tabindex="0">4</a></li><li class="paginate_button "><a href="#" aria-controls="datatable_fixed_column" data-dt-idx="5" tabindex="0">5</a></li><li class="paginate_button "><a href="#" aria-controls="datatable_fixed_column" data-dt-idx="6" tabindex="0">6</a></li><li class="paginate_button next" id="datatable_fixed_column_next"><a href="#" aria-controls="datatable_fixed_column" data-dt-idx="7" tabindex="0">Next</a></li></ul></div></div></div>
+                                                    </div>
+
+                                                </div>
+                                                <!-- end widget content -->
+
+                                            </div>
+                                            <!-- end widget div -->
+
+                                        </div>
+                                        <!-- end widget -->
+
+                                    </article>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <!-- end content -->
+                    </div>
+
+                </div>
+                <!-- end widget div -->
+                <!-- end widget -->
+            </article>
+
+        </div>
+
+        <!-- end row -->
+    </section>
+    <!-- end widget grid -->
+</div>
+<!-- END MAIN CONTENT -->

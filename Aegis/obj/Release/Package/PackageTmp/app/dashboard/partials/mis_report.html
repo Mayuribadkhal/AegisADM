@@ -1,0 +1,102 @@
+﻿<!-- MAIN CONTENT -->
+<div id="content">
+    <!-- widget grid -->
+    <section id="widget-grid" widget-grid>
+        <!-- end row -->
+        <!-- row -->
+        <form name="frmmisrpt">
+            <div class="row">
+                <article class="col-sm-6 col-sm-offset-3">
+                    <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue">
+                        <header>
+                            <div class="basic_top_mar text-center">
+                                <span class="widget-icon"> <i class="glyphicon glyphicon-user"></i> </span>
+                                <h2>MIS Report Monthly or Daily</h2>
+                            </div>
+                        </header>
+                        <div>
+                            <div class="widget-body">
+                                <div class="row small-btn">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>From Date<span style="color:red">*</span></label>
+                                            <label class="input">
+                                                <i class="icon-append fa fa-calendar"></i>
+                                                <input type="text" id="fd" class="form-control" placeholder="Select date" ng-model="Fromdate" ng-change="clear()" onkeydown="return false" autocomplete="off" coupondatepicker required />
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>To Date<span style="color:red">*</span></label>
+                                            <label class="input">
+                                                <i class="icon-append fa fa-calendar"></i>
+                                                <input type="text" id="td" class="form-control" placeholder="Select date" ng-model="Todate" autocomplete="off" onkeydown="return false" coupondatepicker required />
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <!--<div class="col-sm-4">
+                                        <label class="label">Refill Delivery Status</label>
+                                        <input type="radio" name="status" value="r" ng-model="rbtn" ng-required="!rbtn" />
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <label class="label">EZYGAS Booking Status</label>
+                                        <input type="radio" name="status" value="e" ng-model="rbtn" ng-required="!rbtn" />
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <label class="label">Delivery Boy Status</label>
+                                        <input type="radio" name="status" value="d" ng-model="rbtn" ng-required="!rbtn" />
+                                    </div>-->
+                                    <div class="col-sm-4 col-sm-offset-4">
+                                        <input type="radio" name="status" value="r" ng-model="rbtn" ng-required="!rbtn" /><span style="font-weight:bold;"> Refill Delivery Status </span><br />
+                                        <input type="radio" name="status" value="e" ng-model="rbtn" ng-required="!rbtn" /> <span style="font-weight:bold;"> Go Booking Status</span><br />
+                                        <input type="radio" name="status" value="d" ng-model="rbtn" ng-required="!rbtn" /><span style="font-weight:bold;"> Delivery Boy Status</span><br />
+                                    </div>
+                                </div>
+
+                                <div class="row small-btn text-center">
+                                    <div class="col-sm-4 col-sm-offset-4 text-center" >
+                                        <div class="form-group">
+                                            <label>&nbsp;</label>
+                                            <button type="submit" ng-show="divshow" class="btn btn-block btn-success get_details" ng-click="downloadExcel(frmmisrpt.$valid,rbtn)"><i class="fa fa-download"></i> Download Excel</button>
+                                            <button type="button" ng-show="divhide" class="btn btn-block btn-success get_details">
+                                                <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i> Loading
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!--<div class="col-sm-2 small_cls" >
+                                        <div class="form-group">
+                                            <label>&nbsp;</label>
+                                            <button type="button" class="btn btn-block btn-success get_details">
+                                                <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i> Loading
+                                            </button>
+                                        </div>
+                                    </div>-->
+                                </div>
+                                <div class="row small-btn hidden_row well well_search" ng-show="value">
+                                    <div class="col-sm-2 small_cls">
+                                        <div class="form-group">
+                                            &nbsp;
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <!-- end widget div -->
+                    </div>
+                    <!-- end widget -->
+
+                </article>
+
+            </div>
+        </form>
+        <!-- end row -->
+    </section>
+    <!-- end widget grid -->
+</div>
+<!-- END MAIN CONTENT -->

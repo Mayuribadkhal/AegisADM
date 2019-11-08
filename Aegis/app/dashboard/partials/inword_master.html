@@ -1,0 +1,131 @@
+﻿<!-- MAIN CONTENT -->
+<div id="content">
+    <!-- widget grid -->
+    <form name="myInward">
+        <section id="widget-grid" widget-grid>
+            <!-- end row -->
+            <!-- row -->
+            <div class="row">
+                <article class="col-sm-offset-1 col-sm-10">
+                    <!-- new widget -->
+                    <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue" ng-controller="TodoCtrl">
+                        <header>
+                            <div class="basic_top_mar text-center">
+                                <span class="widget-icon"> <i class="fa fa-database"></i> </span>
+                                <h2>Inward Master </h2>
+                            </div>
+                        </header>
+                        <!-- widget div-->
+                        <div>
+                            <div class="widget-body">
+                                <!-- content goes here -->
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>Inward Date<span class="errorMessage" style="color:red">*</span></label>
+                                            <input type="text" ng-model="InwardDate"  required class="form-control" placeholder="Enter Date" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label for="comment">Document Reference Code<span class="errorMessage" style="color:red">*</span></label>
+                                            <input type="text" ng-model="Inward.DocRefCode" required class="form-control" placeholder="Enter Reference Code" maxlength="30" alphanumericonly="alphanumericonly" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>Document Reference Date<span class="errorMessage" style="color:red">*</span></label>
+                                            <input type="text" id="docdate" ng-model="Inward.DocRefDate" required birthdatepicker="birthdatepicker" class="form-control" placeholder="Enter date" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label for="sel1">Product Name<span class="errorMessage" style="color:red">*</span></label>
+                                            <select class="form-control" id="sel1" ng-options="s.ProdCode as s.ProdName for s in getProduct" ng-model="Inward.ProdCode" ng-change="GetProductbind(Inward.ProdCode)" required>
+                                                <option value="" selected>--Select Product Name--</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                  
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label for="comment">Batch Code</label>
+                                            <input type="text" ng-model="Inward.BatchCode" class="form-control" placeholder="Enter Batch Code" maxlength="15" alphanumericonly  />
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="col-sm-3" ng-show="showsrF">
+                                        <div class="form-group">
+                                            <label for="sel1">{{prodlabel}}<span class="errorMessage" style="color:red">*</span></label>
+                                            <input type="text"  ng-model="Inward.ProdSrNo" ng-change="Total1(Inward)" class="form-control" id="psrf" placeholder="Enter Serial No. From"  ng-maxlength="maxlength" ng-minlength="minlength" numericonly />
+                                        <span style="color:red">{{msg1}}</span>
+                                         </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label for="sel1">Product QTY<span class="errorMessage" style="color:red">*</span></label>
+                                            <input type="text" ng-model="Inward.ProdQty" class="form-control" placeholder="Enter Product QTY" id="qty" numericonly ng-change="Check(Inward)" required />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3" ng-show="showsrT">
+                                        <div class="form-group">
+                                            <label for="sel1">Serial No. To<span class="errorMessage" style="color:red">*</span></label>
+                                            <input type="text" ng-model="Inward.ProdSrTo" ng-change="Total1(Inward)" class="form-control" minlength="1" id="psrt" placeholder="Enter Serial No. To" ng-maxlength="maxlength1" ng-minlength="minlength1" numericonly />
+                                            <span class="error help-block" style="color:red">
+                                                <!--{{errorMessage}}-->
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" value="" ng-true-value="'Y'" ng-false-value="'N'" ng-model="Inward.IsActive">Is Active?
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <hr class="hr_basic" />
+                                <div class="row ">
+                                    <div class="col-sm-10" ng-show="divshow">
+                                        <button class="pull-right btn btn-primary" id="btninward" type="submit" value="{{submit}}" ng-click="SaveInwardDetails(myInward.$valid,Inward,InwardDate)">
+                                            <i class="glyphicon glyphicon-send"></i> &nbsp;&nbsp;{{submit}}
+                                        </button>
+                                    </div>
+                                    <div class="col-sm-1" ng-show="divshow">
+                                        <a class="btn btn-default" ui-sref="app.dashboard.inword_master_grid">
+                                            <i class="glyphicon glyphicon-arrow-left"></i> &nbsp;&nbsp;Back
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-10 " ng-show="divhide">
+                                        <button type="button" name="" class="pull-right btn btn-primary">
+                                            <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i> Loading
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- end content -->
+                            </div>
+
+                        </div>
+                        <!-- end widget div -->
+                    </div>
+                    <!-- end widget -->
+
+                </article>
+
+            </div>
+
+            <!-- end row -->
+
+        </section>
+    </form>
+    <!-- end widget grid -->
+
+</div>
+<!-- END MAIN CONTENT -->

@@ -1,0 +1,164 @@
+﻿<!-- MAIN CONTENT -->
+<div id="content">
+
+    <!-- widget grid -->
+    <section id="widget-grid" widget-grid>
+        <form name="myForm">
+
+            <!-- end row -->
+            <!-- row -->
+
+            <div class="row">
+
+                <article class="col-sm-12 col-sm-offset-2 col-sm-8">
+
+                    <!-- new widget -->
+
+
+                    <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue">
+                        <header>
+                            <div class="basic_top_mar text-center">
+                                <span class="widget-icon"> <i class="fa fa-database"></i> </span>
+                                <h2>Actual Product </h2>
+                            </div>
+                        </header>
+                        <!-- widget div-->
+                        <div>
+                            <div class="widget-body">
+                                <!-- content goes here -->
+                                <div class="row">
+
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label for="sel1">Product Group<span class="errorMessage" style="color:red;">*</span></label>
+                                            <select class="form-control" id="sel1" ng-options="s.ItemGroupId as s.ItemGroupName for s in prodGroups" ng-model="actualData.ItemGroupId" required>
+                                                <option value="" selected>--Select Group--</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label for="sel1">Product Class<span class="errorMessage" style="color:red;">*</span></label>
+                                            <select class="form-control" id="sel1" ng-options="s.ItemClassId as s.ItemClassName for s in prodClass" ng-model="actualData.ItemClassId" required>
+                                                <option value="" selected>--Select Class--</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>Product Nature</label>
+                                            <input type="text" class="form-control" placeholder="Enter Product Nature" ng-model="actualData.ItemNature" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>Product Scheme</label>
+                                            <input type="text" class="form-control" placeholder="Enter Product Scheme" ng-model="actualData.ItemScheme"  />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>Product Scheme Name</label>
+                                            <input type="text" class="form-control" placeholder="Enter Product Scheme Name" ng-model="actualData.ItemSchemeName"  />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>Product Code<span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" class="form-control" placeholder="Enter Product Code" ng-model="actualData.ItemCode" alphanumericonly required />
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>Product Name<span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" class="form-control" placeholder="Enter Product Name" ng-model="actualData.ItemName" alphanumericonly required />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>Unit<span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" class="form-control" placeholder="Enter Unit" ng-model="actualData.UM" alphanumericonly required />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>AUM<span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" class="form-control" placeholder="Enter AUM" ng-model="actualData.AUM" alphanumericonly required />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>HSN Code<span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" class="form-control" placeholder="Enter HSN Code" ng-model="actualData.HSNCode" alphanumericonly required />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label class="checkbox-inline" style="margin-top:28px;">
+                                                <input type="checkbox" value="" ng-true-value="'Y'" ng-false-value="'N'" ng-model="actualData.IsActive">Is Active?
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--<div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" value="" ng-true-value="'Y'" ng-false-value="'N'" ng-model="actualData.IsActive">Is Active?
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>-->
+
+                                <hr class="hr_basic" />
+
+                                <div class="row ">
+
+                                    <div class="col-sm-10" ng-show="divshow">
+                                        <button class="pull-right btn btn-primary" type="submit" value="{{submit}}" ng-click="SaveActualDetails(myForm.$valid)">
+                                            <i class="glyphicon glyphicon-send"></i> &nbsp;&nbsp;{{submit}}
+                                        </button>
+                                    </div>
+
+                                    <div class="col-sm-1" ng-show="divshow">
+                                        <a class="btn btn-default" ui-sref="app.dashboard.actual_product_grid">
+                                            <i class="glyphicon glyphicon-arrow-left"></i> &nbsp;&nbsp;Back
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-10 " ng-show="divhide">
+                                        <button type="button" name="" class="pull-right btn btn-primary">
+                                            <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i> Loading
+                                        </button>
+                                    </div>
+
+                                </div>
+
+                                <!-- end content -->
+                            </div>
+
+                        </div>
+                        <!-- end widget div -->
+                    </div>
+                    <!-- end widget -->
+
+                </article>
+
+            </div>
+
+            <!-- end row -->
+        </form>
+    </section>
+    <!-- end widget grid -->
+
+</div>
+<!-- END MAIN CONTENT -->

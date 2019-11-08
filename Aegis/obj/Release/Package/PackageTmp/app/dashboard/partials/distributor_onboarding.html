@@ -1,0 +1,755 @@
+﻿<!-- MAIN CONTENT -->
+
+<div id="content">
+    <!-- widget grid -->
+    <section id="widget-grid" widget-grid>
+        <!-- end row -->
+        <div class="row" ng-if="DIFlag==null">
+            <article class="col-sm-6 col-sm-offset-3">
+                <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue">
+                    <header>
+                        <div class="basic_top_mar text-center">
+                            <span class="widget-icon"> <i class="fa fa-database"></i> </span>
+                            <h2>Distributor On-boarding</h2>
+                        </div>
+                    </header>
+                    <!-- widget div-->
+                    <div>
+                        <div class="widget-body">
+                            <!-- content goes here -->
+                            <!-- content goes here -->
+
+                            <div class="row">
+                                <form name="basicForm">
+                                    <!-- Recomanded -->
+                                    <div class="col-sm-12">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <div class="form-group">
+                                                    <label for="sel1">Distributor Code<span class="errorMessage">*</span></label>
+                                                    <input type="text" class="form-control" placeholder="Enter Distributor Code" minlength="8" maxlength="8" ng-model="distinfo.DistCode" numericonly required />
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <div class="form-group">
+                                                    <label for="sel1">Distributor Name<span class="errorMessage">*</span></label>
+                                                    <input type="text" class="form-control" placeholder="Enter Distributor Name" ng-model="distinfo.DistName" required />
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="sel1">First Name<span class="errorMessage">*</span></label>
+                                                    <input type="text" class="form-control" placeholder="Enter First Name" ng-model="distinfo.FirstName" alphaonly required />
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="sel1">Last Name<span class="errorMessage">*</span></label>
+                                                    <input type="text" class="form-control" placeholder="Enter Last Name" ng-model="distinfo.LastName" alphaonly required />
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="form-group">
+                                                    <label for="sel1">Mobile No.<span class="errorMessage">*</span></label>
+                                                    <input type="text" class="form-control" placeholder="Enter Mobile No." ng-model="distinfo.MobileNo" minlength="10" maxlength="10" oninvalid="this.setCustomValidity('Enter 10 digits mobile number')" onchange="setCustomValidity('')" oninput="setCustomValidity(' ')" numericonly required />
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <div class="form-group">
+                                                    <label for="sel1">Email Id<span class="errorMessage">*</span></label>
+                                                    <input id="email" type="text" class="form-control" placeholder="Enter Email Id" ng-model="distinfo.EmailAddress" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" oninvalid="this.setCustomValidity('Enter valid email id')" onchange="setCustomValidity('')" oninput="setCustomValidity(' ')" tolowercase required />
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="form-group">
+                                                    <label>GST Type<span class="errorMessage">*</span></label>
+                                                    <select class="form-control" ng-model="distinfo.IsGST">
+                                                        <option value="" selected>--Select GST--</option>
+                                                        <option value="GS">GST No</option>
+                                                        <option value="PG">Provisional GST No</option>
+                                                        <option value="RG">Requested GST No</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4" ng-show="distinfo.IsGST=='GS'">
+                                                <div class="form-group">
+                                                    <label for="sel1">GST No.<span class="errorMessage">*</span></label>
+                                                    <input id="gst" type="text" class="form-control" placeholder="Enter GST No." ng-model="distinfo.GstnNo" minlength="15" maxlength="15" patternpattern="\d{2}[a-zA-Z]{5}\d{4}[a-zA-Z]{1}\d{1}[a-zA-Z]{1}[a-zA-Z0-9]{1}" ng-blur="toChangeFlag()" oninvalid="this.setCustomValidity('Please enter valid GST No.')" onchange="setCustomValidity('')" oninput="setCustomValidity(' ')" touppercase alphanumericonly ng-required="distinfo.IsGST=='GS'" />
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4" ng-show="distinfo.IsGST=='PG'">
+                                                <div class="form-group">
+                                                    <label for="sel1">Provisional GST No.<span class="errorMessage">*</span></label>
+                                                    <input type="text" id="gst1" class="form-control" placeholder="Enter Provisional GST No." ng-model="distinfo.ProvGstNo" minlength="15" maxlength="15" pattern="\d{2}[a-zA-Z]{5}\d{4}[a-zA-Z]{1}\d{1}[a-zA-Z]{1}[a-zA-Z0-9]{1}" ng-blur="toChangeFlag()" oninvalid="this.setCustomValidity('Please enter valid GST No.')" onchange="setCustomValidity('')" oninput="setCustomValidity(' ')" touppercase alphanumericonly ng-required="distinfo.IsGST=='PG'" />
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4" ng-show="distinfo.IsGST=='RG'">
+                                                <div class="form-group">
+                                                    <label for="sel1">Requested GST No.</label>
+                                                    <input type="text" id="gst2" class="form-control" placeholder="Enter Requested GST No." ng-model="distinfo.ReqGstNo" minlength="15" maxlength="15" pattern="\d{2}[a-zA-Z]{5}\d{4}[a-zA-Z]{1}\d{1}[a-zA-Z]{1}[a-zA-Z0-9]{1}" ng-blur="toChangeFlag()" oninvalid="this.setCustomValidity('Please enter valid GST No.')" onchange="setCustomValidity('')" oninput="setCustomValidity(' ')" touppercase alphanumericonly ng-required="distinfo.IsGST=='RG'" />
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="form-group">
+                                                    <label for="sel1">PAN No.<span class="errorMessage">*</span></label>
+                                                    <input id="pan" type="text" class="form-control" placeholder="Enter PAN No." ng-model="distinfo.PanNo" touppercase minlength="10" maxlength="10" alphanumericonly required />
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="form-group">
+                                                    <label>Agency Type<span class="errorMessage">*</span></label>
+                                                    <select class="form-control" ng-model="distinfo.AgencyType" ng-change="setNull()" required>
+                                                        <option value="" selected disabled>--Select Type--</option>
+                                                        <option value="PT">Partnership</option>
+                                                        <option value="PO">Proprietorship</option>
+                                                        <option value="LL">LLP</option>
+                                                        <option value="PR">Private</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-4" ng-show="distinfo.AgencyType=='PT'">
+                                                <div class="form-group">
+                                                    <label for="sel1">Partner Name<span class="errorMessage">*</span></label>
+                                                    <input id="gst" type="text" class="form-control" placeholder="Enter Partner Name" ng-model="distinfo.PartnerName" alphanumericonly ng-required="distinfo.AgencyType=='PT'" />
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4" ng-show="distinfo.AgencyType=='PT'">
+                                                <div class="form-group">
+                                                    <label for="sel1">Partner Name</label>
+                                                    <input type="text" id="gst1" class="form-control" placeholder="Enter Partner Name" ng-model="distinfo.PartnerName1" alphanumericonly />
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="form-group">
+                                                    <label>Stockiest<span class="errorMessage">*</span></label>
+                                                    <select class="form-control" ng-options="s.distcode as s.distname for s in stockiestData" ng-model="distinfo.StkiestDistCode" required>
+                                                        <option value="" selected hidden>--Select Stockiest--</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <hr class="hr_basic" />
+                                        <div class="row ">
+                                            <!--<div class="col-sm-10">
+                                                <a class="pull-right btn btn-primary" ng-click="hideForm('UP')" title="Enter existing distributor code to update additional information"> Additional Information</a>
+                                            </div>-->
+
+                                            <div class="col-sm-10">
+                                                <button id="btnsbt" class="pull-right btn btn-primary ladda-button" data-style="zoom-in" type="submit" ng-click="saveDistInfo(basicForm.$valid)">
+                                                    <i class="glyphicon glyphicon-send"></i> Submit
+                                                </button>
+                                            </div>
+
+                                            <div class="col-sm-2" ng-show="divshow">
+                                                <a class="btn btn-default" ui-sref="app.dashboard.distributor_grid">
+                                                    <i class="glyphicon glyphicon-arrow-left"></i> &nbsp;&nbsp;Back
+                                                </a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <!-- Recomanded  end-->
+                                </form>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!-- end widget div -->
+                </div>
+                <!-- end widget -->
+
+            </article>
+
+        </div>
+        <!-- row -->
+
+        <div class="row" ng-if="DIFlag=='UP'">
+            <article class="col-sm-12">
+                <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue">
+                    <header>
+                        <div class="basic_top_mar text-center">
+                            <span class="widget-icon"> <i class="fa fa-database"></i> </span>
+                            <h2>Update Distributor On-boarding</h2>
+                        </div>
+                        <!--<button class="pull-right btn btn-primary" ng-click="hideForm(null)">New Distributor On-boarding</button>-->
+                    </header>
+                    <!-- widget div-->
+                    <div>
+                        <div class="widget-body">
+                            <!-- content goes here -->
+                            <!-- content goes here -->
+
+                            <div class="row">
+                                <!-- <form name="onboardForm" data-smart-validate-form>-->
+                                <div class="col-sm-12" data-smart-wizard data-smart-wizard-callback="wizard1CompleteCallback">
+                                    <div id="tabs" class="form-bootstrapWizard clearfix">
+                                        <ul class="bootstrapWizard">
+                                            <li data-smart-wizard-tab="1">
+                                                <a href="#" ng-click="getDistributorInformation(distinfo.DistCode)">
+                                                    <span class="step"><i class="fa fa-bank fa-2x"></i></span> <span class="title">Distributor information</span>
+                                                </a>
+                                            </li>
+                                            <li data-smart-wizard-tab="2">
+                                                <a href="#" ng-click="setStep(2)">
+                                                    <span class="step"><i class="fa fa-map-marker fa-2x"></i></span> <span class="title">Agency Address Details</span>
+                                                </a>
+                                            </li>
+                                            <li data-smart-wizard-tab="3">
+                                                <a href="#" ng-click="getOwnerDetails()">
+                                                    <span class="step"><i class="fa fa-user fa-2x"></i></span> <span class="title">Owner Details</span>
+                                                </a>
+                                            </li>
+                                            <li data-smart-wizard-tab="4">
+                                                <a href="#" ng-click="getAgencyAddressDetails()">
+                                                    <span class="step"><i class="fa fa-map-marker fa-2x"></i></span> <span class="title">Owner Address</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-content">
+                                        <div class="tab-pane" data-smart-wizard-pane="1">
+                                            <form name="tb1Form">
+                                                <br>
+
+                                                <h3><strong>Step 1 </strong> - Distributor Information</h3>
+
+                                                <div class="row">
+
+                                                    <div class="col-sm-2">
+                                                        <div class="form-group">
+                                                            <label for="sel1">Distributor Code<span class="errorMessage">*</span></label>
+                                                            <input type="text" class="form-control" placeholder="Enter Distributor Code" minlength="8" maxlength="8" ng-model="distinfo.DistCode" ng-change="getDistributorInformation()" numericonly required ng-disabled="distinfo.DistCode" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <label for="sel1">Distributor Name<span class="errorMessage">*</span></label>
+                                                            <input type="text" class="form-control" placeholder="Enter Distributor Name" ng-model="distinfo.DistName" required />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <div class="form-group">
+                                                            <label for="sel1">Registration Code<span class="errorMessage">*</span></label>
+                                                            <input type="text" class="form-control" placeholder="Enter Registration Code" ng-model="distinfo.RegCode" numericonly required />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <div class="form-group">
+                                                            <label for="sel1">Registration Date<span class="errorMessage">*</span></label>
+                                                            <input type="text" class="form-control" placeholder="Enter Date" ng-model="distinfo.RegDate" onkeypress="return false;" autocomplete="off" datepicker required />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <div class="form-group">
+                                                            <label for="sel1">Deposit Amount<span class="errorMessage">*</span></label>
+                                                            <input type="text" class="form-control" placeholder="Enter Amount" ng-model="distinfo.DepstAmount" numericfloat required />
+                                                        </div>
+                                                    </div>
+                                                    <!--<div class="col-sm-3">
+                                                        <div class="form-group">
+                                                            <label for="sel1">Partner Name</label>
+                                                            <input type="text" class="form-control" placeholder="Enter Partner Name" ng-model="distinfo.PatnerName" alphaonly />
+                                                        </div>
+                                                    </div>-->
+                                                    <div class="col-sm-1">
+                                                        <div class="form-group">
+                                                            <label for="sel1">Std Code</label>
+                                                            <input type="text" class="form-control" placeholder="Std Code" ng-model="distinfo.StdCode" maxlength="3" numericonly />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <div class="form-group">
+                                                            <label for="sel1">Landline No.<span class="errorMessage">*</span></label>
+                                                            <input type="text" class="form-control" placeholder="Enter Landline No." ng-model="distinfo.PhoneNo" minlength="11" maxlength="11" oninvalid="this.setCustomValidity('Enter 11 digits Landline number')" onchange="    setCustomValidity('')" oninput="    setCustomValidity(' ')" numericonly required />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <div class="form-group">
+                                                            <label for="sel1">Alternate Landline No.</label>
+                                                            <input type="text" class="form-control" placeholder="Enter Landline No." ng-model="distinfo.PhoneNoEx" minlength="11" maxlength="11" numericonly />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <div class="form-group">
+                                                            <label for="sel1">Fax</label>
+                                                            <input type="text" class="form-control" placeholder="Enter Fax" ng-model="distinfo.Fax" />
+                                                        </div>
+                                                    </div>
+                                                    <!--<div class="col-sm-2">
+                                                        <div class="form-group">
+                                                            <label for="sel1">Pager</label>
+                                                            <input type="text" class="form-control" placeholder="Enter Pager" ng-model="distinfo.Pager" />
+                                                        </div>
+                                                    </div>-->
+                                                    <div class="col-sm-2">
+                                                        <div class="form-group">
+                                                            <label for="sel1">PAN No.<span class="errorMessage">*</span></label>
+                                                            <input type="text" class="form-control" placeholder="Enter PAN No." ng-model="distinfo.PanNo" minlength="10" maxlength="10" autocomplete="off" touppercase alphanumericonly required />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-2" hidden>
+                                                        <div class="form-group">
+                                                            <label for="sel1">Area</label>
+                                                            <select class="form-control" ng-model="distinfo.AreaRefNo">
+                                                                <option value="" selected>--Select--</option>
+                                                                <option value="1001">Mumbai</option>
+                                                                <option value="1002">Pune</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <div class="form-group">
+                                                            <label for="sel1">GST No.<span class="errorMessage">*</span></label>
+                                                            <input id="gst" type="text" class="form-control" placeholder="Enter GST No." ng-model="distinfo.GstnNo" minlength="15" maxlength="15" pattern="\d{2}[a-zA-Z]{5}\d{4}[a-zA-Z]{1}\d{1}[a-zA-Z]{1}[a-zA-Z0-9]{1}" oninvalid=" this.setcustomvalidity('please enter valid gst no.')" onchange="setCustomValidity('')" oninput="setCustomValidity(' ')" touppercase alphanumericonly required />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <div class="form-group">
+                                                            <label for="sel1">GST Registration Date<span class="errorMessage">*</span></label>
+                                                            <input type="text" class="form-control" placeholder="Enter Date" ng-model="distinfo.GstRegDate" onkeypress="return false" autocomplete="off" datepicker required />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <div class="form-group">
+                                                            <label for="sel1">GST Type<span class="errorMessage">*</span></label>
+                                                            <input type="text" class="form-control" placeholder="Enter GST Type" ng-model="distinfo.GstType" alphaonly required />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <div class="form-group">
+                                                            <label for="sel1">Requested GST No.</label>
+                                                            <input id="gst2" type="text" class="form-control" placeholder="Enter Requested GST No." ng-model="distinfo.ReqGstNo" minlength="15" maxlength="15" pattern="\d{2}[a-zA-Z]{5}\d{4}[a-zA-Z]{1}\d{1}[a-zA-Z]{1}[a-zA-Z0-9]{1}" oninvalid="this.setCustomValidity('Please enter valid GST No.')" onchange="setCustomValidity('')" oninput="setCustomValidity(' ')" touppercase alphanumericonly />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <div class="form-group">
+                                                            <label for="sel1">Provisional GST No.</label>
+                                                            <input id="gst1" type="text" class="form-control" placeholder="Enter Provisional GST No." ng-model="distinfo.ProvGstNo" minlength="15" maxlength="15" pattern="\d{2}[a-zA-Z]{5}\d{4}[a-zA-Z]{1}\d{1}[a-zA-Z]{1}[a-zA-Z0-9]{1}" oninvalid="this.setCustomValidity('Please enter valid GST No.')" onchange="setCustomValidity('')" oninput="setCustomValidity(' ')" touppercase alphanumericonly />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <div class="form-group">
+                                                            <label for="sel1">Close Date</label>
+                                                            <input type="text" class="form-control" placeholder="Enter Close Date" ng-model="distinfo.ClosedDate" onkeypress="return false" autocomplete="off" datepicker />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <label for="sel1">Email Id<span class="errorMessage">*</span></label>
+                                                            <input id="email" type="text" class="form-control" placeholder="Enter Email Id" ng-model="distinfo.EmailAddress" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" oninvalid="this.setCustomValidity('Enter valid email id')" onchange="setCustomValidity('')" oninput="setCustomValidity(' ')" tolowercase required />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <div class="form-group">
+                                                            <label>Agency Type<span class="errorMessage">*</span></label>
+                                                            <select class="form-control" ng-model="distinfo.AgencyType" ng-change="setNull()" required>
+                                                                <option value="" selected disabled>--Select Type--</option>
+                                                                <option value="PT">Partnership</option>
+                                                                <option value="PO">Proprietorship</option>
+                                                                <option value="LL">LLP</option>
+                                                                <option value="PR">Private</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-2" ng-show="distinfo.AgencyType=='PT'">
+                                                        <div class="form-group">
+                                                            <label for="sel1">Partner Name<span class="errorMessage">*</span></label>
+                                                            <input id="gst" type="text" class="form-control" placeholder="Enter Partner Name" ng-model="distinfo.PartnerName" alphanumericonly ng-required="distinfo.AgencyType=='PT'" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-2" ng-show="distinfo.AgencyType=='PT'">
+                                                        <div class="form-group">
+                                                            <label for="sel1">Partner Name</label>
+                                                            <input type="text" id="gst1" class="form-control" placeholder="Enter Partner Name" ng-model="distinfo.PartnerName1" alphanumericonly />
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="form-actions">
+                                                    <div class="row">
+                                                        <div class="col-sm-12">
+                                                            <ul class="pager wizard no-margin">
+                                                                <li class="next">
+                                                                    <!--<a href="#" class="btn btn-lg txt-color-darken"> Next </a>-->
+                                                                    <button type="submit" class="btn btn-lg txt-color-darken round-btn pull-right ladda-button" data-style="zoom-in" ng-click="saveDistInfo(tb1Form.$valid)">Next</button>
+                                                                </li>
+                                                                <li class="previous">
+                                                                    <a data-ui-sref="app.dashboard.distributor_grid" class="btn btn-lg btn-default pull-right" style="margin-right:20px;"> Back </a>
+                                                                </li>
+
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="tab-pane" data-smart-wizard-pane="2">
+                                            <form name="tab2Form">
+                                                <br>
+
+                                                <h3><strong>Step 2</strong> - Agency Address Details</h3>
+
+                                                <div class="row">
+                                                    <div class="col-sm-2">
+                                                        <div class="form-group">
+                                                            <label for="sel1">Address Type <span class="errorMessage">*</span></label>
+                                                            <select class="form-control" ng-model="aggaddr.AddressType" ng-change="getAgAddrType(aggaddr.AddressType)" required>
+                                                                <option value="" selected>--Select--</option>
+                                                                <option value="AG">Agency Address</option>
+                                                                <option value="GD">Godown Address</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <div class="form-group">
+                                                            <label for="sel1">State <span class="errorMessage">*</span></label>
+                                                            <select class="form-control" ng-options="s.StateCode as s.StateDesc for s in allStates" ng-model="aggaddr.StateCode" ng-change="getDistrict(aggaddr.StateCode)" required>
+                                                                <option value="" selected>--Select--</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <div class="form-group">
+                                                            <label for="sel1">District <span class="errorMessage">*</span></label>
+                                                            <select class="form-control" ng-options="s.DistrictCode as s.DistrictName for s in allDistricts" ng-model="aggaddr.DistrictCode" ng-change="getCity(aggaddr.StateCode,aggaddr.DistrictCode)" required>
+                                                                <option value="" selected>--Select--</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <div class="form-group">
+                                                            <label for="sel1">Taluka/City<span class="errorMessage">*</span> </label>
+                                                            <select class="form-control" ng-options="s.TalukaCode as s.TalukaName for s in allCities" ng-model="aggaddr.CityCode" required>
+                                                                <option value="" selected>--Select--</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <label for="sel1">Address Line 1<span class="errorMessage">*</span></label>
+                                                            <input type="text" class="form-control" placeholder="Enter Address Line 1" ng-model="aggaddr.AddressLine1" required />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <label for="sel1">Address Line 2</label>
+                                                            <input type="text" class="form-control" placeholder="Enter Address Line 2" ng-model="aggaddr.AddressLine2" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <label for="sel1">Address Line 3</label>
+                                                            <input type="text" class="form-control" placeholder="Enter Address Line 3" ng-model="aggaddr.AddressLine3" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <div class="form-group">
+                                                            <label for="sel1">Pin Code</label>
+                                                            <input type="text" class="form-control" placeholder="Enter Pin" ng-model="aggaddr.Pin" minlength="6" maxlength="6" numericonly required />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-1">
+                                                        <button id="btnsubmit" class="btn btn-primary btn-marg-top ladda-button" data-style="zoom-in" type="submit" ng-click="saveAgencyAddress(tab2Form.$valid,aggaddr.AddressType)">
+                                                            <i class="fa fa-plus"></i> &nbsp;&nbsp;Add
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="table-responsive">
+                                                        <table class="table tbl">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th class="text-center">Address Type</th>
+                                                                    <th class="text-center">State </th>
+                                                                    <th class="text-center">District </th>
+                                                                    <th class="text-center">City</th>
+                                                                    <th class="text-center">Address Line 1</th>
+                                                                    <th class="text-center">Address Line 2</th>
+                                                                    <th class="text-center"> address line 3</th>
+                                                                    <th class="text-center">Pin Code</th>
+                                                                    <th class="text-center">Details</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr ng-repeat="addr in AgAddrDet">
+                                                                    <td class="text-center">{{addr.AddressName}}</td>
+                                                                    <td class="text-center">{{addr.StateCode}}</td>
+                                                                    <td class="text-center">{{addr.DistrictCode}}</td>
+                                                                    <td class="text-center">{{addr.CityCode}}</td>
+                                                                    <td class="text-center">{{addr.AddressLine1}}</td>
+                                                                    <td class="text-center">{{addr.AddressLine2}}</td>
+                                                                    <td class="text-center">{{addr.AddressLine3}}</td>
+                                                                    <td class="text-center">{{addr.Pin}}</td>
+
+                                                                    <td class="text-center"><a class="btn btn-primary btn-xs" ng-click="[viewAGAddr(addr),getAgAddrType(addr.AddressType)]"><i class="fa fa-eye" aria-hidden="true"></i> &nbsp;View</a></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <div class="form-actions">
+                                                    <div class="row">
+                                                        <div class="col-sm-12">
+                                                            <ul class="pager wizard no-margin">
+                                                                <li class="next">
+                                                                    <button class="btn btn-lg txt-color-darken round-btn pull-right" ng-click="setStep(3)"> Next </button>
+                                                                </li>
+                                                                <li class="previous">
+                                                                    <a class="btn btn-lg btn-default pull-right" ng-click="setStep(1)" style="margin-right:20px;"> Previous </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="tab-pane" data-smart-wizard-pane="3">
+                                            <form name="tab3Form">
+                                                <br>
+
+                                                <h3><strong>Step 3</strong> - Owner Details</h3>
+
+                                                <div class="row">
+                                                    <div class="col-sm-2">
+                                                        <div class="form-group">
+                                                            <label for="sel1">Last Name<span class="errorMessage">*</span></label>
+                                                            <input type="text" class="form-control" placeholder="Enter Last Name" ng-model="ownerdet.LastName" alphaonly required />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <div class="form-group">
+                                                            <label for="sel1">First Name<span class="errorMessage">*</span></label>
+                                                            <input type="text" class="form-control" placeholder="Enter First Name" ng-model="ownerdet.FirstName" alphaonly required />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <div class="form-group">
+                                                            <label for="sel1">Father Name<span class="errorMessage">*</span></label>
+                                                            <input type="text" class="form-control" placeholder="Enter Father Name" ng-model="ownerdet.FatherName" alphaonly required />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <div class="form-group">
+                                                            <label for="sel1">Mother Name<span class="errorMessage">*</span></label>
+                                                            <input type="text" class="form-control" placeholder="Enter Mother Name" ng-model="ownerdet.MotherName" alphaonly required />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <div class="form-group">
+                                                            <label for="sel1">Gender<span class="errorMessage">*</span></label>
+                                                            <select class="form-control" ng-model="ownerdet.Gender" required>
+                                                                <option value="" selected>--Select--</option>
+                                                                <option value="M">Male</option>
+                                                                <option value="F">Female</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <div class="form-group">
+                                                            <label for="sel1">Blood Group<span class="errorMessage">*</span></label>
+                                                            <select class="form-control" ng-model="ownerdet.BloodGroup" required>
+                                                                <option value="" selected>--Select--</option>
+                                                                <option value="O+">O +ve</option>
+                                                                <option value="O-">O -ve</option>
+                                                                <option value="A+">A +ve</option>
+                                                                <option value="A-">A -ve</option>
+                                                                <option value="AB+">AB +ve</option>
+                                                                <option value="AB-">AB -ve</option>
+                                                                <option value="B+">B +ve</option>
+                                                                <option value="B-">B -ve</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <div class="form-group">
+                                                            <label for="sel1">Date of Birth<span class="errorMessage">*</span></label>
+                                                            <input type="text" class="form-control" placeholder="Select date of birth" ng-model="ownerdet.DateOfBirth" onkeydown="return false" autocomplete="off" datepicker required />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <div class="form-group">
+                                                            <label for="sel1">Number of Sons<span class="errorMessage">*</span></label>
+                                                            <input type="text" class="form-control" placeholder="Enter No." ng-model="ownerdet.NoOfSons" numericonly required />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <div class="form-group">
+                                                            <label for="sel1">Number of Daughters<span class="errorMessage">*</span></label>
+                                                            <input type="text" class="form-control" placeholder="Enter No." ng-model="ownerdet.NoOfDaughters" numericonly required />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <div class="form-group">
+                                                            <label for="sel1">Dependent<span class="errorMessage">*</span></label>
+                                                            <input type="text" class="form-control" placeholder="Enter Dependent" ng-model="ownerdet.Dependents" numericonly required />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <div class="form-group">
+                                                            <label for="sel1">Plant<span class="errorMessage">*</span></label>
+                                                            <select class="form-control" ng-model="ownerdet.PlantCode" required>
+                                                                <option value="" selected>--Select--</option>
+                                                                <option value="1001">Mumbai</option>
+                                                                <option value="1002">Chennai</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <div class="form-group">
+                                                            <label for="sel1">Voter Id<span class="errorMessage">*</span></label>
+                                                            <input type="text" class="form-control" placeholder="Enter Voter Id" ng-model="ownerdet.VoterId" alphanumericonly required />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <div class="form-group">
+                                                            <label for="sel1">Aadhaar No.<span class="errorMessage">*</span></label>
+                                                            <input type="text" class="form-control" placeholder="Enter Aadhaar No." ng-model="ownerdet.AadharNo" minlength="12" maxlength="12" numericonly required />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-actions">
+                                                    <div class="row">
+                                                        <div class="col-sm-12">
+                                                            <ul class="pager wizard no-margin">
+
+                                                                <li class="next">
+                                                                    <button class="btn btn-lg txt-color-darken round-btn pull-right ladda-button" data-style="zoom-in" ng-click="saveOwnerDetails(tab3Form.$valid)"> Next </button>
+                                                                </li>
+                                                                <li class="previous">
+                                                                    <a class="btn btn-lg btn-default pull-right" ng-click="setStep(2)" style="margin-right:20px;"> Previous </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="tab-pane" data-smart-wizard-pane="4">
+                                            <form name="tab4Form">
+                                                <br>
+
+                                                <h3><strong>Step 4</strong> - Owner Address</h3>
+                                                <br>
+
+                                                <div class="row">
+                                                    <!--<div class="col-sm-2">
+                                                        <div class="form-group">
+                                                            <label for="sel1">Address Type </label>
+                                                            <select class="form-control" ng-model="onboard.addressType">
+                                                                <option value="" selected>--Select Type--</option>
+                                                                <option value="OW">Owner Address</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>-->
+                                                    <div class="col-sm-2">
+                                                        <div class="form-group">
+                                                            <label for="sel1">State <span class="errorMessage">*</span></label>
+                                                            <select class="form-control" ng-options="s.StateCode as s.StateDesc for s in allStates" ng-model="ownerdet.StateCode" ng-change="getDistrict(ownerdet.StateCode)" required>
+                                                                <option value="" selected>--Select--</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <div class="form-group">
+                                                            <label for="sel1">District <span class="errorMessage">*</span></label>
+                                                            <select class="form-control" ng-options="s.DistrictCode as s.DistrictName for s in allDistricts" ng-model="ownerdet.DistrictCode" ng-change="getCity(ownerdet.StateCode,ownerdet.DistrictCode)" required>
+                                                                <option value="" selected>--Select--</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <div class="form-group">
+                                                            <label for="sel1">Taluka/City<span class="errorMessage">*</span> </label>
+                                                            <select class="form-control" ng-options="s.TalukaCode as s.TalukaName for s in allCities" ng-model="ownerdet.CityCode" required>
+                                                                <option value="" selected>--Select--</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <label for="sel1">Address Line 1<span class="errorMessage">*</span></label>
+                                                            <input type="text" class="form-control" placeholder="Enter Address Line 1" ng-model="ownerdet.AddressLine1" required />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <label for="sel1">Address Line 2</label>
+                                                            <input type="text" class="form-control" placeholder="Enter Address Line 2" ng-model="ownerdet.AddressLine2" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <label for="sel1">Address Line 3</label>
+                                                            <input type="text" class="form-control" placeholder="Enter Address Line 3" ng-model="ownerdet.AddressLine3" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <div class="form-group">
+                                                            <label for="sel1">Pin Code<span class="errorMessage">*</span></label>
+                                                            <input type="text" class="form-control" placeholder="Enter Pin" ng-model="ownerdet.Pin" minlength="6" maxlength="6" oninvalid="this.setCustomValidity('Enter 6 digits pincode number')" onchange="setCustomValidity('')" oninput="setCustomValidity(' ')" numericonly required />
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-12 text-center">
+                                                        <button id="btnsubmit" class="btn btn-primary ladda-button" data-style="zoom-in" type="submit" ng-click="saveOwnerAddress(tab4Form.$valid,'OW')">
+                                                            <i class="glyphicon glyphicon-send"></i> Submit
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="form-actions">
+                                                    <div class="row">
+                                                        <div class="col-sm-12">
+                                                            <ul class="pager wizard no-margin">
+                                                                <li class="previous">
+                                                                    <a class="btn btn-lg btn-default pull-right" ng-click="setStep(3)"> Previous </a>
+                                                                </li>
+                                                                <!--<li class="next" data-smart-wizard-next>
+                                                                    <a href="#" class="btn btn-lg txt-color-darken"> Next </a>
+                                                                </li>-->
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                        <!--<div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <ul class="pager wizard no-margin">
+                                                        <li class="previous" data-smart-wizard-prev>
+                                                            <a href="#" class="btn btn-lg btn-default"> Previous </a>
+                                                        </li>
+                                                        <li class="next" data-smart-wizard-next>
+                                                            <a href="#" class="btn btn-lg txt-color-darken"> Next </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>-->
+
+                                    </div>
+                                </div>
+                                <!--</form>-->
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!-- end widget div -->
+                </div>
+                <!-- end widget -->
+
+            </article>
+
+        </div>
+        <!-- end row -->
+    </section>
+    <!-- end widget grid -->
+</div>
+<!-- END MAIN CONTENT -->

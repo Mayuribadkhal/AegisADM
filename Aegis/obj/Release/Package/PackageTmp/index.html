@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html lang="en-us" class="no-js" ng-strict-di>
+<head>
+    <meta charset="utf-8">
+    <title> AEGIS </title>
+    <base href="/" />   <!--gogasadmin-->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/css/smartadmin-production-plugins.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/css/smartadmin-production.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/css/smartadmin-skins.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/css/smartadmin-angular.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/css/smartadmin-rtl.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/css/demo.min.css">
+    <link href="styles/css/your_style.css" rel="stylesheet" />
+    <link href="styles/css/ui-grid.css" rel="stylesheet" />
+    <link href="styles/css/ui-grid1.css" rel="stylesheet" />
+    <link href="styles/css/sweet-alert.css" rel="stylesheet" />
+   <!-- <link href="styles/css/ladda.min.css" rel="stylesheet" />-->
+    <link href="styles/css/ladda-themeless.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="styles/img/aegislogo.gif" type="image/x-icon">
+    <link rel="apple-touch-icon" href="styles/img/splash/sptouch-icon-iphone.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="styles/img/splash/touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="styles/img/splash/touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="styles/img/splash/touch-icon-ipad-retina.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-startup-image" href="styles/img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
+    <link rel="apple-touch-startup-image" href="styles/img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
+    <link rel="apple-touch-startup-image" href="styles/img/splash/iphone.png" media="screen and (max-device-width: 320px)">
+</head>
+
+
+<body data-smart-device-detect
+      data-smart-fast-click
+      data-smart-layout
+      data-smart-page-title="Admin" class="smart-style-3 menu-on-top" ng-controller="AdminLoginController">
+
+    <div data-ui-view="root" data-autoscroll="false"></div>
+    <div class="news_wrapper" ng-init="init()" ng-controller="NewsDisplayController">
+        <div class="row">
+            <div class="col-sm-2">
+                <div class="footer_copy">
+                    &copy; 2019 &nbsp;1.0
+                </div>
+            </div>
+            <div class="col-sm-10">
+                <div id="news_strip" ng-init="init()" ng-mouseover="conf.news_move_flag=false" ng-mouseout="conf.news_move_flag=true">
+                    <div class="shadow left news_name"> News &nbsp;&nbsp;</div>
+                    <div>
+
+                    </div>
+                    <marquee scrollamount="4">
+                        <span ng-repeat="item in allItems">
+                            <span style="padding-right:50px;" class={{item.nMarkBold}}> {{item.title}}. </span>
+                        </span>
+                    </marquee>
+                    <div class="shadow right">&nbsp;</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBedme0cPT4-DH_Abuo9nLL2nDl9TqP-Rg'></script>
+    <script src="build/vendor.js"></script>
+    <script src="js/Chart.min.js"></script>
+    <script src="js/angular-chart.min.js"></script>
+    <script src="build/app.js"></script>
+    <script src="build/tuples.js"></script>
+    <script src="js/ui-grid.js"></script>
+    <script src="js/aes.js"></script>
+    <script src="js/alasql.min.js"></script>
+    <script src="js/angular-base64.js"></script>
+    <script src="js/angularjs-crypto.js"></script>
+    <script src="js/CryptoJs.js"></script>
+    <script src="js/CryptoJSCipher.js"></script>
+    <script src="js/FileSaver.js"></script>
+    <script src="js/ng-device-detector.min.js"></script>
+    <script src="js/re-tree.min.js"></script>
+    <script src="js/ngStorage.js"></script>
+    <script src="js/pdfmake.js"></script>
+    <script src="js/sweet-alert.js"></script>
+    <script src="js/SweetAlert.js"></script>
+    <script src="js/ui-grid.js"></script>
+    <script src="js/vfs_fonts.js"></script>
+    <script src="js/xlsx.core.min.js"></script>
+    <script src="js/xlsx.full.min.js"></script>
+    <script src="js/ng-file-upload.js"></script>
+    <script src="js/base64-upload.js"></script>
+    <script src="js/spin.min.js"></script>
+    <script src="js/SmartAlert.js"></script>
+    <script src="js/imagebase64.js"></script>
+    <script src="js/imagebase64min.js"></script>
+    <script src="js/excel-builder.dist.js"></script>
+    <script src="js/chart.piecelabel.js"></script>
+    <script src="js/autoFitColumns.min.js"></script>
+    <script src="js/ladda.min.js"></script>
+    <script src="js/SheetJS-angular.js"></script>
+
+    <!--<script src="build/build.min.js"></script>-->
+    <script src="build/GlobalService/global.services.js"></script>
+    <script src="build/AdminAuthentication/AdminLogin.js"></script>
+    <script src="build/Master/Master.js"></script>
+    <script src="build/Setting/Setting.js"></script>
+    <script src="build/Distributor/Distributor.js"></script>
+    <script src="build/Dashboard/MyXpressAdmin.js"></script>
+    <script src="build/Payment/Payment.js"></script>
+    <script src="build/Product/Product.js"></script>
+    <script src="build/Safety/Safety.js"></script>
+    <script src="build/Report/LicenseValidityReport.js"></script>
+    <script src="build/ManageSession/ManageSession.js"></script>
+    <script src="build/Analytical/Analytical.js"></script>
+    <script src="build/Migration/DataMigration.js"></script>
+    <script src="build/Log/Log.js"></script>
+    <script src="build/Dashboard/NewAdminDashboard.js"></script>
+    <script src="build/Dashboard/DigitalDashboard.js"></script>
+    <script src="build/Orders/OrderNavigator.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+﻿<!-- MAIN CONTENT -->
+<div id="content">
+    <form name="myForm">
+        <!-- widget grid -->
+        <section id="widget-grid" widget-grid>
+
+
+            <!-- end row -->
+            <!-- row -->
+
+            <div class="row">
+
+                <article class="col-sm-12 col-sm-offset-2 col-sm-8">
+                    <!-- new widget -->
+                    <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue" ng-controller="TodoCtrl">
+                        <header>
+                            <div class="basic_top_mar text-center">
+                                <span class="widget-icon"> <i class="fa fa-database"></i> </span>
+                                <h2>Manage Question Master </h2>
+                            </div>
+                        </header>
+                        <!-- widget div-->
+                        <div>
+                            <div class="widget-body">
+                                <!-- content goes here -->
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="sel1">Question Type<span style="color:red">*</span></label>
+
+                                            <select class="form-control" ng-model="safety.Qtype" required>
+                                                <option value="" selected>--Select Question Type--</option>
+                                                <option value="CYLDR">Cylinder</option>
+                                                <option value="REG">Regulator</option>
+                                                <option value="RT">Rubber Tube</option>
+                                                <option value="STOVE">Stove</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="sel1">Select Language<span style="color:red">*</span></label>
+                                            <select class="form-control" id="sel1" ng-options="l.LangCode as l.LangDesc for l in getlang" ng-model="safety.LanguageCode" ng-change="dropdownshow(safety.LanguageCode)" required>
+                                                <option value="" selected>--Select Language--</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row" ng-show="mshow">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label for="sel1">Select Reference Question<span style="color:red">*</span> </label>
+                                            <select class="form-control" id="sel1" ng-options="q.QrefNo as q.Question for q in getquestions" ng-model="safety.QrefNo">
+                                                <option value="" selected>--Select Reference Question--</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Enter Question<span style="color:red">*</span></label>
+                                            <input type="text" class="form-control" placeholder="Enter Question" ng-model="safety.Qdesc" required />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Rating<span style="color:red">*</span></label>
+                                            <input type="text" class="form-control" placeholder="Enter Rating" ng-model="safety.Rating" ng-change="Rating(safety)" numericonly required />
+                                            <span class="error help-block" style="color:red">
+                                                {{errorMessage}}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Correct Answer<span style="color:red">*</span></label>
+                                            <select class="form-control" ng-model="safety.CorrectAnswer" required>
+                                                <option value="" selected>--Select Status--</option>
+                                                <option value="Y">Yes</option>
+                                                <option value="N">No</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <div class="form-group">
+                                            <label>
+                                                <input type="checkbox" value="" ng-true-value="'Y'" ng-false-value="'N'" ng-model="safety.IsMandatory"> Is Mandatory ?
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>
+                                                <input type="checkbox" value="" ng-true-value="'Y'" ng-false-value="'N'" ng-model="safety.Isactive"> Is Active ?
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <hr class="hr_basic" />
+                                <div class="row ">
+                                    <div class="col-sm-10" ng-show="divshow">
+                                        <button class="pull-right btn btn-primary" id="btnrating" type="submit" value="{{submit}}" ng-click="SaveInspectionQuestions(myForm.$valid,safety)">
+                                            <i class="glyphicon glyphicon-send"></i> &nbsp;&nbsp;{{submit}}
+                                        </button>
+                                    </div>
+
+                                    <div class="col-sm-1" ng-show="divshow">
+                                        <a class="btn btn-default" ui-sref="app.dashboard.manage_question_master_grid">
+                                            <i class="glyphicon glyphicon-arrow-left"></i> &nbsp;&nbsp;Back
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-10 " ng-show="divhide">
+                                        <button type="button" class="pull-right btn btn-primary">
+                                            <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i> Loading
+                                        </button>
+                                    </div>
+
+                                </div>
+
+                                <!-- end content -->
+                            </div>
+
+                        </div>
+                        <!-- end widget div -->
+                    </div>
+                    <!-- end widget -->
+
+                </article>
+
+            </div>
+
+            <!-- end row -->
+
+        </section>
+        <!-- end widget grid -->
+    </form>
+</div>
+<!-- END MAIN CONTENT -->

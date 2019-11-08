@@ -1,0 +1,466 @@
+<aside id="left-panel">
+    <!-- User info -->
+    <div class="btn-group login-info">
+        <a href="#" class="dropdown-toggle no-margin userdropdown" data-toggle="dropdown">
+            <img src="styles/img/avatars/sunny.png" alt="John Doe" class="online" />
+        </a>
+        <ul class="dropdown-menu pull-right">
+            <li>
+                <a ui-sref="app.dashboard.change_password" class="padding-10 padding-top-5 padding-bottom-5">
+                    <i class="fa fa-user"></i>
+                    <u>C</u>hange Password
+                </a>
+            </li>
+            <li class="divider"></li>
+            <li>
+                <a ui-sref="app.dashboard.photo_upload" class="padding-10 padding-top-5 padding-bottom-5">
+                    <i class="fa fa-camera"></i>
+                    <u>P</u>hoto Upload
+                </a>
+            </li>
+            <li class="divider"></li>
+            <li ng-controller="AdminLoginController">
+                <a class="padding-10 padding-top-5 padding-bottom-5" data-action="userLogout" ng-click="LogOut()">
+                    <i class="fa fa-sign-out fa-lg"></i> <strong><u>L</u>ogout</strong>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- end user info -->
+    <nav>
+        <!-- NOTE: Notice the gaps after each icon usage <i></i>..
+        Please note that these links work a bit different than
+        traditional href="" links. See documentation for details.
+        -->
+        <ul data-smart-menu ng-controller="ManageSessionController">
+            <li data-menu-collapse>
+                <a data-ui-sref="#"><i class="fa fa-lg fa-fw fa-home" aria-hidden="true"></i> <span class="menu-item-parent">Dashboard</span></a>
+                <ul>
+                    <li ng-hide="useraccgridhpcl">
+                        <!--data-ui-sref="{{dashboardlink}}"-->
+                        <a ui-sref-if="AA" class="nav-menu-disable" data-ui-sref="app.dashboard.dashboard_ezy_gas"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Standard Dashboard </a>
+                    </li>
+                    <li ng-hide="useraccgridiocl">
+                        <!--data-ui-sref="{{dashboardlink}}"-->
+                        <a ui-sref-if="AA" class="nav-menu-disable" data-ui-sref="app.dashboard.dashboard_My_Express_gas"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Standerd Dashboard </a>
+                    </li>
+                    <li>
+                        <a ui-sref-if="AB" class="nav-menu-disable" data-ui-sref="app.dashboard.new_dashboard"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Advance Dashboard</a>
+                    </li>
+                    <!--<li>
+                        <a ui-sref-if="AB" class="nav-menu-disable" data-ui-sref="app.dashboard.digital_dashboard"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Digital Dashboard</a>
+                    </li>-->
+                    <li ng-hide="safteymenu">
+                        <a class="nav-menu-disable"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i>  Mechanical Dashboard</a>
+                        <!--data-ui-sref="app.dashboard.dashboard_mechanical"-->
+                    </li>
+                </ul>
+            </li>
+            <li data-menu-collapse>
+                <a data-ui-sref="#"><i class="fa fa-lg fa-fw fa-database" aria-hidden="true"></i> <span class="menu-item-parent">Master</span></a>
+                <ul>
+                    <li>
+                        <a class="nav-menu-disable"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i>  State Master</a>
+                    </li>
+                    <li data-ui-sref-active="active">
+                        <a ui-sref-if="BB" ui-sref="app.dashboard.District_master_grid"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> District Master</a>
+                    </li>
+                    <li data-ui-sref-active="active">
+                        <a ui-sref-if="BC" ui-sref="app.dashboard.taluka_master_grid"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Taluka Master</a>
+                    </li>
+                    <li data-ui-sref-active="active" ng-if="false">
+                        <a ui-sref-if="BD" class="nav-menu-disable" data-ui-sref="app.dashboard.block_smart_card_reasons_grid" ng-click="manageblock()"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span> Block Smart Card Reasons</span></a>
+                    </li>
+                    <li data-ui-sref-active="active" ng-if="false">
+                        <a ui-sref-if="BE" class="nav-menu-disable" data-ui-sref="app.dashboard.region_master_grid" ng-click="manageregion()"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span> Regional Mailing Information</span></a>
+                    </li>
+                    <li data-ui-sref-active="active" ng-if="false">
+                        <a ui-sref-if="BF" class="nav-menu-disable" data-ui-sref="app.dashboard.language_master_grid" ng-click="managelang()"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span> Language Master</span></a>
+                    </li>
+                    <li data-ui-sref-active="active">
+                        <a ui-sref-if="BG" class="nav-menu-disable" data-ui-sref="app.dashboard.bank_master_grid" ng-click="managebnk()"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span> Bank Master</span></a>
+                    </li>
+                    <li data-ui-sref-active="active">
+                        <a ui-sref-if="BH" class="nav-menu-disable" data-ui-sref="app.dashboard.payment_mode_grid" ng-click="manageptmode()"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span> Payment  Mode</span></a>
+                    </li>
+                    <li data-ui-sref-active="active">
+                        <a ui-sref-if="BI" class="nav-menu-disable" data-ui-sref="app.dashboard.transport_mode_grid" ng-click="managetport()"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span> Transport Mode</span></a>
+                    </li>
+                    <li data-ui-sref-active="active">
+                        <a ui-sref-if="BJ" class="nav-menu-disable" data-ui-sref="app.dashboard.user_role_grid" ng-click="manageurole()"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent"> User Role Master</span></a>
+                    </li>
+                    <li data-ui-sref-active="active">
+                        <a ui-sref-if="BK" class="nav-menu-disable" data-ui-sref="app.dashboard.xpressg_appgrid" ng-click=" ManageApp()"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent"> Applications Master</span></a>
+                    </li>
+                    <li data-ui-sref-active="active">
+                        <a ui-sref-if="BL" class="nav-menu-disable" data-ui-sref="app.dashboard.zonemaster_grid" ng-click="ManageMTC()"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Zone Master</a>
+                    </li>
+                    <li data-ui-sref-active="active">
+                        <a ui-sref-if="BM" class="nav-menu-disable" data-ui-sref="app.dashboard.region_grid" ng-click="ManageMTC()"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Region Master</a>
+                    </li>
+                    <li data-ui-sref-active="active" ng-if="false">
+                        <a ui-sref-if="BN" class="nav-menu-disable" data-ui-sref="app.dashboard.exclude_ro_grid"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Exclude RO Master</a>
+                    </li>
+                    <li data-ui-sref-active="active">
+                        <a ui-sref-if="BO" class="nav-menu-disable" data-ui-sref="app.dashboard.pdc_question_grid" ng-click="ManageMTC()"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> PDC Question Master</a>
+                    </li>
+                    <li data-ui-sref-active="active">
+                        <a ui-sref-if="BP" class="nav-menu-disable" data-ui-sref="app.dashboard.manufacture_grid"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Manufacture Master</a>
+                    </li>
+                    <li data-ui-sref-active="active">
+                        <a ui-sref-if="BQ" class="nav-menu-disable" data-ui-sref="app.dashboard.plant_grid"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Plant Master</a>
+                    </li>
+                    <li data-ui-sref-active="active">
+                        <a ui-sref-if="BR" class="nav-menu-disable" data-ui-sref="app.dashboard.cylinder_providers_grid"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Cylinder Providers Master</a>
+                    </li>
+                    <li data-ui-sref-active="active">
+                        <a data-ui-sref="app.dashboard.godown-list"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Godown</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li data-menu-collapse>
+                <a data-ui-sref="#"><i class="fa fa-lg fa-fw fa-file"></i> <span class="menu-item-parent">Operational</span></a>
+                <ul>
+                    <li data-menu-collapse>
+                        <a data-ui-sref="#"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Channel Partner</a>
+                        <ul>
+                            <li>
+                                <a ui-sref-if="CA" class="nav-menu-disable" data-ui-sref="app.dashboard.distributor_grid"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Manage Channel Partner</a>
+                            </li>
+                            <li>
+                                <a ui-sref-if="CB" class="nav-menu-disable" data-ui-sref="app.dashboard.connect_distributor" ng-click="managecdist()"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Connect Distributor</a>
+                            </li>
+                            <li data-ui-sref-active="active">
+                                <a ui-sref-if="CC" class="nav-menu-disable" data-ui-sref="app.dashboard.distributor_info" ng-click="manageDH()"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Add/Update Hierarchy To Distributor</a>
+                            </li>
+                            <li data-menu-collapse>
+                                <a data-ui-sref="#"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Manage Profile</a>
+                                <ul>
+                                    <li>
+                                        <a ui-sref-if="CDA" class="nav-menu-disable" data-ui-sref="app.dashboard.product_allocation" ng-click="managePA()"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Product Allocation</a>
+                                    </li>
+                                    <li>
+                                        <a ui-sref-if="CDB" class="nav-menu-disable" data-ui-sref="app.dashboard.manage_service" ng-click="manageSer()"><i class=" fa fa-lg fa-fw fa-cube txt-color-blue"></i> Manage Service</a>
+                                    </li>
+                                    <li>
+                                        <a ui-sref-if="CDC" class="nav-menu-disable" data-ui-sref="app.dashboard.manage_users" ng-click="manageusr()"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Manage Users</a>
+                                    </li>
+                                    <li>
+                                        <a class="nav-menu-disable"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Manage Synchronize PCs </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li data-menu-collapse>
+                                <a><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Other Settings</a>
+                                <ul>
+                                    <li>
+                                        <a ui-sref-if="CEA" class="nav-menu-disable" data-ui-sref="app.dashboard.setting_sms_grid" ng-click="manageSMS()"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> SMS Credentials</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li ng-if="false">
+                                <a ui-sref-if="CF" class="nav-menu-disable" data-ui-sref="app.dashboard.increase_validity" ng-click="manageExtend()"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Extend License Validity</a>
+                            </li>
+                            <li ng-if="false">
+                                <a ui-sref-if="CG" class="nav-menu-disable" data-ui-sref="app.dashboard.distributor_payment_gateway_grid" ng-click="manageDPG()"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Payment Gateway Details</a>
+                            </li>
+                            <li ng-controller="PreLoginController">
+                                <a ui-sref-if="CH" class="nav-menu-disable" ng-click="checkstatus('DG')"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Pre-Login</a>
+                                <!--data-ui-sref="app.dashboard.pre_login"-->
+                            </li>
+                            <li>
+                                <a ui-sref-if="CI" class="nav-menu-disable" data-ui-sref="app.dashboard.hierarchy_of_distributor"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Hierarchy Details of Distributor</a>
+                            </li>
+                            <li>
+                                <a ui-sref-if="CJ" class="nav-menu-disable" data-ui-sref="app.dashboard.update_distributor"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Activate/Deacivate Distributor</a>
+                            </li>
+                            <li ng-if="false">
+                                <a ui-sref-if="CK" class="nav-menu-disable" data-ui-sref="app.dashboard.push_digital_payment_grid"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Push Digital Payment</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li data-menu-collapse>
+                        <a data-ui-sref="#"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Product</a>
+                        <ul>
+                            <li>
+                                <a ui-sref-if="CL" class="nav-menu-disable" data-ui-sref="app.dashboard.product_group_grid"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Product Group</a>
+                            </li>
+                            <li>
+                                <a ui-sref-if="CM" class="nav-menu-disable" data-ui-sref="app.dashboard.product_class_grid"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Product Class</a>
+                            </li>
+                            <li data-ui-sref-active="active">
+                                <a ui-sref-if="CN" class="nav-menu-disable" data-ui-sref="app.dashboard.actual_product_grid"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Actual Product</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li data-menu-collapse>
+                        <a data-ui-sref="#"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Hierarchy</a>
+                        <ul>
+                            <li data-ui-sref-active="active">
+                                <a ui-sref-if="CO" class="nav-menu-disable" data-ui-sref="app.dashboard.hierarchy_grid" ng-click="manageHI()"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Hierarchy</a>
+                            </li>
+                            <li data-ui-sref-active="active">
+                                <a ui-sref-if="CP" class="nav-menu-disable" data-ui-sref="app.dashboard.update_hierarchy" ng-click="manageUHI()"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Update Hierarchy </a>
+
+                            </li>
+                            <li data-ui-sref-active="active">
+                                <a ui-sref-if="CQ" class="nav-menu-disable" data-ui-sref="app.dashboard.update_employee_to_hierarchy"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Update Employee To Hierarchy </a>
+
+                            </li>
+                            <li data-ui-sref-active="active">
+                                <a ui-sref-if="CW" class="nav-menu-disable" data-ui-sref="app.dashboard.manage_fr_hierarchy"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Manage FR Hierarchy </a>
+
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a ui-sref-if="CR" class="nav-menu-disable"><i class=" fa fa-lg fa-fw fa-cube txt-color-blue"></i> Return Refill Remarks<span style="color:red;">*</span></a>
+                    </li>
+                    <li data-ui-sref-active="active">
+                        <a ui-sref-if="CS" class="nav-menu-disable"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span> Block Smart Card<span style="color:red;">*</span></span></a>
+                    </li>
+                    <li ng-if="false">
+                        <a ui-sref-if="CT" class="nav-menu-disable"><i class=" fa fa-lg fa-fw fa-cube txt-color-blue"></i> Remarks<span style="color:red;">*</span></a>
+                    </li>
+                    <li data-ui-sref-active="active">
+                        <a ui-sref-if="CU" class="nav-menu-disable"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span> Refill Prices<span style="color:red;">*</span></span></a>
+                    </li>
+                    <li data-ui-sref-active="active">
+                        <a ui-sref-if="CV" data-ui-sref="app.dashboard.price_allocation" class="nav-menu-disable"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Price Allocation</a>
+                    </li>
+                    <li data-ui-sref-active="active">
+                        <a ui-sref-if="CX" data-ui-sref="app.dashboard.upload_cylinder_data" class="nav-menu-disable"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Upload Cylinder Data</a>
+                    </li>
+                    <li data-ui-sref-active="active">
+                        <a ui-sref-if="CY" data-ui-sref="app.dashboard.cylinder_master" class="nav-menu-disable"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Cylinder Master</a>
+                    </li>
+                </ul>  
+            </li>
+
+            <li data-menu-collapse>
+                <a data-ui-sref="#"><i class="fa fa-lg fa-fw fa-bar-chart"></i> <span class="menu-item-parent">Reports</span></a>
+                <ul>
+                    <li ng-if="false">
+                        <a ui-sref-if="DA" class="nav-menu-disable" data-ui-sref="app.dashboard.license_validity_report" ng-click="ManageReport()"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> License Validity Report</a>
+                    </li>
+                    <li ng-hide="{{syncerrormenu}}" ng-if="false">
+                        <a ui-sref-if="DB" class="nav-menu-disable" data-ui-sref="app.dashboard.syncerrorlog_report" ng-click="ManageReport()"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Sync Error Log Report</a>
+                    </li>
+                    <li ng-show="{{syncerrormenu}}" ng-if="false">
+                        <a class="nav-menu-disable"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Sync Error Log Report</a>
+                    </li>
+                    <li>
+                        <a ui-sref-if="DC" class="nav-menu-disable" data-ui-sref="app.dashboard.view_hierarchy"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> View Hierarchy</a>
+                    </li>
+                    <li data-menu-collapse ng-if="false">
+                        <a data-ui-sref="#"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Review Reports</a>
+                        <ul>
+                            <li>
+                                <a ui-sref-if="DDA" class="nav-menu-disable" data-ui-sref="app.dashboard.distributor_wise_feedback_report"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Distributor Wise Review Report</a>
+                            </li>
+                            <li>
+                                <a ui-sref-if="DDB" class="nav-menu-disable" data-ui-sref="app.dashboard.consumer_feedback_report" ng-click="ManageCons()"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Consumer Number Wise Review Report</a>
+                            </li>
+                            <li>
+                                <a ui-sref-if="DDC" class="nav-menu-disable" data-ui-sref="app.dashboard.consumer_area_feedback_report" ng-click="ManageArea()"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Consumer Review Report</a>
+                            </li>
+                            <li>
+                                <a ui-sref-if="DDD" class="nav-menu-disable" data-ui-sref="app.dashboard.consumer_feedback_areawise_summary" ng-click="ManageASummary()"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Area Wise Consumer Review Summary</a>
+                            </li>
+                            <li data-ui-sref-active="active">
+                                <a ui-sref-if="DDE" class="nav-menu-disable" data-ui-sref="app.dashboard.consumer_feedback_delivery_boywise_summary" ng-click="ManageDSummary()"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Delivery Boy Wise Consumer Review Summary</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li data-menu-collapse ng-if="false">
+                        <a data-ui-sref="#"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Order Reports</a>
+                        <ul>
+                            <li>
+                                <a ui-sref-if="DEA" class="nav-menu-disable" data-ui-sref="app.dashboard.order_detail_report"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Order Detail Report</a>
+                            </li>
+                            <li>
+                                <a ui-sref-if="DEB" class="nav-menu-disable" data-ui-sref="app.dashboard.payment_detail_report"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Payment Detail Report</a>
+                            </li>
+                            <li>
+                                <a ui-sref-if="DEC" class="nav-menu-disable" data-ui-sref="app.dashboard.outward_detail_report"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Outward Detail Report</a>
+                            </li>
+                            <li>
+                                <a ui-sref-if="DED" class="nav-menu-disable" data-ui-sref="app.dashboard.Get_OPFDetails"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> OPF Details Report</a>   
+                            </li>
+                            <li>
+                                <a ui-sref-if="DEE" class="nav-menu-disable" data-ui-sref="app.dashboard.dispatch_detail_report"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Dispatch Details Report</a>
+                            </li>
+                            <li>
+                                <a ui-sref-if="DEF" class="nav-menu-disable" data-ui-sref="app.dashboard.inward_product_report"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Inward Product Report</a>
+                            </li>
+                            <li>
+                                <a ui-sref-if="DEG" class="nav-menu-disable" data-ui-sref="app.dashboard.rejected_orders"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Rejected Orders Report</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li data-ui-sref-active="active" ng-if="false">
+                        <a ui-sref-if="DF" class="nav-menu-disable" data-ui-sref="app.dashboard.user_authentication"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Distributor Authentication Code Details</a>
+                    </li>                  
+                    <li data-menu-collapse>
+                        <a ui-sref-if="DG"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Monthly Reports</a>
+                        <ul>
+                            <li>
+                                <a ui-sref-if="DGA" class="nav-menu-disable" data-ui-sref="app.dashboard.refill_del_count_report"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Refill Delivery Count</a>
+                            </li>
+                            <li ng-if="false">
+                                <a ui-sref-if="DGB" class="nav-menu-disable" data-ui-sref="app.dashboard.digital_pay_count_report"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Digital Payment Count</a>
+                            </li>
+                            <li>
+                                <a ui-sref-if="DGC" class="nav-menu-disable" data-ui-sref="app.dashboard.booking_count_report"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Booking Count</a>
+                            </li>
+                            <li ng-if="false">
+                                <a ui-sref-if="DGD" class="nav-menu-disable" data-ui-sref="app.dashboard.ezygas_card_activation_count"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> AEGIS Card Activation Count</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a ui-sref-if="DH" class="nav-menu-disable" data-ui-sref="app.dashboard.weight_report"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Refill Weight Report</a>
+                    </li>
+                    <li ng-if="false">
+                        <a ui-sref-if="DI" class="nav-menu-disable" data-ui-sref="app.dashboard.opening_pay_count"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Open Pay Count Report</a>
+                    </li>
+                    <li ng-if="false">
+                        <a ui-sref-if="DJ" class="nav-menu-disable" data-ui-sref="app.dashboard.transeferredcons"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Transeferred Consumers</a>
+                    </li>
+                    <li ng-if="false">
+                        <a ui-sref-if="DK" class="nav-menu-disable" data-ui-sref="app.dashboard.misreport"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> MIS Report</a>
+                    </li>
+                    <li ng-if="false">
+                        <a ui-sref-if="DL" class="nav-menu-disable" data-ui-sref="app.dashboard.digital_payment_details"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Digital Payment Report</a>
+                    </li>
+                    <li>
+                        <a ui-sref-if="DM" class="nav-menu-disable" data-ui-sref="app.dashboard.consumerbase_location"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Consumer Base Location Report</a>
+                    </li>
+                    <li ng-if="false">
+                        <a ui-sref-if="DN" class="nav-menu-disable" data-ui-sref="app.dashboard.mosambee_delboy_report"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Mosambee Delivery Boy Report</a>
+                    </li>
+                    <li>
+                        <a ui-sref-if="DO" class="nav-menu-disable" data-ui-sref="app.dashboard.pending_cashmemo_report"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Pending Cash Memo Report</a>
+                    </li>
+                    <li>
+                        <a ui-sref-if="DP" class="nav-menu-disable" data-ui-sref="app.dashboard.outward_summary_report"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Outward </a>
+                    </li>
+                    <li>
+                        <a ui-sref-if="DQ" class="nav-menu-disable" data-ui-sref="app.dashboard.inward_summary_report"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Inward </a>
+                    </li>
+
+                    <li>
+                        <a data-ui-sref="app.dashboard.vehicle-fitness"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Vehicle Fitness </a>
+                    </li>
+
+
+                    <li>
+                        <a ui-sref-if="DR" class="nav-menu-disable" data-ui-sref="app.dashboard.distributor_credit_debit_details"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Distributor Credit Debit Details </a>
+                    </li>
+                    <li>
+                        <a ui-sref-if="DS" class="nav-menu-disable" data-ui-sref="app.dashboard.new_connection_request_summary"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> New Connection Request Summary </a>
+                    </li>
+                    <li>
+                        <a ui-sref-if="DT" class="nav-menu-disable" data-ui-sref="app.dashboard.new_connection_request_detail"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> New Connection Request Details</a>
+                    </li>
+                </ul> 
+            </li>
+            <li data-menu-collapse >
+                <a data-ui-sref="#"><i class="fa fa-lg fa-fw fa-bar-chart"></i> <span class="menu-item-parent">Analytical</span></a>
+                <ul>
+                    <li ng-if="false">
+                        <a ui-sref-if="EA" class="nav-menu-disable" data-ui-sref="app.dashboard.distributor_payment_gateway_report"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Payment Gateway Report</a>
+                    </li>
+                    <!--<li ng-show="safteymenu">
+                        <a ui-sref-if="HB" class="nav-menu-disable"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Daily Transaction Report</a>
+                    </li>-->
+                 
+                    <li ng-if="false">
+                        <a ui-sref-if="EB" class="nav-menu-disable" data-ui-sref="app.dashboard.delivery_man_wise_report"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Delivery Man wise Report</a>
+                    </li>
+                    <li ng-if="false">
+                        <a ui-sref-if="EC" class="nav-menu-disable" data-ui-sref="app.dashboard.dist_pdevice_count_report"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Distributor wise Payment Device Count Report</a>
+                    </li>                    
+                    <li ng-if="false">
+                        <a ui-sref-if="ED" class="nav-menu-disable" data-ui-sref="app.dashboard.transsummary_wise_report"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Delivery Man wise Transaction Summary Report</a>
+                    </li>
+
+                    <li>
+                        <a ui-sref-if="EE" class="nav-menu-disable" data-ui-sref="app.dashboard.dash_deliverydetails" ng-click="analyticalrptclick()"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> AEGIS Refill Transaction Status</a>
+                    </li>
+
+                    <li>
+                        <a ui-sref-if="EF" class="nav-menu-disable" data-ui-sref="app.dashboard.dash_digitalpaymentdet" ng-click="analyticalrptclick()"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Digital Payment Analysis</a>
+                    </li>
+                    <li>
+                        <a ui-sref-if="EG" class="nav-menu-disable" data-ui-sref="app.dashboard.totaldigitalpayments" ng-click="analyticalrptclick()"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Contribution in Digital Payments</a>
+                    </li>
+                    <li>
+                        <a ui-sref-if="EH" class="nav-menu-disable" data-ui-sref="app.dashboard.smartcardsalepotential" ng-click="analyticalrptclick()"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> AEGIS Card Sales Potential </a>
+                    </li>
+                    <li>
+                        <a ui-sref-if="EI" class="nav-menu-disable" data-ui-sref="app.dashboard.ezygasusage" ng-click="analyticalrptclick()"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> AEGIS Potential </a>
+                    </li>
+                    <li>
+                        <a ui-sref-if="EJ" class="nav-menu-disable" data-ui-sref="app.dashboard.onboardingpotential" ng-click="analyticalrptclick()"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Digital Payments On-boarding Potential </a>
+                    </li>
+                    <li>
+                        <a ui-sref-if="EK" class="nav-menu-disable" data-ui-sref="app.dashboard.ezydelversiondetails" ng-click="analyticalrptclick()"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i>Delivery Verison Details</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li data-menu-collapse>
+                <a data-ui-sref="#"><i class="fa fa-lg fa-fw fa-cog"></i> <span class="menu-item-parent">Settings</span></a>
+                <ul>
+                    <li data-ui-sref-active="active" ng-show="{{synmenu}}" ng-if="false">
+                        <a class="nav-menu-disable" ng-click="manageSync()"><i class=" fa fa-lg fa-fw fa-cube txt-color-blue"></i> Synchronise</a>
+                    </li>
+                    <li data-ui-sref-active="active">
+                        <a ui-sref-if="FB" class="nav-menu-disable" data-ui-sref="app.dashboard.news_management" ng-click="managenews()"><i class=" fa fa-lg fa-fw fa-cube txt-color-blue"></i> News Management</a>
+                    </li>
+
+                    <li data-ui-sref-active="active">
+                        <a ui-sref-if="FC" class="nav-menu-disable" data-ui-sref="app.dashboard.image_management_grid" ng-click="manageimage()"><i class=" fa fa-lg fa-fw fa-cube txt-color-blue"></i> Image Management</a>
+                    </li>
+                    <li data-ui-sref-active="active" ng-hide="userauthmenu">
+                        <a ui-sref-if="FD" class="nav-menu-disable" data-ui-sref="app.dashboard.user_account_pushpam_grid" ng-click="manageup()"><i class=" fa fa-lg fa-fw fa-cube txt-color-blue"></i> User Accounts AEGIS-Tech</a>
+                    </li>
+
+                    <li data-ui-sref-active="active" ng-hide="{{useraccgridhpcl}}">
+                        <a ui-sref-if="FE" class="nav-menu-disable" data-ui-sref="app.dashboard.user_account_hpcl_grid" ng-click="manageui()"><i class=" fa fa-lg fa-fw fa-cube txt-color-blue"></i> User Accounts AEGIS</a>
+                    </li>
+                    <li data-ui-sref-active="active">
+                        <a ui-sref-if="FF" class="nav-menu-disable" data-ui-sref="app.dashboard.mainmenu_grid" ng-click="manageMM()"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Main Menu</a>
+                    </li>
+                    <li data-ui-sref-active="active">
+                        <a ui-sref-if="FG" class="nav-menu-disable" data-ui-sref="app.dashboard.forms_grid" ng-click="manageSM()"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Sub Menu</a>
+                    </li>
+
+                    <li data-ui-sref-active="active">
+                        <a ui-sref-if="FH" class="nav-menu-disable" data-ui-sref="app.dashboard.rolestatus_grid" ng-click="manageRS()"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Role Setup</a>
+                    </li>
+                    <li data-ui-sref-active="active" >
+                        <a ui-sref-if="FI" class="nav-menu-disable" data-ui-sref="app.dashboard.userauth_grid" ng-click="manageUA()"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> User Authentication</a>
+                    </li>         
+                    <li data-ui-sref-active="active">
+                        <a ui-sref-if="FJ" class="nav-menu-disable" data-ui-sref="app.dashboard.appversion_grid" ng-click="ManageVersion()"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Application Versions </a>
+                    </li>
+                    <li data-ui-sref-active="active">
+                        <a ui-sref-if="FK" class="nav-menu-disable" data-ui-sref="app.dashboard.pdc_weight_setting"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> PDC & Weight Settings</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <span class="minifyme" data-action="minifyMenu" minify-menu>
+        <i class="fa fa-arrow-circle-left hit"></i>
+    </span>
+
+</aside>

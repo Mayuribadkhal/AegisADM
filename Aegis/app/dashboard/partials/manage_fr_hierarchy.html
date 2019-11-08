@@ -1,0 +1,153 @@
+﻿<!-- MAIN CONTENT -->
+<div id="content">
+    <!-- widget grid -->
+    <section id="widget-grid" widget-grid>
+        <!-- end row -->
+        <!-- row -->
+        <div class="row">
+            <article class="col-sm-12">
+                <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue">
+                    <header>
+                        <div class="basic_top_mar text-center">
+                            <span class="widget-icon"> <i class="fa fa-database"></i> </span>
+                            <h2>Manage FR Hierarchy</h2>
+                        </div>
+                    </header>
+                    <!-- widget div-->
+                    <div>
+                        <div class="widget-body">
+                            <!-- content goes here -->
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <form name="frmUpdateHierachy">
+                                        <div class="row ">
+                                            <div class="col-sm-2">
+                                                <div class="form-group">
+                                                    <label for="sel1">Distributor Code</label>
+                                                    <input type="text" class="form-control" ng-model="DistCode" placeholder="Enter distributor code" maxlength="10" numericonly />
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="form-group">
+                                                    <label for="sel1">Field Representative</label>
+                                                    <select class="form-control" name="FR" ng-model="CUserCode" ng-options="f.CUserCode as f.FullName for f in FRdata" title="Select FR" >
+                                                        <option value="" selected > -- All -- </option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4" ng-show="divshow">
+                                                <button class="btn btn-block btn-primary report_btn get_details btn-top" type="submit" value="Submit" ng-click="getAgencyFRDetails()">
+                                                    <i class="glyphicon glyphicon-search"></i> &nbsp;Get Details
+                                                </button>
+                                            </div>
+                                            <div class="col-sm-4" ng-show="!divshow">
+                                                <button type="button" name="" class="btn btn-block btn-primary report_btn get_details  btn-top">
+                                                    <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i> Loading
+                                                </button>
+                                            </div>
+                                            <div class="col-sm-1 pull-right">
+                                                <div class="form-group">
+                                                    <label>&nbsp;</label>
+                                                    <button class="btn btn-block btn-primary report_btn get_details pull-right" data-toggle="modal" data-target="#frModal"><i class="fa fa-plus"></i> Add New</button>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <hr class="hr-notop" />
+                                    <article>
+                                        <!-- end widget -->
+                                    </article>
+                                </div>
+                                <div class="col-sm-12">
+                                    <hr class="hr-notop" />
+                                    <article>
+                                        <!-- Widget ID (each widget will need unique ID)-->
+                                        <div class="jarviswidget jarviswidget-color-blueDark jarviswidget-sortable" id="wid-id-1" data-widget-editbutton="false" role="widget">
+                                            <div role="content">
+                                                <!-- widget edit box -->
+                                                <div class="jarviswidget-editbox">
+                                                <!-- This area used as dropdown edit box -->
+                                                </div>
+                                                <!-- end widget edit box -->
+                                                <!-- widget content -->
+                                                <div class="widget-body no-padding">
+                                                    <div id="datatable_fixed_column_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                                                        <div ui-grid="gridOptions1" ui-grid-pagination ui-grid-exporter ui-grid-selection class="grid">
+                                                        </div>
+                                                    </div>
+                                                    <!-- end widget content -->
+                                                </div>
+                                                <!-- end widget div -->
+                                            </div>
+                                        </div>
+                                        <!-- end widget -->
+                                    </article>
+                                </div>
+                            </div>
+                            <hr class="hr_basic" />
+                            <!-- end s1 tab pane -->
+                            <!-- end content -->
+                        </div>
+
+                    </div>
+                    <!-- end widget div -->
+                </div>
+                <!-- end widget -->
+
+            </article>
+
+
+        </div>
+        <!-- end row -->
+    </section>
+    <!-- end widget grid -->
+</div>
+<!-- END MAIN CONTENT -->
+<!-- Modal -->
+<div class="modal fade" id="frModal" role="dialog" data-backdrop="static">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Add Field Representative</h4>
+            </div>
+            <form name="updateFR">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="sel1">Distributor Code</label>
+                                <input type="text" class="form-control" ng-model="FRDistCode" placeholder="Enter distributor code" maxlength="10" numericonly required/>
+                            </div>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="form-group">
+                                <label for="sel1">Field Representative</label>
+                                <select class="form-control" name="FR" ng-model="FRUserCode" ng-options="f.CUserCode as f.FullName for f in FRdata" title="Select FR" required>
+                                    <option value="" selected> -- All -- </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer text-center">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <button id="btnsbt" class=" btn btn-primary ladda-button" data-style="zoom-in" type="submit" ng-click="agencyUpdateFR(updateFR.$valid,'Y')">
+                                <i class="glyphicon glyphicon-send"></i> Submit
+                            </button>
+
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+               
+            </form>
+        </div>
+
+    </div>
+</div>

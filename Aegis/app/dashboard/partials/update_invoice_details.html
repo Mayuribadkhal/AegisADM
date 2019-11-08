@@ -1,0 +1,98 @@
+﻿<!-- MAIN CONTENT -->
+
+<div id="content">
+    <!-- widget grid -->
+    <section id="widget-grid" widget-grid>
+        <!-- end row -->
+        <div class="row" ng-if="DIFlag==null">
+            <article class="col-sm-6 col-sm-offset-3">
+                <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue">
+                    <header>
+                        <div class="basic_top_mar text-center">
+                            <span class="widget-icon"> <i class="fa fa-database"></i> </span>
+                            <h2>Update Invoice Details</h2>
+                        </div>
+                    </header>
+                    <!-- widget div-->
+                    <div>
+                        <div class="widget-body">
+                            <!-- content goes here -->
+                            <!-- content goes here -->
+
+                            <div class="row">
+                                <form name="invoiceDtlsForm">
+                                    <!-- Recomanded -->
+                                    <div class="col-sm-12">
+                                        <div class="row">
+                                            <div class="col-sm-8">
+                                                <div class="form-group">
+                                                    <label for="sel1">Product<span class="errorMessage">*</span></label>
+                                                    <input type="text" class="form-control" placeholder="Enter Product" ng-model="invoice.ItemName" disabled required />
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="form-group">
+                                                    <label for="sel1">Product Quantity<span class="errorMessage">*</span></label>
+                                                    <input type="text" class="form-control" placeholder="Enter Product Quantity" ng-model="invoice.SoundQty" disabled required />
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="form-group">
+                                                    <label for="sel1">Invoice No.<span class="errorMessage">*</span></label>
+                                                    <input type="text" class="form-control" placeholder="Enter DocRefCode" ng-model="invoice.DocRefCode" required />
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="form-group">
+                                                    <label for="sel1">Amount<span class="errorMessage">*</span></label>
+                                                    <input type="text" class="form-control" placeholder="Enter Amount" ng-model="invoice.Amount" ng-change="GetAmount()" required />
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="form-group">
+                                                    <label for="sel1">Amount Per Cylinder<span class="errorMessage">*</span></label>
+                                                    <input type="text" class="form-control" placeholder="Enter Amount per Cylinder" ng-model="invoice.AmountPerCyl" required />
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                      <br>
+                                        <div class="row">
+                                            <div class="col-sm-10" ng-show="divshow">
+                                                <button class="pull-right btn btn-primary" type="submit" ng-click="InvoiceDetailsDetails(invoiceDtlsForm.$valid)">
+                                                    <i class="glyphicon glyphicon-send"></i> &nbsp;&nbsp;Submit
+                                                </button>
+                                            </div>
+                                            <div class="col-sm-1" ng-show="divshow">
+                                                <a class="btn btn-default" data-ui-sref="app.dashboard.outward_summary_report">
+                                                    <i class="glyphicon glyphicon-arrow-left"></i> &nbsp;&nbsp;Back
+                                                </a>
+                                            </div>
+                                            <div class="col-sm-10" ng-show="divhide">
+                                                <button type="button" name="" class="pull-right btn btn-primary">
+                                                    <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i> Loading
+                                                </button>
+                                            </div>
+                                        </div>
+                                        </div>
+                                   
+                                    <!-- Recomanded  end-->
+                                </form>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!-- end widget div -->
+                </div>
+                <!-- end widget -->
+
+            </article>
+
+        </div>
+        <!-- row -->
+        <!-- end row -->
+    </section>
+    <!-- end widget grid -->
+</div>
+<!-- END MAIN CONTENT -->

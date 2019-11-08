@@ -1,0 +1,130 @@
+﻿<!-- MAIN CONTENT -->
+<div id="content" ng-controller="DashboardCtrl">
+
+    <!-- widget grid -->
+    <form name="myRegion">
+        <section id="widget-grid" widget-grid>
+
+
+            <!-- end row -->
+            <!-- row -->
+
+            <div class="row">
+
+                <article class="col-sm-12 col-sm-offset-2 col-sm-8">
+                    <!-- new widget -->
+                    <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue" ng-controller="TodoCtrl">
+                        <header>
+                            <div class="basic_top_mar text-center">
+                                <span class="widget-icon"> <i class="fa fa-database"></i> </span>
+                                <h2>Region Information</h2>
+                            </div>
+                        </header>
+                        <!-- widget div-->
+                        <div>
+
+                            <div class="widget-body">
+                                <!-- content goes here -->
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <div class="form-group">
+                                            <label for="sel1">Region Code<span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" id="regcode" class="form-control" ng-model="Region.RegCode" placeholder="Enter Region Code" maxlength="2" minlength="2" alphaonly="alphaonly" capitalize required />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <div class="form-group">
+                                            <label for="sel1">Region Description<span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" class="form-control" id="rd" ng-model="Region.RegDesc" placeholder="Enter Region Description" alphaonly required />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-10">
+                                        <div class="bottom15">
+                                            <label>Host Email<span class="errorMessage" style="color:red;">*</span></label>
+                                            <!--ng-pristine ng-untouched ng-empty ng-valid-email ng-invalid ng-invalid-required-->
+                                            <input type="email" id="regionmailid" class="form-control" name="emailid" ng-model="Region.HostEmail" required ng-blur="myFunction()" pattern='[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'>
+                                        </div>
+                                    </div>
+                                </div><br>
+                                <div class="row">
+                                    <div class="col-sm-10">
+                                        <div class="bottom15">
+                                            <label>Password<span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="password" name="password" class="form-control" ng-model="Region.password" maxlength="8" minlength="8" required />
+                                        </div>
+                                    </div>
+                                </div><br>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="bottom15">
+                                            <label>Port<span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" name="port" class="form-control" ng-model="Region.Port" numericonly required maxlength="5" minlength="1" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <div class="bottom15">
+                                            <label>SMTP Server<span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" name="smtp" class="form-control" ng-model="Region.SMTPServer" required>
+
+                                        </div>
+                                    </div>
+                                </div><br>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <input type="checkbox" value="" ng-true-value="'Y'" ng-false-value="'N'" ng-model="Region.EnableSSL">&nbsp; Enable SSL ?
+                                        <input type="checkbox" value="" ng-true-value="'Y'" ng-false-value="'N'" ng-model="Region.UseDefaultCredentials">&nbsp; Use Default Credentials ?
+                                        <!--<label><input type="checkbox" id="cb1" ng-model="email.enablessl" ng-value-true="Y" ng-value-false="N" class="ng-pristine ng-untouched ng-valid ng-empty"> Enable SSL ? </label> &nbsp; &nbsp; &nbsp;
+                                        <label> <input type="checkbox" id="cb2" ng-model="email.usedefaultcr" ng-value-true="Y" ng-value-false="N" class="ng-pristine ng-untouched ng-valid ng-empty"> User Default Credentials ? </label>-->
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'" ng-model="Region.IsActive">&nbsp;Is Active?
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="hr_basic" />
+                                <div class="row ">
+                                    <!--<div class="col-sm-12 ">
+                                        <div class="sub-back-btn pull-right">
+                                            <input type="submit" class="btn btn-primary  " value="Submit">&nbsp;&nbsp;
+                                            <a ui-sref="app.dashboard.bank_master_grid"> <input type="submit" class="btn btn-default " value="Back"></a>
+                                        </div>
+                                    </div>-->
+                                    <div class="col-sm-10" ng-show="divshow">
+                                        <button class="pull-right btn btn-primary" type="submit" value="{{submit}}" ng-click="SaveRegionDetails(myRegion.$valid,Region)">
+                                            <i class="glyphicon glyphicon-send"></i> &nbsp;&nbsp;{{submit}}
+                                        </button>
+                                    </div>
+                                    <div class="col-sm-1" ng-show="divshow">
+                                        <a class="btn btn-default" ui-sref="app.dashboard.region_master_grid">
+                                            <i class="glyphicon glyphicon-arrow-left"></i> &nbsp;&nbsp;Back
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-10" ng-show="divhide">
+                                        <button type="button" name="" class="pull-right btn btn-primary">
+                                            <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i> Loading
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- end content -->
+                            </div>
+
+                        </div>
+                        <!-- end widget div -->
+                    </div>
+                    <!-- end widget -->
+                </article>
+            </div>
+            <!-- end row -->
+        </section>
+    </form>
+    <!-- end widget grid -->
+</div>
+<!-- END MAIN CONTENT -->

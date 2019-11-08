@@ -1,0 +1,132 @@
+﻿<!-- MAIN CONTENT -->
+<div id="content">
+    <!-- widget grid -->
+    <section id="widget-grid" widget-grid>
+        <!-- end row -->
+        <!-- row -->
+        <form name="formpayment">
+            <div class="row">
+                <article class="col-sm-12">
+                    <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue">
+                        <header>
+                            <div class="basic_top_mar text-center">
+                                <span class="widget-icon"> <i class="glyphicon glyphicon-user"></i> </span>
+                                <h2> Fitness vehicle</h2>
+                            </div>
+                        </header>
+                        <!-- widget div-->
+
+                        <div>
+                            <div class="widget-body">
+                                <!-- content goes here -->
+
+                                <div class="row small-btn">
+                                    <div class="col-sm-2 small_cls">
+                                        <div class="form-group">
+                                            <label>Distributor Code<span style="color:red">*</span></label>
+                                            <label class="input">
+                                                <input type="text" class="form-control" placeholder="Enter Distributor Code." ng-model="DistCode" required />
+                                            </label>
+                                        </div>
+                                    </div>
+                             
+                                    <div class="col-sm-1" ng-show="divshow">
+                                        <div class="form-group">
+                                            <label>&nbsp;</label>
+                                            <button type="submit" class="btn btn-block btn-primary report_btn get_details" ><i class="fa fa-search"></i> Get Details</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-9" style="margin-top:20px;">
+                                        
+                                           
+                                            <a ui-sref="app.dashboard.vehicle-fit-veiw"><button type="button" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> New Test</button></a>
+
+                                    </div>
+
+                                    <div class="col-sm-1" ng-show="divhide">
+                                        <div class="form-group">
+                                            <label>&nbsp;</label>
+
+                                            <button type="button" name="" class=" btn btn-block btn-primary report_btn get_details ">
+                                                <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i> Loading
+                                            </button>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <hr class="hr-notop" />
+                                <article>
+                                    <div id="page-wrapper">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <!-- /.panel -->
+                                                <div class="panel panel-default">
+                                                    <!-- /.panel-heading -->
+                                                    <div class="panel-body">
+                                                        <!-- widget div-->
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <div class="dash-box">
+                                                                    <div class="row">
+                                                                        <div class="col-sm-12">
+                                                                            <div class="table-responsive">
+                                                                                <table class="table tbl">
+                                                                                    <thead>
+                                                                                        <tr>
+                                                                                            <th class="text-center">View</th>
+                                                                                            <th class="text-center">Distributor Code </th>
+                                                                                            <th class="text-center">Distributor Name</th>
+                                                                                            <th class="text-center">Vehicle No.</th>
+                                                                                            <th class="text-center">Vehicle Type</th>
+                                                                                            <th class="text-center">Last fitness Test</th>
+                                                                                      
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <td class="text-center"><a ui-sref="app.dashboard.vehicle-fit-veiw"><button class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></button></a></td>
+                                                                                            <td class="text-center">10001</td>
+                                                                                           
+                                                                                            <td class="text-center">Pravin</td>
+                                                                                            <td class="text-center">MH09CH3514</td>
+                                                                                            <td class="text-center">Two wheeler</td>
+                                                                                            <td class="text-center">Ok</td>
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- end widget div -->
+
+                                                    </div>
+                                                    <!-- end widget -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <!-- end s1 tab pane -->
+                                <!-- end content -->
+                            </div>
+
+                        </div>
+
+                        <!-- end widget div -->
+                    </div>
+                    <!-- end widget -->
+
+                </article>
+
+            </div>
+        </form>
+        <!-- end row -->
+    </section>
+    <!-- end widget grid -->
+</div>
+<!-- END MAIN CONTENT -->

@@ -1,0 +1,12 @@
+C:\Users\Lenovo1\Desktop\Aegis\Aegis\bin\Aegis.dll.config
+C:\Users\Lenovo1\Desktop\Aegis\Aegis\bin\Aegis.dll
+C:\Users\Lenovo1\Desktop\Aegis\Aegis\bin\Aegis.pdb
+C:\Users\Lenovo1\Desktop\Aegis\Aegis\obj\Debug\Aegis.dll
+C:\Users\Lenovo1\Desktop\Aegis\Aegis\obj\Debug\Aegis.pdb
+C:\Users\Lenovo1\Desktop\Aegis\Aegis\obj\Debug\Aegis.csprojResolveAssemblyReference.cache
+D:\PROJECTS\Aegis\Admin\Aegis\Aegis\bin\Aegis.dll.config
+D:\PROJECTS\Aegis\Admin\Aegis\Aegis\bin\Aegis.dll
+D:\PROJECTS\Aegis\Admin\Aegis\Aegis\bin\Aegis.pdb
+D:\PROJECTS\Aegis\Admin\Aegis\Aegis\obj\Debug\Aegis.csprojResolveAssemblyReference.cache
+D:\PROJECTS\Aegis\Admin\Aegis\Aegis\obj\Debug\Aegis.dll
+D:\PROJECTS\Aegis\Admin\Aegis\Aegis\obj\Debug\Aegis.pdb

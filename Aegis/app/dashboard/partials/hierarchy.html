@@ -1,0 +1,196 @@
+﻿<!-- MAIN CONTENT -->
+<div id="content">
+    <!-- widget grid -->
+    <form name="frmHierarachi">
+        <section id="widget-grid" widget-grid>
+            <!-- end row -->
+            <!-- row -->
+            <div class="row">
+                <article class="col-sm-12">
+                    <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue">
+                        <header>
+                            <div class="basic_top_mar text-center">
+                                <span class="widget-icon"> <i class="fa fa-database"></i> </span>
+                                <h2>Hierarchy</h2>
+                            </div>
+                        </header>
+                        <!-- widget div-->
+                        <div>
+                            <div class="widget-body">
+                                <!-- content goes here -->
+                                <!-- content goes here -->
+
+
+                                <div class="row ">
+                                    <div class="col-sm-2">
+                                        <div class="form-group">
+                                            <label for="sel1">For<span class="errorMessage" style="color:red;">*</span></label>
+                                            <select class="form-control" ng-options="r.rolefor as r.name for r in for" ng-model="rolefor" ng-change="bindRole(rolefor)" required>
+                                                <option value="" selected>Select</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="form-group">
+                                            <label>Hierarchy Name<span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" class="form-control" placeholder="Enter Hierarchy Name" alphaonly="alphaonly" ng-model="HsDesc" required />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="form-group">
+                                            <label for="sel1">Role<span class="errorMessage" style="color:red;">*</span></label>
+                                            <select class="form-control" id="sel1" ng-options="r.RoleCode as r.RoleDesc for r in getRoleValue" ng-model="RoleCode" ng-change="getUser(RoleCode)">
+                                                <option value="" selected>Select</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="form-group">
+                                            <label for="sel1">Zone<span class="errorMessage" style="color:red;">*</span></label>
+                                            <select class="form-control" id="sel1" ng-options="z.ZoneId as z.ZoneDesc for z in Dallzone" ng-model="ZoneId" ng-change="getregion(ZoneId)" required>
+                                                <option value="" selected>Select</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="form-group">
+                                            <label for="sel1">Region<span class="errorMessage" style="color:red;">*</span></label>
+                                            <select class="form-control" id="sel1" ng-options="r.RegionId as r.Region for r in Dallregion" ng-model="RegionId" required>
+                                                <option value="" selected>Select</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-sm-2">
+                                        <div class="form-group">
+                                            <label for="sel1">Applicable Date<span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" id="date" class="form-control" ng-model="date" name="d" class="input-xs" hierarchydatepicker required />
+
+
+                                        </div>
+                                    </div>
+
+                                    <!--<div class="col-sm-2">
+                                        <div class="form-group renew-margin">
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" value="" ng-true-value="'Y'" ng-false-value="'N'" ng-model="IsActive">Is Active?
+                                            </label>
+                                        </div>
+                                    </div>-->
+
+                                </div>
+
+
+
+                                <!--second grid-->
+
+                                <hr class="hr-notop" />
+                                <article>
+
+
+                                    <!-- Widget ID (each widget will need unique ID)-->
+                                    <div class="jarviswidget jarviswidget-color-blueDark jarviswidget-sortable" id="wid-id-1" data-widget-editbutton="false" role="widget">
+
+                                        <div role="content">
+
+                                            <!-- widget edit box -->
+                                            <!-- end widget edit box -->
+                                            <!-- widget content -->
+
+
+
+
+                                            <div class="col-xs-12 col-sm-6 hidden-xs">
+
+                                                <div class="widget-body">
+                                                    <div ui-grid="gridOptions1" ui-grid-pagination ui-grid-exporter ui-grid-selection class="grid hie_grid">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-6 hidden-xs">
+                                                <div class="widget-body">
+                                                    <div ui-grid="gridOptions2" ui-grid-pagination ui-grid-exporter ui-grid-selection class="grid hie_grid">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- end widget content -->
+
+                                        </div>
+                                        <!-- end widget div -->
+                                    </div>
+
+                                </article>
+
+
+
+                                <div class="row">
+                                    <div class="col-sm-11" ng-show="divshow">
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                        <button class="pull-right btn btn-primary" type="submit" ng-click="savePostData(frmHierarachi.$valid)" value="Submit">
+                                            <i class="glyphicon glyphicon-send"></i> &nbsp;Submit
+                                        </button>
+                                    </div>
+                                    <div class="col-sm-11" ng-show="divhide">
+                                        <label>&nbsp;</label>
+                                        <button type="button" name="" class="pull-right btn btn-primary">
+                                            <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i> Loading
+                                        </button>
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <p>&nbsp;</p>
+                                        <a class="btn btn-default" ng-click="clear()" ui-sref="app.dashboard.hierarchy_grid">
+                                            <i class="glyphicon glyphicon-arrow-left"></i> &nbsp;Back
+                                        </a>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            </div>
+                            <!-- end widget -->
+
+                </article>
+                <hr class="hr_basic" />
+
+
+                <!--<div class="row ">
+
+                    <div class="col-sm-11">
+                        <button class="pull-right btn btn-primary" type="submit" ng-click="savePostData(frmHierarachi.$valid)" value="Submit">
+                            <i class="glyphicon glyphicon-send"></i> &nbsp;Submit
+                        </button>
+                    </div>
+                    <div class="col-sm-1">
+                        <a class="btn btn-default" ng-click="clear()" ui-sref="app.dashboard.hierarchy_grid">
+                            <i class="glyphicon glyphicon-arrow-left"></i> &nbsp;Back
+                        </a>
+                    </div>
+                    <div class="col-sm-10" ng-show="divhide">
+                        <button type="button" name="" class="pull-right btn btn-primary">
+                            <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i> Loading
+                        </button>
+                    </div>
+                </div>-->
+                <!-- end s1 tab pane -->
+                <!-- end content -->
+                <!-- end content -->
+            </div>
+
+</div>
+<!-- end widget div -->
+                    </div>
+<!-- end widget -->
+                </article>
+
+            </div>
+<!-- end row -->
+        </section>
+    </form>
+
+<!-- end widget grid -->
+</div>
+<!-- END MAIN CONTENT -->

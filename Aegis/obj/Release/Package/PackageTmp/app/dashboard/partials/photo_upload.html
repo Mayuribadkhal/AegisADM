@@ -1,0 +1,122 @@
+﻿<!-- MAIN CONTENT -->
+<div id="content">
+    <!-- widget grid -->
+    <section id="widget-grid" widget-grid>
+        <!-- end row -->
+        <!-- row -->
+       <form name="myForm">
+        <div class="row">
+            <article class="col-sm-6 col-sm-offset-3">
+                <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue" ng-controller="delivered_ordersctrl">
+                    <header>
+                        <div class="basic_top_mar text-center">
+                            <span class="widget-icon"> <i class="glyphicon glyphicon-user"></i> </span>
+                            <h2> Photo Upload </h2>
+                        </div>
+                    </header>
+                    <!-- widget div-->
+                  
+                        <div>
+                            <div class="widget-body">
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <div class="form-group">
+                                            <label>First Name</label>
+
+                                            <input type="text" class="form-control" ng-model="FirstName" placeholder="Enter First Name" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <div class="form-group">
+                                            <label>Last Name</label>
+
+                                            <input type="text" class="form-control" ng-model="LastName" placeholder="Enter Last Name" disabled />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4 ">
+                                        <label><strong>Current Profile Image</strong></label>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="img-upload ">
+                                        <div class="col-sm-4">
+                                            <div class="photo_upload">
+                                                <img src={{filepreview}} />
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <label><strong>New Profile Image</strong></label>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+
+
+                                    <div class="new_prof_label col-sm-5 col-md-5 col-lg-5">
+                                        <label>( 128*125 / 86kb maximum )</label>
+                                    </div>
+                                    <div class="new_prof_label1 col-sm-5 col-md-5 col-lg-5">
+                                        <!--<input type="file" name="pic" accept="image/*">-->
+                                        <input type="file" name="file" ng-model="ImageName" base-sixty-four-input onload="onLoad" value="{{imagename}}">
+                                    </div>
+                                    
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-10" ng-show="divshow">
+                                        <button class="pull-right btn btn-primary" type="submit" value="Submit" ng-click="UploadPhoto(myForm.$valid,ImageName)">
+                                            <i class="glyphicon glyphicon-send"></i> &nbsp;&nbsp;Submit
+                                        </button>
+                                    </div>
+                                    <div class="col-sm-1" ng-show="divshow">
+                                        <a class="btn btn-default" ui-sref="app.dashboard.dashboard_My_Express_gas">
+                                            <i class="glyphicon glyphicon-arrow-left"></i> &nbsp;&nbsp;Back
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-10 " ng-show="divhide">
+                                        <button type="button" name="" class="pull-right btn btn-primary">
+                                            <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i> Loading
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--<hr class="hr_basic" />
+                            <div class="row">
+
+                                <div class="col-sm-12">
+
+                                    <button class="btn btn-primary pull-right">Upload</button>
+
+
+                                </div>
+                            </div>-->
+                        </div>
+
+
+                    <!--</form>-->
+
+                </div>
+            </article>
+        </div>
+        <!-- end widget div -->
+        </form>
+    </section>
+                </div>
+                <!-- end widget -->
+           
+
+      
+        <!-- end row -->
+    
+    <!-- end widget grid -->
+<!-- END MAIN CONTENT -->

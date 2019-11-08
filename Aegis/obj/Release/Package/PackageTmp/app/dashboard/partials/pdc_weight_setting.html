@@ -1,0 +1,110 @@
+﻿<!-- MAIN CONTENT -->
+<div id="content">
+
+    <!-- widget grid -->
+    <section id="widget-grid" widget-grid>
+
+
+        <!-- end row -->
+        <!-- row -->
+
+        <div class="row">
+
+            <article class="col-sm-12 col-sm-offset-2 col-sm-8">
+                <!-- new widget -->
+                <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue">
+                    <header>
+                        <div class="basic_top_mar text-center">
+                            <span class="widget-icon"> <i class="fa fa-user"></i> </span>
+                            <h2>PDC & Weight Setting </h2>
+                        </div>
+                    </header>
+                    <!-- widget div-->
+                    <div>
+                        <form name="myform">
+                            <div class="widget-body">
+                                <!-- content goes here -->
+
+                             
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>Expected Weight (In KG)<span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" ng-model="PDCsetting.ExpectedWeight" class="form-control" placeholder="Enter Expected Weight" numericfloat required />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>Minimum Weight (In KG)<span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" ng-model="PDCsetting.MiniAccepted"  class="form-control" placeholder="Enter Minimum Weight" numericfloat required />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>Maximum Weight (In KG)<span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" ng-model="PDCsetting.MaxAccepted" class="form-control" placeholder="Enter Maximum Weight" numericfloat required />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>Danger Zone (%)<span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" ng-model="PDCsetting.DanzerZonePer" class="form-control" placeholder="Enter Danger Zone" numericfloat required />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>PDC Question Version<span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" ng-model="PDCsetting.QuestionVersion"  class="form-control" placeholder="Enter Version" alphanumericonly required />
+                                        </div>
+                                    </div>
+                                    <!--<div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" value="" ng-true-value="'Y'" ng-false-value="'N'" ng-model="UserRole.IsActive">Is Active?
+                                            </label>
+                                        </div>
+                                    </div>-->
+                                </div>
+
+                                <hr class="hr_basic" />
+                                <div class="row ">
+                                    <div class="col-sm-12" ng-show="divshow">
+                                        <button class="pull-right btn btn-primary" type="submit" value="submit" ng-click="PostSettingInfo(myform.$valid)">
+                                            <i class="glyphicon glyphicon-send"></i> &nbsp;&nbsp;Submit
+                                        </button>
+                                    </div>
+                                    <!--<div class="col-sm-1" ng-show="divshow">
+                                        <a class="btn btn-default" data-ui-sref="app.dashboard.pdc_question_grid">
+                                            <i class="glyphicon glyphicon-arrow-left"></i> &nbsp;&nbsp;Back
+                                        </a>
+                                    </div>-->
+                                    <div class="col-sm-12" ng-show="divhide">
+                                        <button type="button" name="" class="pull-right btn btn-primary">
+                                            <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i> Loading
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- end content -->
+                            </div>
+                        </form>
+
+                    </div>
+                    <!-- end widget div -->
+                </div>
+                <!-- end widget -->
+
+            </article>
+
+        </div>
+
+        <!-- end row -->
+
+    </section>
+    <!-- end widget grid -->
+
+</div>
+<!-- END MAIN CONTENT -->

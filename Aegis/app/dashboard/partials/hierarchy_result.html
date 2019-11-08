@@ -1,0 +1,84 @@
+﻿<!-- MAIN CONTENT -->
+<div id="content">
+    <!-- widget grid -->
+    <section id="widget-grid" widget-grid>
+        <!-- end row -->
+        <!-- row -->
+        <form name="frmLicenseValidityReport">
+            <div class="row">
+                <article class="col-sm-8 col-sm-offset-2">
+                    <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue">
+                        <header>
+                            <div class="basic_top_mar text-center">
+                                <span class="widget-icon"> <i class="glyphicon glyphicon-user"></i> </span>
+                                <h2>Hierarchy Result</h2>
+                            </div>
+                        </header>
+                        <!-- widget div-->
+                        <div>
+                            <div class="widget-body">
+                                <!-- content goes here -->
+                                <div class="row small-btn">
+                                    <div class="col-sm-2 small_cls pull-right">
+                                        <div class="form-group pull-right">
+                                            <a class="btn btn-default" ui-sref="app.dashboard.assign_and_view_hierarchy">
+                                                <i class="glyphicon glyphicon-arrow-left"></i> &nbsp;&nbsp;Back
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                              
+                                <article>
+                                    <div class="row">
+                                        <div class="col-sm-3 col-sm-offset-3">
+                                            <strong>Total Employee Selected <span class="pull-right">:</span></strong>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            {{Ecount}}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-3 col-sm-offset-3">
+                                            <strong>Total Hierarchy Selected <span class="pull-right">:</span></strong>
+                                        </div>
+                                        <div class="col-sm-6">
+                                           {{Hcount}}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-3 col-sm-offset-3">
+                                            <strong>Added <span class="pull-right">:</span></strong>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            {{countaa}}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-3 col-sm-offset-3">
+                                            <strong>Skipped <span class="pull-right">:</span></strong>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            {{countbb}}
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <!-- end s1 tab pane -->
+                                <!-- end content -->
+                            </div>
+
+                        </div>
+                        <!-- end widget div -->
+                    </div>
+                    <!-- end widget -->
+
+                </article>
+
+            </div>
+        </form>
+        <!-- end row -->
+    </section>
+    <!-- end widget grid -->
+</div>
+<!-- END MAIN CONTENT -->

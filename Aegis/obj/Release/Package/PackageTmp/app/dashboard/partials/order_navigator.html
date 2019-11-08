@@ -1,0 +1,49 @@
+﻿<!-- MAIN CONTENT -->
+<div id="content">
+    <form name="myForm">
+        <section id="widget-grid" widget-grid>
+            <div class="row">
+                <article class="col-sm-6 col-sm-offset-3">
+                    <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue">
+                        <header>
+                            <div class="basic_top_mar text-center">
+                                <span class="widget-icon"> <i class="glyphicon glyphicon-user"></i> </span>
+                                <h2>Connect Distributor</h2>
+                            </div>
+                        </header>
+                        <div>
+                            <div class="widget-body">
+                                <br /><br />
+                                <div class="row">
+                                    <div class="col-sm-4  col-sm-offset-4">
+                                        <div class="form-group">
+                                            <label>Distributor Code<span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" class="form-control" ng-model="DistCode" placeholder="Enter Distributor code" maxlength="{{maxlen}}" numericonly required />
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4 col-sm-offset-4 small_cls "  ng-show="divshow">
+                                        <div class="form-group">
+                                          
+                                            <button type="submit" class="btn btn-block btn-primary report_btn get_details" style="margin: auto;" ng-click="getDistDetails(myForm.$valid)"><i class="fa fa-external-link"></i> Connect</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 col-sm-offset-4 small_cls" style="margin: auto;" ng-hide="divshow" >
+                                        <div class="form-group">
+
+                                            <button type="button" class="btn btn-block btn-primary report_btn get_details">
+                                                <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i> Loading
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </form>
+</div>

@@ -1,0 +1,146 @@
+﻿<!-- MAIN CONTENT -->
+<div id="content" ng-controller="DashboardCtrl">
+    <form name="payfrm">
+        <!-- widget grid -->
+        <section id="widget-grid" widget-grid>
+            <!-- end row -->
+            <!-- row -->
+            <div class="row">
+                <article class="col-sm-12 col-sm-offset-2 col-sm-8">
+                    <!-- new widget -->
+                    <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue" ng-controller="TodoCtrl">
+                        <header>
+                            <div class="basic_top_mar text-center">
+                                <span class="widget-icon"> <i class="fa fa-database"></i> </span>
+                                <h2>Godown</h2>
+                            </div>
+                        </header>
+                        <!-- widget div-->
+                        <div>
+                            <div class="widget-body">
+                                <!-- content goes here -->
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label for="sel1">Channel Partner / Dist Code<span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" class="form-control" id="pmode" placeholder="Enter Channel Partner / Dist Code" ng-model="pay.PayMode" maxlength="2" minlength="2" alphaonly="alphaonly" required />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label for="sel1">Godown Name<span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" class="form-control" id="pmode" placeholder="Enter Godown Name" ng-model="pay.PayMode" maxlength="2" minlength="2" alphaonly="alphaonly" required />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label for="sel1">Address Line 1<span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" class="form-control" placeholder="Enter Address Line 1" ng-model="pay.PayDesc" required />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label for="sel1">Address Line 2<span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" class="form-control" placeholder="Enter Address Line 2" ng-model="pay.PayDesc" required />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label for="sel1">Address Line 3<span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" class="form-control" placeholder="Enter Address Line 3" ng-model="pay.PayDesc" required />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label for="sel1">Pin Code<span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" class="form-control" placeholder="Enter Pin Code" ng-model="pay.PayDesc" required />
+                                        </div>
+                                    </div>
+                                </div>
+                              
+
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label for="sel1">Godown Capacity<span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" class="form-control" placeholder="Enter Godown Capacity" ng-model="pay.PayDesc" required />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label for="sel1">Godown License No.<span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" class="form-control" placeholder="Enter Godown License No." ng-model="pay.PayDesc" required />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label for="sel1">License Issue Date<span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" class="form-control" placeholder="License Issue Date" ng-model="pay.PayDesc" required />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label for="sel1">License Expiry Date<span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" class="form-control" placeholder="Enter License Expiry Date" ng-model="pay.PayDesc" required />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4" style="margin-top:23px;">
+                                        <input type="file" class="form-control" placeholder="Enter License Expiry Date" ng-model="pay.PayDesc" required />
+                                    </div>
+                                 
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" value="" ng-true-value="'Y'" ng-false-value="'N'" ng-model="pay.IsActive">Is Active?
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <hr class="hr_basic" />
+                                <div class="row ">
+                                    <div class="col-sm-10" ng-show="divshow">
+                                        <button class="pull-right btn btn-primary" type="submit" value="{{submit}}" ng-click="savePayMentDetails(payfrm.$valid,pay)">
+                                            <i class="glyphicon glyphicon-send"></i> &nbsp;&nbsp;Submit
+                                        </button>
+                                    </div>
+                                    <div class="col-sm-10" ng-show="divhide">
+                                        <button type="button" name="" class="pull-right btn btn-primary">
+                                            <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i> Loading
+                                        </button>
+                                    </div>
+                                    <div class="col-sm-1" ng-show="divshow">
+                                        <a class="btn btn-default" ui-sref="app.dashboard.godown-list">
+                                            <i class="glyphicon glyphicon-arrow-left"></i> &nbsp;&nbsp;Back
+                                        </a>
+                                    </div>
+
+                                </div>
+
+                                <!-- end content -->
+                            </div>
+
+                        </div>
+                        <!-- end widget div -->
+                    </div>
+                    <!-- end widget -->
+
+                </article>
+
+            </div>
+
+            <!-- end row -->
+
+        </section>
+        <!-- end widget grid -->
+    </form>
+</div>
+<!-- END MAIN CONTENT -->

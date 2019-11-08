@@ -1,0 +1,224 @@
+﻿<!-- MAIN CONTENT -->
+<div id="content">
+
+    <!-- widget grid -->
+    <section id="widget-grid" widget-grid>
+
+
+        <!-- end row -->
+        <!-- row -->
+        <form name="myForm">
+            <div class="row">
+
+                <article class="col-sm-12">
+                    <!-- new widget -->
+                    <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue">
+                        <header>
+                            <div class="basic_top_mar text-center">
+                                <i class="fa fa-credit-card"></i> &nbsp;<h2>PDC Report</h2>
+                            </div>
+                        </header>
+                        <!-- widget div-->
+                        <div>
+                            <div class="widget-body">
+                                <!-- content goes here -->
+                                <div class="row small-btn">
+                                    <div class="col-sm-2 small_cls">
+                                        <div class="form-group">
+                                            <label>Distributor Code<span class="errorMessage" style="color:red">*</span></label>
+                                            <input type="text" ng-model="PDC.DistCode" numericonly placeholder="Enter Distributor Code" class="form-control" required />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="form-group">
+                                            <label>Consumer Number</label>
+                                            <input type="text" ng-model="PDC.Consno" placeholder="Enter Consumer No." alphanumericonly class="form-control"  />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2 small_cls">
+                                        <div class="form-group">
+                                            <label>From Date<span class="errorMessage" style="color:red">*</span></label>
+                                            <label class="input">
+                                                <i class="icon-append fa fa-calendar"></i>
+                                                <input class="form-control" id="fd" type="text" data-toggle="tooltip" data-placement="top" title="Select From Date" ng-model="PDC.Startdate" placeholder="DD-MMM-YYYY" coupondatepicker required />
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-2 small_cls">
+                                        <div class="form-group">
+                                            <label>To Date<span class="errorMessage" style="color:red">*</span></label>
+                                            <label class="input">
+                                                <i class="icon-append fa fa-calendar"></i>
+                                                <input class="form-control" id="td" type="text" data-toggle="tooltip" data-placement="top" title="Select To Date" ng-model="PDC.EndDate" placeholder="DD-MMM-YYYY" coupondatepicker required />
+                                            </label>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-sm-2 small_cls advanced_field small_field" ng-show="divshow">
+                                        <div class="form-group">
+                                            <label>&nbsp;</label>
+                                            <button type="submit" class="btn btn-block btn-primary report_btn get_details" ng-click="GetPDCReport(PDC,myForm.$valid)"><i class="fa fa-search"></i> Get Details</button>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-2 " ng-show="divhide">
+                                        <div class="form-group">
+                                            <label>&nbsp;</label>
+                                            <button type="button" name="" class=" btn btn-block btn-primary report_btn get_details">
+                                                <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i> Loading
+                                            </button>
+                                        </div>
+                                    </div>
+
+
+
+
+                                </div>
+                                <hr class="hr-notop" />
+                                <article>
+                                    <!-- Widget ID (each widget will need unique ID)-->
+                                    <div class="jarviswidget jarviswidget-color-blueDark jarviswidget-sortable" id="wid-id-1" data-widget-editbutton="false" role="widget">
+                                        <!-- widget options:
+                                        usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+                                        data-widget-colorbutton="false"
+                                        data-widget-editbutton="false"
+                                        data-widget-togglebutton="false"
+                                        data-widget-deletebutton="false"
+                                        data-widget-fullscreenbutton="false"
+                                        data-widget-custombutton="false"
+                                        data-widget-collapsed="true"
+                                        data-widget-sortable="false"
+
+                                        -->
+                                        <!-- widget div-->
+                                        <div role="content">
+
+                                            <!-- widget edit box -->
+                                            <div class="jarviswidget-editbox">
+                                                <!-- This area used as dropdown edit box -->
+
+                                            </div>
+                                            <!-- end widget edit box -->
+                                            <!-- widget content -->
+                                            <div class="widget-body no-padding" style="border-top: 1px solid #ddd;">
+
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="table-responsive">
+                                                            <div ui-grid="gridOptions1" ui-grid-pagination ui-grid-selection ui-grid-exporter class="grid">
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <!-- end widget content -->
+
+                                        </div>
+                                        <!-- end widget div -->
+
+                                    </div>
+                                    <!-- end widget -->
+
+                                </article>
+
+                                <!-- end content -->
+                            </div>
+
+                        </div>
+                        <!-- end widget div -->
+                </article>
+            </div>
+            <!-- end widget -->
+
+
+        </form>
+        <!-- end row -->
+
+    </section>
+    <!-- end widget grid -->
+
+</div>
+<!-- END MAIN CONTENT -->
+
+
+
+<div class="modal fade" id="pdc_modal" role="dialog">
+    <div class="modal-dialog modal_width" style="top:112px;width:90%;">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header" style="background: #306d9e; color:#fff;">
+                <button type="button" class="close" data-dismiss="modal" style="color:#fff;">&times;</button>
+                <h4 class="modal-title">PDC Details</h4>
+            </div>
+            <div class="modal-body">
+                <div class="panel-body">
+                    <!--<div class="row">
+                        <div class="col-sm-12">
+                            <div class="table-responsive">
+                                <div ui-grid="gridOptions5" ui-grid-pagination ui-grid-selection ui-grid-exporter class="grid-view">
+                                </div>
+                            </div>
+                        </div>
+                    </div>-->
+                    <strong style="padding-right:20px;">Consumer No. : {{RCons}}</strong>
+                    <strong style="padding-right:20px;">Cash Memo No. : {{RCashM}}</strong>
+                    <strong>Danger Zone : <span ng-if="RDangZ=='No'" style="color:green;">{{RDangZ}}</span><span ng-if="RDangZ=='Yes'" style="color:RED;">{{RDangZ}}</span></strong>
+
+
+                    <div class="row table-responsive" style="height:300px; width:100%;overflow-y:auto;">
+
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <!--<th>Consumer No.</th>
+                                    <th>Created Date</th>
+                                    <th>Area Code</th>
+                                    <th>Area Name</th>
+                                    <th>Delivery Boy Code</th>-->
+                                    <th>Question</th>
+                                    <th style="text-align:center">Percentage</th>
+                                    <!--<th>Cash Memo No.</th>-->
+                                    <th style="text-align:center">Actual Answer</th>
+                                    <th style="text-align:center">Correct Answer</th>
+                                    <!--<th>Rating</th>
+                                    <th>Obtain Points</th>-->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="x in data">
+                                    <!--<td>{{x.ConsNo}}</td>
+                                    <td>{{x.CreatedDate}}</td>
+                                    <td>{{x.AreaCode}}</td>
+                                    <td>{{x.AreaName}}</td>
+                                    <td>{{x.DBCode}}</td>-->
+                                    <td>{{x.Qdesc}}</td>
+                                    <td style="text-align:right">{{x.percentage}}</td>
+                                    <!--<td>{{x.cashmemono}}</td>-->
+                                    <td style="text-align:center">{{x.ActualAns}}</td>
+                                    <td style="text-align:center">{{x.CorrectAnswer}}</td>
+                                    <!--<td>{{x.Rating}}</td>
+                                    <td>{{x.ObtainPoints}}</td>-->
+
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>

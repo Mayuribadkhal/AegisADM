@@ -1,0 +1,144 @@
+﻿<!-- MAIN CONTENT -->
+<div id="content">
+
+    <!-- widget grid -->
+    <form name="myForm">
+        <section id="widget-grid" widget-grid>
+
+
+            <!-- end row -->
+            <!-- row -->
+
+            <div class="row">
+
+                <article class="col-sm-12">
+                    <!-- new widget -->
+                    <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue">
+                        <header>
+                            <div class="basic_top_mar text-center">
+                                <i class="fa fa-credit-card"></i> &nbsp;<h2>Delivery Man Wise Report</h2>
+                            </div>
+                        </header>
+                        <!-- widget div-->
+                        <div>
+                            <div class="widget-body">
+                                <!-- content goes here -->
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <div class="form-group">
+                                            <label>Month<span style="color:red">*</span></label>
+                                            <select class="form-control" id="sel1" ng-options="mon.Monthcode as mon.Monthname for mon in GetMonth" ng-model="verify.Monthname" required>
+                                                <option value="" selected>--Select --</option>
+                                            </select>
+                                           
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="form-group">
+                                            <label>Year<span style="color:red">*</span></label>     
+                                            <select class="form-control" id="sel12" ng-options="year.label as year.label for year in years" ng-model="label" required>
+                                                <option value="" selected>--Select --</option>
+                                            </select>                      
+                                          
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="form-group">
+                                            <label>Distributor Code</label>
+                                            <input type="text"  numericonly="numericonly" class="form-control" placeholder="Enter Distributor Code" ng-model="verify.DistCode" numericonly maxlength="{{maxlen}}" minlength="6">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-2 small_cls advanced_field small_field" ng-show="divshow">
+
+
+                                        <div class="form-group">
+                                            <label>&nbsp;</label>
+                                            <button type="submit" ng-click="GetSearch(myForm.$valid,verify,label)" class="btn btn-block btn-primary report_btn get_details"><i class=" fa fa-search"></i> Get Details</button>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-2 " ng-hide="divshow">
+                                        <div class="form-group">
+                                            <label>&nbsp;</label>
+                                            <button type="button" name="" class=" btn btn-block btn-primary report_btn get_details">
+                                                <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i> Loading
+                                            </button>
+                                        </div>
+                                    </div>
+
+
+
+
+                                </div>
+                                <hr class="hr-notop" />
+                                <article>
+                                    <!-- Widget ID (each widget will need unique ID)-->
+                                    <div class="jarviswidget jarviswidget-color-blueDark jarviswidget-sortable" id="wid-id-1" data-widget-editbutton="false" role="widget">
+                                        <!-- widget options:
+                                        usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+                                        data-widget-colorbutton="false"
+                                        data-widget-editbutton="false"
+                                        data-widget-togglebutton="false"
+                                        data-widget-deletebutton="false"
+                                        data-widget-fullscreenbutton="false"
+                                        data-widget-custombutton="false"
+                                        data-widget-collapsed="true"
+                                        data-widget-sortable="false"
+
+                                        -->
+                                        <!-- widget div-->
+                                        <div role="content">
+
+                                            <!-- widget edit box -->
+                                            <div class="jarviswidget-editbox">
+                                                <!-- This area used as dropdown edit box -->
+
+                                            </div>
+                                            <!-- end widget edit box -->
+                                            <!-- widget content -->
+                                            <div class="widget-body no-padding" style="border-top: 1px solid #ddd;">
+
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="table-responsive">
+                                                            <div ui-grid="gridOptions1" ui-grid-pagination ui-grid-selection ui-grid-exporter class="grid">
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <!-- end widget content -->
+
+                                        </div>
+                                        <!-- end widget div -->
+
+                                    </div>
+                                    <!-- end widget -->
+
+                                </article>
+
+                                <!-- end content -->
+                            </div>
+
+                        </div>
+                        <!-- end widget div -->
+                    </div>
+                    <!-- end widget -->
+
+                </article>
+
+            </div>
+
+            <!-- end row -->
+
+        </section>
+    </form>
+    <!-- end widget grid -->
+
+</div>
+<!-- END MAIN CONTENT -->

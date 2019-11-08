@@ -1,0 +1,202 @@
+﻿
+<div id="content">
+    <!-- widget grid -->
+    <div>
+        <form name="DistInfoform">
+            <section id="widget-grid" widget-grid>
+                <div class="row">
+                    <article class="col-sm-12 col-sm-offset-2 col-sm-8">
+                        <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue" ng-controller="TodoCtrl">
+                            <header>
+                                <div class="basic_top_mar text-center">
+                                    <span class="widget-icon"> <i class="fa fa-credit-card"></i> </span>
+                                    <h2>Add Hierarchy To Distributor </h2>
+                                </div>
+                            </header>
+                            <!-- widget div-->
+                            <div>
+                                <div class="widget-body">
+                                    <!-- content goes here -->
+                                    <!--<div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>Distributor Code</label>
+                                            <input type="text" class="form-control" placeholder="Distributor Code" required />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-1">
+                                        <div class="form-group">
+                                            <label>&nbsp;</label>
+                                            <span class="input-group-btn">
+                                                <button type="submit" class="btn btn-block btn-primary report_btn get_details" ng-click=""><i class="fa fa-search"></i>&nbsp;&nbsp;Get Details</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-1" ng-show="Getdivhide">
+                                        <div class="form-group">
+                                            <label>&nbsp;</label>
+                                            <span class="input-group-btn">
+                                                <button type="button" name="" class=" btn btn-block btn-primary ">
+                                                    <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i> Loading
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>Agency Name</label>
+                                            <input type="text" class="form-control" ng-model="Synchronize.ConsumersFrom" placeholder="Agency Name" required />
+                                        </div>
+                                    </div>
+
+                                </div>-->
+
+
+                                    <!--<div class="row">
+
+                                        <div class="col-sm-4">
+                                            <label>Distributor Code</label>
+                                            <div class="form-group">
+                                                <label>{{ConnetDistCode}}</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <label>Distributor Name</label>
+                                            <div class="form-group">
+                                                <label>{{ConnectDistName}}</label>
+                                                </div>
+                                            </div>
+
+                                        <div class="col-sm-4">
+                                            <label>Distributor City</label>
+                                            <div class="form-group">
+                                                <label>{{ConnetDistCity}}</label>
+                                            </div>
+                                    </div>
+                                        </div>-->
+                                    <!--<div class="row">
+
+                                    <div class="col-sm-4">
+
+                                        <label>State</label>
+                                        <div class="form-group">
+                                            <select class="form-control">
+                                                <option>...Select State..</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+
+                                        <label>District</label>
+                                        <div class="form-group">
+                                            <select class="form-control">
+                                                <option>...Select District..</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-sm-4">
+
+                                        <label>Taluka</label>
+                                        <div class="form-group">
+                                            <select class="form-control">
+                                                <option>...Select Taluka..</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+
+                                </div>-->
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <label>GoTech Hierarchy Code<span style="color:red">*</span></label>
+                                            <div class="form-group">
+                                                <select class="form-control" ng-options="p.HsId as p.HsDesc for p in dropData" ng-model="DistInfo.PushHCode" required>
+                                                    <option value="" selected>--Select--</option>
+                                                </select>
+                                                <!--<input type="text" numericonly="numericonly" class="form-control" maxlength="6" ng-model="DistInfo.PushHCode" required />-->
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <label>Company Hierarchy Code<span style="color:red">*</span></label>
+                                            <div class="form-group">
+                                                <select class="form-control" ng-options="p.HsId as p.HsDesc for p in dropDataCo" ng-model="DistInfo.CompHCode" required>
+                                                    <option value="" selected>--Select--</option>
+                                                </select>
+                                                <!--<input type="text" alphanumericonly="alphanumericonly" class="form-control" maxlength="6" ng-model="DistInfo.CompHCode" required />-->
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <label>Distributor Code<span style="color:red">*</span></label>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" required ng-model="DistInfo.DistCode"   />
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">                                           
+                                            <button class="btn btn-primary btn-mar-top" type="submit" ng-click="AddRow(DistInfo,DistInfoform.$valid)">
+                                                <i class="fa fa-plus"></i> &nbsp;&nbsp;Add&nbsp;&nbsp;
+                                            </button>
+                                            <button class="pull-right btn btn-primary btn-mar-top btn-mar-left" type="submit" ng-click="UpdateInfo(DistInfo)">
+                                                <i class="glyphicon glyphicon-send"></i> &nbsp;&nbsp;Submit
+                                            </button>
+                                        </div>
+                                        <!--<div class="col-sm-2">
+                                            <label>&nbsp;</label>
+                                            <button class="pull-right btn btn-primary btn-mar-top btn-mar-left" type="submit" ng-click="UpdateInfo(DistInfo,DistInfoform.$valid)">
+                                                <i class="glyphicon glyphicon-send"></i> &nbsp;&nbsp;Update
+                                            </button>
+                                        </div>-->
+
+                                    </div>
+                                    <hr class="hr_basic">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div ui-grid="gridOptions1" ui-grid-pagination ui-grid-exporter ui-grid-selection class="grid"></div>
+                                        </div>                                        
+                                    </div>
+                                 
+
+                                    <!--<div class="row">
+                                        <div class="col-sm-12">
+                                            <button class="pull-right btn btn-primary" type="submit" ng-click="UpdateInfo(DistInfo,DistInfoform.$valid)">
+                                                <i class="glyphicon glyphicon-send"></i> &nbsp;&nbsp;Update
+                                            </button>
+                                        </div>
+                                      
+                                        <div class="col-sm-1 " ng-show="divhide">
+                                            <button type="button" name="" class="pull-right btn btn-primary">
+                                                <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i> Loading
+                                            </button>
+                                        </div>
+                                    </div>-->
+                                </div>
+
+                                <!-- end content -->
+                            </div>
+
+                        </div>
+                        <!-- end widget div -->
+                    </article>
+                </div>
+
+            </section>
+        </form>
+        <!-- end widget -->
+
+    </div>
+
+</div>
+<!-- END MAIN CONTENT -->

@@ -1,0 +1,200 @@
+﻿<!-- MAIN CONTENT -->
+<div id="content">
+
+    <!-- widget grid -->
+    <form name="myForm">
+        <section id="widget-grid" widget-grid>
+
+
+            <!-- end row -->
+            <!-- row -->
+
+            <div class="row">
+
+                <article class="col-sm-12 col-sm-offset-2 col-sm-8">
+
+                    <!-- new widget -->
+                    <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue">
+                        <header>
+                            <div class="basic_top_mar text-center">
+                                <span class="widget-icon"> <i class="fa fa-database"></i> </span>
+                                <h2>Application Versions</h2>
+                            </div>
+                        </header>
+                        <!-- widget div-->
+                        <div>
+                            <div class="widget-body">
+                                <!-- content goes here -->
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label for="Release sel1">Date</label>
+                                            <label class="input">
+                                                <i class="icon-append fa fa-calendar"></i>
+                                                <input type="text" class="form-control" placeholder="Enter Release Date" ng-model="ver.RDate" datepicker required/>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label for="sel1">Version Number</label>
+                                            <input type="text" class="form-control" placeholder="Enter Version Number" ng-model="ver.VNo" required />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label for="sel1">Application Name</label>
+                                            <select class="form-control" id="sel1" ng-options="a.AppId as a.AppName for a in allapp" ng-model="ver.AppId" required>
+                                                <option value="" selected>--Select--</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="col-sm-4">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label for="sel1">Type</label>
+                                                    <select class="form-control" id="sel1" ng-model="ver.DType" required>
+                                                        <option value="" selected>--Select--</option>
+                                                        <option value="NE">New</option>
+                                                        <option value="FI">Fix</option>
+                                                        <option value="OP">Optimisation</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label for="sel1">Description</label>
+                                                    <textarea class="form-control" rows="3" id="comment" ng-model="ver.Description" required></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label class="checkbox-inline">
+                                                        <input type="checkbox" value="" ng-true-value="'Y'" ng-false-value="'N'" ng-model="ver.Isactive" >Is Active?
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-12 small_cls">
+                                                <div class="form-group">
+
+                                                    <button type="submit" class="btn btn-block btn-primary report_btn get_details pull-right" ng-click="AddRow(myForm.$valid,ver)"><i class="fa fa-plus"></i>  Add New</button>
+
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br>
+                                    </div>
+                                    <div class="col-sm-8">
+
+                                        <article>
+
+
+                                            <!-- Widget ID (each widget will need unique ID)-->
+                                            <div class="jarviswidget jarviswidget-color-blueDark jarviswidget-sortable" id="wid-id-1" data-widget-editbutton="false" role="widget">
+                                                <!-- widget options:
+                                                usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+                                                data-widget-colorbutton="false"
+                                                data-widget-editbutton="false"
+                                                data-widget-togglebutton="false"
+                                                data-widget-deletebutton="false"
+                                                data-widget-fullscreenbutton="false"
+                                                data-widget-custombutton="false"
+                                                data-widget-collapsed="true"
+                                                data-widget-sortable="false"
+
+                                                -->
+                                                <!-- widget div-->
+                                                <div role="content">
+
+                                                    <!-- widget edit box -->
+                                                    <div class="jarviswidget-editbox">
+                                                        <!-- This area used as dropdown edit box -->
+
+                                                    </div>
+                                                    <!-- end widget edit box -->
+                                                    <!-- widget content -->
+                                                    <div class="widget-body no-padding">
+
+                                                        <div id="datatable_fixed_column_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                                                            <div class="dt-toolbar">
+                                                                <div class="col-xs-12 col-sm-6 hidden-xs">
+                                                                    <div id="datatable_fixed_column_filter" class="dataTables_filter">
+                                                                        <label>
+                                                                            <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+                                                                            <input type="search" class="form-control" placeholder="" aria-controls="datatable_fixed_column">
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-6 col-xs-12 hidden-xs"><div class="toolbar"></div></div>
+                                                            </div>
+
+                                                            <div ui-grid="gridOptions1" ui-grid-pagination ui-grid-exporter ui-grid-selection class="grid">
+                                                            </div>
+
+                                                        </div>
+                                                        <!-- end widget content -->
+
+                                                    </div>
+                                                    <!-- end widget div -->
+
+                                                </div>
+                                                <!-- end widget -->
+                                                </div>
+                                        </article>
+                                    </div>
+                                </div>
+
+
+                                <hr class="hr_basic" />
+                                <div class="row ">
+                                    <div class="col-sm-10" ng-show="divshow">
+                                        <button class="pull-right btn btn-primary" type="submit" value="{{submit}}" ng-click="SaveVersion(myForm.$valid,ver)" formnovalidate>
+                                            <i class="glyphicon glyphicon-send"></i> &nbsp;&nbsp;{{submit}}
+                                        </button>
+                                    </div>
+                                    <div class="col-sm-1" ng-show="divshow">
+                                        <a class="btn btn-default" ui-sref="app.dashboard.appversion_grid">
+                                            <i class="glyphicon glyphicon-arrow-left"></i> &nbsp;&nbsp;Back
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-10 " ng-show="divhide">
+                                        <button type="button" name="" class="pull-right btn btn-primary">
+                                            <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i> Loading
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- end content -->
+                            </div>
+
+                        </div>
+                        <!-- end widget div -->
+                    </div>
+                    <!-- end widget -->
+
+                </article>
+
+            </div>
+
+            <!-- end row -->
+
+        </section>
+        <!-- end widget grid -->
+    </form>
+</div>
+<!-- END MAIN CONTENT -->

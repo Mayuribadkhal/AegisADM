@@ -1,0 +1,84 @@
+﻿<!-- MAIN CONTENT -->
+<div id="content">
+    <!-- widget grid -->
+    <section id="widget-grid" widget-grid>
+        <!-- end row -->
+        <!-- row -->
+        <div class="row">
+            <article class="col-sm-12 col-sm-offset-2 col-sm-8">
+                <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue">
+                    <header>
+                        <div class="basic_top_mar text-center">
+                            <span class="widget-icon"> <i class="glyphicon glyphicon-user"></i> </span>
+                            <h2>Daily Transaction Report</h2>
+                        </div>
+                    </header>
+                    <!-- widget div-->
+                    <div>
+                        <div class="widget-body">
+                            <!-- content goes here -->
+                            <div class="row ">
+
+                                <div class="col-sm-4 col-sm-offset-4 col-sm-4">
+                                    <div class="form-group">
+                                        <label>Transaction Date<span style="color:red">*</span></label>
+                                        <label class="input">
+                                            <i class="icon-append fa fa-calendar"></i>
+                                            <input type="text" id="fd" class="form-control" placeholder="dd-mmm-yyyy" ng-model="Date" required datepicker />
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--
+                    <div class="col-sm-1 min_select">
+                        <div class="form-group">
+                            <label>Status</label>
+                            <select class="form-control">
+                                <option>Select</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-2 ">
+                        <div class="form-group">
+                            <label>Inserted By</label>
+                            <select class="form-control">
+                                <option>-- Select -- </option>
+                            </select>
+                        </div>
+                    </div>
+                        -->
+                            <div class="row ">
+                                <div class="col-sm-1  col-sm-offset-5 col-sm-1">
+                                    <div class="form-group">
+                                        <label>&nbsp;</label>
+                                        <button type="submit" class="btn btn-block btn-primary report_btn get_details" ng-click="GetSearch()"><i class="glyphicon glyphicon-download-alt"></i> Download</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+                            <!-- end s1 tab pane -->
+                            <!-- end content -->
+                        </div>
+
+                    </div>
+                    <!-- end widget div -->
+                </div>
+                <!-- end widget -->
+
+            </article>
+
+        </div>
+        <!-- end row -->
+    </section>
+    <!-- end widget grid -->
+</div>
+<!-- END MAIN CONTENT -->
+

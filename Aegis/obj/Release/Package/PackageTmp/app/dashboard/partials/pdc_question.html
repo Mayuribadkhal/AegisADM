@@ -1,0 +1,139 @@
+﻿<!-- MAIN CONTENT -->
+<div id="content">
+
+    <!-- widget grid -->
+    <section id="widget-grid" widget-grid>
+
+
+        <!-- end row -->
+        <!-- row -->
+
+        <div class="row">
+
+            <article class="col-sm-12 col-sm-offset-2 col-sm-8">
+                <!-- new widget -->
+                <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue">
+                    <header>
+                        <div class="basic_top_mar text-center">
+                            <span class="widget-icon"> <i class="fa fa-user"></i> </span>
+                            <h2>PDC Qusetion </h2>
+                        </div>
+                    </header>
+                    <!-- widget div-->
+                    <div>
+                        <form name="PDCQuestionfrm">
+                            <div class="widget-body">
+                                <!-- content goes here -->
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Question Description<span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" id="rolecodeid" class="form-control" placeholder="Enter Question Description" ng-model="PDCQuestion.Qdesc"  required />
+                                        </div>
+                                    </div>
+                                </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label for="sel1">Language<span class="errorMessage" style="color:red;">*</span></label>
+                                                <select ng-options="l.LangCode as l.LangDesc for l in GetLanguage" class="form-control" ng-model="PDCQuestion.LanguageCode" required>
+                                                    <option value="" selected>--Select Language--</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label for="sel1">Is Mandatory<span class="errorMessage" style="color:red;">*</span></label>
+                                                <select ng-options="m.IsMandatory as m.IsMandatoryDesc for m in GetIsMandatory" class="form-control" id="ddl11" ng-model="PDCQuestion.IsMandatory" required>
+                                                    <option value="" selected>--Select --</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label for="sel1">Inspection Type<span class="errorMessage" style="color:red;">*</span></label>
+                                                <select ng-options="i.InspType as i.IsnpDesc for i in GetInspType" class="form-control" id="ddl11" ng-model="PDCQuestion.InspType" required>
+                                                    <option value="" selected>--Select Type--</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label for="sel1">Correct Answer<span class="errorMessage" style="color:red;">*</span></label>
+                                            <select ng-options="a.CorrectAnswer as a.AnsDesc for a in GetCorrectAns" class="form-control" ng-model="PDCQuestion.CorrectAnswer" required>
+                                                <option value="" selected>-- Select --</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label for="sel1">Control Type<span class="errorMessage" style="color:red;">*</span></label>
+                                            <select ng-options="c.AnsCntrlType as c.AnsCntrlTypeDesc for c in GetControlType" class="form-control" ng-model="PDCQuestion.AnsCntrlType" required>
+                                                <option value="" selected>--Select --</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>Control Parameter<span class="errorMessage" style="color:red;"></span></label>
+                                            <input type="text" ng-model="PDCQuestion.cntrlString" class="form-control" placeholder="Control Parameter" required />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>Points<span class="errorMessage" style="color:red;">*</span></label>
+                                            <input type="text" ng-model="PDCQuestion.Rating" required class="form-control" placeholder="Enter Points" required />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group mar-top" >
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" value="" ng-true-value="'Y'" ng-false-value="'N'" ng-model="PDCQuestion.Isactive">Is Active?
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <hr class="hr_basic" />
+                                <div class="row ">
+                                    <div class="col-sm-10" ng-show="divshow">
+                                        <button class="pull-right btn btn-primary" type="submit" ng-click="PostPDCQuestion(PDCQuestionfrm.$valid,PDCQuestion)">
+                                            <i class="glyphicon glyphicon-send"></i> &nbsp;&nbsp;Submit
+                                        </button>
+                                    </div>
+                                    <div class="col-sm-1" ng-show="divshow">
+                                        <a class="btn btn-default" data-ui-sref="app.dashboard.pdc_question_grid">
+                                            <i class="glyphicon glyphicon-arrow-left"></i> &nbsp;&nbsp;Back
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-10" ng-show="divhide">
+                                        <button type="button" name="" class="pull-right btn btn-primary">
+                                            <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i> Loading
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- end content -->
+                            </div>
+                        </form>
+
+                    </div>
+                    <!-- end widget div -->
+                </div>
+                <!-- end widget -->
+
+            </article>
+
+        </div>
+
+        <!-- end row -->
+
+    </section>
+    <!-- end widget grid -->
+
+</div>
+<!-- END MAIN CONTENT -->

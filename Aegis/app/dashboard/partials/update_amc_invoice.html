@@ -1,0 +1,69 @@
+﻿<!-- MAIN CONTENT -->
+<div id="content" ng-controller="DashboardCtrl">
+
+    <!-- widget grid -->
+    <section id="widget-grid" widget-grid>
+        <!-- end row -->
+        <!-- row -->
+        <div class="row">
+            <form name="PaymentForm">
+                <article class="col-xs-12 col-sm-offset-4 col-sm-4">
+
+                    <!-- new widget -->
+
+                    <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue">
+                        <header>
+                            <div class="basic_top_mar text-center">
+                                <span class="widget-icon"> <i class="fa fa-database"></i> </span>
+                                <h2>Update AMC Invoice</h2>
+                            </div>
+                        </header>
+                        <!-- widget div-->
+                        <div>
+                            <div class="widget-body">
+                                <!-- content goes here -->
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <label><strong>Total Pending Invoices</strong><span class="badge badge-primary" style="margin-left: 20px; background-color: #d17813;">100</span></label>
+                                    </div>
+
+
+                                </div><br>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="new_prof_label1 ">
+                                            <input type="file" name="file" ng-model="Payment.Data" base-sixty-four-input onload="onLoad" value="{{imagename}}">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-5">
+                                     <button class="btn btn-primary"><i class="fa fa fa-edit"></i> Update</button>
+                                    </div>
+                                </div><br>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <label><strong>Records Updated</strong><span class="badge badge-primary" style="margin-left: 20px; background-color: #d17813;">100</span></label>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <label><strong>Closing</strong><span class="badge badge-primary" style="margin-left: 20px; background-color: #d17813;">100</span></label>
+                                    </div>
+                                </div><br>
+                            
+                            </div>
+
+                        </div>
+                        <!-- end widget div -->
+                    </div>
+                    <!-- end widget -->
+
+                </article>
+            </form>
+        </div>
+
+        <!-- end row -->
+
+    </section>
+    <!-- end widget grid -->
+
+</div>
+<!-- END MAIN CONTENT -->

@@ -1,0 +1,208 @@
+﻿<!-- MAIN CONTENT -->
+<div id="content" ng-controller="DashboardCtrl">
+    <form name="myForm">
+        <!-- widget grid -->
+        <section id="widget-grid" widget-grid>
+            <!-- end row -->
+            <!-- row -->
+
+            <div class="row">
+                <article class="col-sm-12 col-sm-offset-2 col-sm-8">
+                    <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue" ng-controller="TodoCtrl">
+                        <header>
+                            <div class="basic_top_mar text-center">
+                                <span class="widget-icon"> <i class="fa fa-database"></i> </span>
+                                <h2>Communication Master</h2>
+                            </div>
+                        </header>
+                        <!-- widget div-->
+                        <div>
+
+                            <div class="widget-body">
+                                <!-- content goes here -->
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="sel1">Mail flag<span class="errorMessage" style="color:red;">*</span></label>
+                                            <!--  <input class="form-control" placeholder="Enter Mail Flag" ng-model="mail.MFlag" required style="" />-->
+                                            <select id="mflag" class="form-control" ng-model="mail.MFlag">
+                                                <option value="" selected>--Select--</option>
+                                                <option value="NE">New Order</option>
+                                                <option value="AC">Verified Payment</option>
+                                                <option value="OPF">Order In Process</option>
+                                                <option value="DI">Dispatch</option>
+                                                <option value="CL">Cancel Order</option>
+                                                <option value="CR">Cancel Request</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="sel1">To<span class="errorMessage" style="color:red;">*</span></label>
+                                            <textarea class="form-control ng-pristine ng-invalid ng-invalid-required ng-touched" rows="2" id="message" placeholder="Enter mail address" ng-model="mail.MailIds" required style=""></textarea>
+                                        </div>
+                                    </div>
+                                   
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="sel1">Cc</label>
+                                            <textarea class="form-control ng-pristine ng-invalid ng-invalid-required ng-touched" rows="2" id="message" placeholder="Enter mail address" ng-model="mail.CCMailIds" style=""></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="sel1">Bcc</label>
+                                            <textarea class="form-control ng-pristine ng-invalid ng-invalid-required ng-touched" rows="2" id="message" placeholder="Enter mail address" ng-model="mail.BCCMailIDs"  style=""></textarea>
+                                        </div>
+                                    </div>
+                                 
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label  for="sel1">Subject For Logistic<span class="errorMessage" style="color:red;">*</span></label>
+                                            <textarea id="lsub" class="form-control ng-pristine ng-invalid ng-invalid-required ng-touched" rows="2" placeholder="Enter Subject Logistic" ng-model="mail.MailSubject" required></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label  for="sel1">Subject For Distributor<span class="errorMessage" style="color:red;">*</span></label>
+                                            <textarea id="dsub" class="form-control ng-pristine ng-invalid ng-invalid-required ng-touched" rows="2" placeholder="Enter Subject Distributor" ng-model="mail.MailSubjectD" required style=""></textarea>
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="sel1">Memo For Logistic</label>
+                                            <textarea class="form-control ng-pristine ng-invalid ng-invalid-required ng-touched" rows="2" placeholder="Enter Memo Logistic" ng-model="mail.MailText" style="" disabled></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="sel1">Memo For Distributor</label>
+                                            <textarea class="form-control ng-pristine ng-invalid ng-invalid-required ng-touched" rows="2" placeholder="Enter Memo Distributor" ng-model="mail.MailTextD" style="" disabled></textarea>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label  for="sel1"> Messege Body For Logistic</label>
+                                            <textarea id="mbl" class="form-control ng-pristine ng-invalid ng-invalid-required ng-touched" rows="2" placeholder="Enter Messege Body For Logistic " ng-model="mail.MsgBody" style=""></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label  for="sel1">Messege Body For Distributor<span class="errorMessage" style="color:red;">*</span></label>
+                                            <textarea id="mbd" class="form-control ng-pristine ng-invalid ng-invalid-required ng-touched" rows="2" id="message" placeholder="Enter Messege Body For Distributor" ng-model="mail.MsgBodyD" required style=""></textarea>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label  for="sel1">Display Name<span class="errorMessage" style="color:red;">*</span></label>
+                                            <input id="dispname" class="form-control" placeholder="Enter Mail Flag" ng-model="mail.DisplayName" required style="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="sel1">Mobile No.<span class="errorMessage" style="color:red;">*</span></label>
+                                            <input id="mob" class="form-control" placeholder="Enter Mail Flag" ng-model="mail.MobileNos" required  numericonly maxlength="10" minlength="10"   />
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <!--<div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="sel1">Messege Body<span class="errorMessage" style="color:red;">*</span></label>
+                                            <textarea class="form-control ng-pristine ng-invalid ng-invalid-required ng-touched" rows="2" id="message" placeholder="Enter Mail Text" ng-model="mail.MsgBody" required style=""></textarea>
+                                        </div>
+                                    </div>-->
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="sel1">Regards<span class="errorMessage" style="color:red;">*</span></label>
+                                            <input id="regards" class="form-control" placeholder="Enter Mail Flag" ng-model="mail.Regards" required style="" />
+                                        </div>
+                                    </div>
+                                  
+                                <div class="row">
+                                   
+                                    <div class="col-sm-6">
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="checkbox-inline ">
+                                                    <input type="checkbox" value="" ng-true-value="'Y'" ng-false-value="'N'" ng-model="mail.IsActive">Is Active?
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+
+                                            <div class="form-group">
+                                                <label class="checkbox-inline ">
+                                                    <input type="checkbox" value="" ng-true-value="'Y'" ng-false-value="'N'" ng-model="mail.IsSMS">Is SMS?
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <div class="form-group">
+                                                    <label class="checkbox-inline ">
+                                                        <input type="checkbox" value="" ng-true-value="'Y'" ng-false-value="'N'" ng-model="mail.IsMail">Is Mail?
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        <hr class="hr_basic" />
+                                        <div class="row ">
+                                            <div class="col-sm-10" ng-show="divshow">
+                                                <button class="pull-right btn btn-primary" type="submit" value="{{submit}}" ng-click="SaveMCDetails(myForm.$valid,mail)">
+                                                    <i class="glyphicon glyphicon-send"></i> &nbsp;&nbsp;{{submit}}
+                                                </button>
+                                            </div>
+                                            <div class="col-sm-1" ng-show="divshow">
+                                                <a class="btn btn-default" ui-sref="app.dashboard.mail_master_grid">
+                                                    <i class="glyphicon glyphicon-arrow-left"></i> &nbsp;&nbsp;Back
+                                                </a>
+                                            </div>
+                                            <div class="col-sm-10" ng-show="divhide">
+                                                <button type="button" name="" class="pull-right btn btn-primary">
+                                                    <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i> Loading
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <!-- end content -->
+                                    </div>
+
+
+                      
+                        <!-- end widget div -->
+                    </div>
+                    <!-- end widget -->
+
+                </article>
+
+            </div>
+
+
+            <!-- end row -->
+
+        </section>
+    </form>
+    <!-- end widget grid -->
+
+</div>
+<!-- END MAIN CONTENT -->

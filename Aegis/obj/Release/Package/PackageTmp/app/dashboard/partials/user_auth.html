@@ -1,0 +1,122 @@
+﻿
+
+<!-- MAIN CONTENT -->
+<div id="content" ng-controller="DashboardCtrl">
+    <form name="myForm">
+        <!-- widget grid -->
+        <section id="widget-grid" widget-grid>
+
+            <div class="row">
+                <article class="col-sm-12 col-sm-offset-2 col-sm-8">
+                    <!-- new widget -->
+                    <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue" ng-controller="TodoCtrl">
+                        <header>
+                            <div class="basic_top_mar text-center">
+                                <span class="widget-icon"> <i class="fa fa-database"></i> </span>
+                                <h2>User Authentication</h2>
+                            </div>
+                        </header>
+                        <!-- widget div-->
+                        <div>
+                            <div class="widget-body">
+                                <!-- content goes here -->
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label for="sel1">Role<span class="errorMessage" style="color:red;">*</span></label>
+                                            <select class="form-control" id="ddl1" ng-options="r.RoleCode as r.RoleDesc for r in getallrole" ng-model="auth.RoleCode" ng-change="getRoleStatusIdWise(auth.RoleCode)" required>
+                                                <option value="" selected>--Select Role--</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label for="sel1">Main Menu<span class="errorMessage" style="color:red;">*</span></label>
+                                            <select class="form-control" id="sel2" ng-options="m.MainMenuID as m.MainMenu for m in allmenu" ng-model="auth.MainMenuID" ng-change="getFormsinBulkSelect(auth.RoleCode,auth.MainMenuID)" required>
+                                                <option value="" selected>--Select Menu--</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-1 col-sm-offset-3" ng-show="divshow">
+                                        <label>&nbsp;</label>
+                                        <button class="pull-right btn btn-primary" type="submit" id="btnsub" value="{{submit}}" ng-click="SaveSelectedBulk(myForm.$valid,auth)">
+                                            <i class="glyphicon glyphicon-send"></i> Submit
+                                        </button>
+                                    </div>
+                                    <div class="col-sm-1" ng-show="divshow">
+                                        <label>&nbsp;&nbsp;</label>
+                                        <a class="btn btn-default" ui-sref="app.dashboard.userauth_grid">
+                                            <i class="glyphicon glyphicon-arrow-left"></i> &nbsp;&nbsp;Back
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-1 col-sm-offset-3" ng-show="divhide">
+                                        <br />
+                                        <button type="button" name="" class="pull-right btn btn-primary">
+                                            <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i> Loading
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row" ng-show="divmsg">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label for="sel1">&nbsp;</label>
+                                            <label><span class="glyphicon glyphicon-info-sign"></span><span style="color:red;font-size:small">{{Msg1}}</span></label>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="widget-body">
+
+                                            <div id="datatable_fixed_column_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                                                <div class="dt-toolbar">
+                                                    <div class="col-xs-12 col-sm-6 hidden-xs">
+                                                        <div id="datatable_fixed_column_filter" class="dataTables_filter">
+                                                            <label>
+                                                                <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+                                                                <input type="search" class="form-control" placeholder="" aria-controls="datatable_fixed_column">
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-xs-12 hidden-xs"><div class="toolbar"></div></div>
+                                                </div>
+
+                                                <div ui-grid="gridOptions1" ui-grid-pagination ui-grid-exporter ui-grid-selection class="grid" ng-show="divgrid">
+                                                </div>
+
+                                            </div>
+                                            <!-- end widget content -->
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
+                                <!-- end content -->
+                            </div>
+
+                        </div>
+                        <!-- end widget div -->
+                    </div>
+                    <!-- end widget -->
+
+                </article>
+
+            </div>
+
+            <!-- end row -->
+
+        </section>
+    </form> 
+    <!-- end widget grid -->
+
+</div>
+<!-- END MAIN CONTENT -->

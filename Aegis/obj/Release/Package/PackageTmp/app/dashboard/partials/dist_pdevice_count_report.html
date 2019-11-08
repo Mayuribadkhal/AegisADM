@@ -1,0 +1,114 @@
+﻿<!-- MAIN CONTENT -->
+<div id="content">
+    <!-- widget grid -->
+    <section id="widget-grid" widget-grid>
+        <!-- end row -->
+        <!-- row -->
+        <form name="frmLicenseValidityReport">
+            <div class="row">
+                <article class="col-sm-12">
+                    <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue">
+                        <header>
+                            <div class="basic_top_mar text-center">
+                                <span class="widget-icon"> <i class="glyphicon glyphicon-user"></i> </span>
+                                <h2>Distributor Wise Payment Device Count Report </h2>
+                            </div>
+                        </header>
+                        <!-- widget div-->
+                        <div>
+                            <div class="widget-body">
+                                <!-- content goes here -->
+                                <div class="row small-btn">
+                                    <div class="col-sm-2 small_cls">
+                                        <div class="form-group">
+                                            <label>Distributor Code<span style="color:red">*</span></label>
+                                            <input type="text" id="Dist" class="form-control" ng-model="DistCode" placeholder="Enter Distributor Code" maxlength="{{maxlen}}" ng-click="clear1()" numericonly required>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2 small_cls" ng-show="divshow">
+                                        <div class="form-group">
+                                            <label>&nbsp;</label>
+                                            <button type="submit" class="btn btn-block btn-primary report_btn get_details" ng-click="GetSearch(frmLicenseValidityReport.$valid)"><i class="fa fa-search"></i> Get Details</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2 small_cls" ng-show="divhide">
+                                        <div class="form-group">
+                                            <label>&nbsp;</label>
+                                            <button type="button" class="btn btn-block btn-primary report_btn get_details">
+                                                <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i> Loading
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row small-btn hidden_row well well_search" ng-show="value">
+                                    <div class="col-sm-2 small_cls">
+                                        <div class="form-group">
+                                            &nbsp;
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="hr-notop" />
+                                <article>
+
+
+                                    <!-- Widget ID (each widget will need unique ID)-->
+                                    <div class="jarviswidget jarviswidget-color-blueDark jarviswidget-sortable" id="wid-id-1" data-widget-editbutton="false" role="widget">
+                                  
+                                        <div role="content">
+
+                                            <!-- widget edit box -->
+                                            <div class="jarviswidget-editbox">
+                                                <!-- This area used as dropdown edit box -->
+
+                                            </div>
+                                            <!-- end widget edit box -->
+                                            <!-- widget content -->
+                                            <div class="widget-body no-padding">
+
+                                                <div id="datatable_fixed_column_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                                                    <div class="dt-toolbar">
+                                                        <div class="col-xs-12 col-sm-6 hidden-xs">
+                                                            <div id="datatable_fixed_column_filter" class="dataTables_filter">
+                                                                <label>
+                                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+                                                                    <input type="search" class="form-control" placeholder="" aria-controls="datatable_fixed_column">
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6 col-xs-12 hidden-xs"><div class="toolbar"></div></div>
+                                                    </div>
+
+                                                    <div ui-grid="gridOptions1" ui-grid-pagination ui-grid-exporter ui-grid-selection class="grid">
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                            <!-- end widget content -->
+
+                                        </div>
+                                        <!-- end widget div -->
+
+                                    </div>
+                                    <!-- end widget -->
+
+                                </article>
+
+                                <!-- end s1 tab pane -->
+                                <!-- end content -->
+                            </div>
+
+                        </div>
+                        <!-- end widget div -->
+                    </div>
+                    <!-- end widget -->
+
+                </article>
+
+            </div>
+        </form>
+        <!-- end row -->
+    </section>
+    <!-- end widget grid -->
+</div>
+<!-- END MAIN CONTENT -->

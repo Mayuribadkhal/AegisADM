@@ -1,0 +1,149 @@
+﻿<!-- MAIN CONTENT -->
+<div id="content">
+
+    <form name="myForm">
+        <!-- widget grid -->
+        <section id="widget-grid" widget-grid>
+
+
+            <!-- end row -->
+            <!-- row -->
+
+            <div class="row">
+
+                <article class="col-sm-12 col-sm-offset-2 col-sm-8">
+
+                    <!-- new widget -->
+
+
+
+                    <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue">
+                        <header>
+                            <div class="basic_top_mar text-center">
+                                <span class="widget-icon"> <i class="fa fa-database"></i> </span>
+                                <h2>Update Rejected Order</h2>
+                            </div>
+                        </header>
+                        <!-- widget div-->
+                        <div>
+                            <div class="widget-body">
+                                <!-- content goes here -->
+                                <!--<div class="row">
+                                    <div class="col-sm-12">
+                                        <input type="submit" class="btn btn-default pull-right" value="Back">
+                                        </div>
+
+                                    </div>-->
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-group text-center">
+                                            <label><strong>Distributor Code : </strong></label></br>
+                                            <label>{{DistCode}}</label>
+
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-sm-3">
+                                        <div class="form-group text-center">
+                                            <label><strong>Order No : </strong></label></br>
+
+                                            <label>{{OrderNo}}</label>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-sm-3">
+                                        <div class="form-group text-center">
+                                            <label><strong>OPF No : </strong></label></br>
+
+                                            <label>{{OpfNo}}</label>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group text-center">
+                                            <label><strong>Rejected On : </strong></label></br>
+
+                                            <label>{{RejectDt}}</label>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="form-group text-right">
+                                            <label>&nbsp;</label>
+                                            <label>Product</label>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <div class="form-group">
+
+                                            <input type="text" ng-model="ProdName" numericonly class="form-control" disabled>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+
+                                    <div class="col-sm-4 ">
+                                        <div class="form-group text-right">
+                                            <label>&nbsp;</label>
+                                            <label>Remark<span style="color:red">*</span></label>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <div class="form-group">
+                                            <textarea class="form-control ng-pristine ng-invalid ng-invalid-required ng-touched" rows="2" id="message" placeholder="Enter remark here" ng-model="Remark" style="" required></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row ">
+                                    <!--<div class="col-sm-12 ">
+                                        <div class="sub-back-btn pull-right">
+                                            <input type="submit" class="btn btn-primary  " value="Submit">&nbsp;&nbsp;
+                                            <a ui-sref="app.dashboard.opf_grid "> <input type="submit" class="btn btn-default " value="Back"></a>
+                                        </div>
+                                    </div>-->
+                                    <div class="col-sm-10" ng-show="divshow">
+                                        <button class="pull-right btn btn-primary" type="submit" value="{{submit}}" ng-click="SaveUpdate(myForm.$valid,Remark)">
+                                            <i class="glyphicon glyphicon-send"></i> &nbsp;&nbsp;Update
+                                        </button>
+                                    </div>
+                                    <div class="col-sm-1" ng-show="divshow">
+                                        <a class="btn btn-default" ui-sref="app.dashboard.reject_log">
+                                            <i class="glyphicon glyphicon-arrow-left"></i> &nbsp;&nbsp;Back
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-10 " ng-show="divhide">
+                                        <button type="button" name="" class="pull-right btn btn-primary">
+                                            <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i> Loading
+                                        </button>
+                                    </div>
+                                </div>
+                                <!-- end content -->
+                            </div>
+                        </div>
+                        <!-- end widget div -->
+                    </div>
+                    <!-- end widget -->
+                </article>
+            </div>
+            <!-- end row -->
+
+        </section>
+        <!-- end widget grid -->
+    </form>
+</div>
+<!-- END MAIN CONTENT -->

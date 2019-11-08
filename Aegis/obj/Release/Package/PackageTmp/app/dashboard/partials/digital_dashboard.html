@@ -1,0 +1,209 @@
+﻿<!-- MAIN CONTENT --> <div id="content" style="margin-top:-10px !important;">
+    <ul class="breadcrumb">
+        <li><a ng-click="breadClick('Home')">Home</a></li>
+        <li id="brd" ng-repeat="x in bread1"><a ng-click="breadClick(x.ZoneId,x.RegionId,x.HsId)">{{x.Name}}</a></li>
+        <!--<li>RO</li>-->
+    </ul>
+    <!--<div class="row">
+        <big-breadcrumbs items="['Dashboard', 'My Dashboard']" class="col-xs-12 col-sm-7 col-md-7 col-lg-4"></big-breadcrumbs>
+        <div data-smart-include="app/layout/partials/sub-header.tpl.html"></div>
+    </div>-->
+    <!-- widget grid --> <section id="widget-grid" widget-grid>
+        <!-- row --> <div class="row">
+            <article class="col-sm-12">
+                <div jarvis-widget id="live-feeds-widget" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-fullscreenbutton="false" data-widget-colorbutton="false" data-widget-deletebutton="false">
+                    <!--<div class="ezy-head">
+                        <div class="pull-left">
+                            <span class="widget-icon"> <i class="glyphicon glyphicon-stats txt-color-darken"></i> </span>
+                            <h2 class="black">
+                                Live Feeds As On &nbsp;<span class="relative dateSelect">
+                                    <input type="text" id="dashDate" ng-model="date1" name="d" class="input-xs" dashdatepicker required>
+                                    <button type="submit" class="btn btn-xs btn-primary" ng-click="dateChange(date1)" ng-show="Getdivhide"> GO </button>
+                                    <button ng-hide="Getdivhide" type="button" name="" class="btn btn-xs btn-primary">
+                                        <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i>
+                                    </button>
+                                </span>
+                            </h2>
+                        </div>
+                    </div>-->
+
+
+                    <div style="border-bottom:none;">
+                        <div class="row" style="border-bottom:none;">
+
+                            <!--<div class="col-sm-6 col-xs-12">
+                                <div jarvis-widget id="chartjs-pie-chart" data-widget-fullscreenbutton="false" data-widget-deletebutton="false" data-widget-sortable="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-editbutton="false">
+                                    <header>
+
+                                        <h2 class="text-center graph-head">Digital Payment Analysis</h2>
+                                    </header>
+
+                                    <div class="widget-body padding-bot">
+                                        <div ng-hide="c2">
+                                            <div class="no-graph">
+                                                <span style="width:auto; height:250px;" ui-sref="#">No Data Available</span>
+                                            </div>
+                                            <canvas id="pie" style="position: relative; height:30vh;"
+                                                    chart-data="data3" chart-labels="labels3" chart-colors="colors3"></canvas>
+                                        </div>
+                                        <canvas id="pie" class="chart-pie no-graph" height="100px" ng-show="c2"
+                                                chart-data="data2" chart-labels="labels2" chart-options="options2"  style="height:201px!important;"></canvas>
+                                        <span class="chart_count1" ng-show="c2">Total Digital Payments :<strong>{{SumofCount2}}</strong></span>
+                                    </div>
+
+                                </div>
+                            </div>-->
+                            <div class="col-sm-4 col-xs-12">
+                                <div jarvis-widget id="morris-line-graph-a-widget" data-widget-fullscreenbutton="false" data-widget-sortable="false" data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-editbutton="false">
+                                    <header>
+                                        <span class="widget-icon"> </span>
+                                        <h2 class="text-center graph-head">Last 8 Days Digital Payments</h2>
+                                    </header>
+
+                                    <div>
+                                        <div class="widget-body no-padding body-grph">
+                                            <div ng-hide="l1">
+                                                <span class="no-graph graph-head">No Data Available</span>
+                                            </div>
+                                            <canvas id="line" class="chart no-graph chart-line chart111" chart-data="data" style="display: block; width: 407px; height: 186px;"
+                                                    chart-labels="labels" chart-series="series" chart-options="options" chart-dataset-override="datasetOverride" height="140"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-8 col-xs-12">
+                                <div jarvis-widget id="chartjs-pie-chart" data-widget-fullscreenbutton="false" data-widget-deletebutton="false" data-widget-sortable="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-editbutton="false">
+                                    <header>
+
+                                        <h2 class="text-center graph-head">Digital Payment Against Provider</h2>
+                                    </header>
+
+                                    <div class="widget-body padding-bot">
+                                        <div ng-hide="c3">
+                                            <div class="no-graph">
+                                                <span style="width:auto; height:250px;" ui-sref="#">No Data Available</span>
+                                            </div>
+                                            <canvas id="pie" style="position: relative; height:30vh;"
+                                                    chart-data="data3" chart-labels="labels3" chart-colors="colors3"></canvas>
+                                        </div>
+                                        <canvas id="bar" class="chart-bar no-graph " height="80px" ng-show="c3"
+                                                chart-data="data3" chart-labels="labels3" chart-options="options3" chart-colors="colors" chart-dataset-override="datasetOverride1" style="height:201px!important;"></canvas>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 text-center">
+                                <div ng-show="forhi" style="border-bottom: none; margin-top: 8px;">
+                                            <h4 class="text-center" style="font-weight:500;">{{ZoneTitle}} </h4>                                
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="row" style="border-bottom:none;margin-top:8px;" ng-hide="hideMiddle">
+                            <div class="col-sm-4 col-xs-12">
+                                <div jarvis-widget id="chartjs-pie-chart" data-widget-fullscreenbutton="false" data-widget-sortable="false" data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-editbutton="false">
+                                    <header>
+
+                                        <h2 class="text-center graph-head">Digital Payment Analysis</h2>
+                                    </header>
+
+                                    <div class="widget-body body-grph" style="padding-top:10px;">
+                                        <div ng-hide="c2" style="padding-top:0px !important;padding-bottom:0px !important;">
+                                            <div class="no-graph">
+                                                <span style="width:auto; height:250px;" ui-sref="#">No Data Available</span>
+                                            </div>
+                                        </div>
+                                        <canvas id="pie" class="no-graph1 chart-pie chart1 " ng-show="c2"
+                                                chart-data="data2" chart-labels="labels2" chart-options="options2"></canvas>
+                                        <span class="chart_count" ng-show="c2">Total Digital Payments :<strong>{{SumofCount2}}</strong></span>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-sm-8 col-xs-12" ng-hide="hideMiddle">
+                                <div jarvis-widget id="chartjs-pie-chart" data-widget-fullscreenbutton="false" data-widget-deletebutton="false" data-widget-sortable="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-editbutton="false">
+                                    <header>
+
+                                        <h2 class="text-center graph-head">Contribution in Digital Payments</h2>
+                                    </header>
+
+                                    <div class="widget-body padding-bot">
+                                        <div ng-hide="c4">
+                                            <div class="no-graph">
+                                                <span style="width:auto; height:250px;" ui-sref="#">No Data Available</span>
+                                            </div>
+                                            <canvas id="pie" style="position: relative; height:30vh;"
+                                                    chart-data="data3" chart-labels="labels3" chart-colors="colors3"></canvas>
+                                        </div>
+                                        <canvas id="bar" class="chart-bar no-graph " height="80px" ng-show="c4"
+                                                chart-data="data4" chart-labels="labels4" chart-options="options4" chart-colors="colors" chart-dataset-override="datasetOverride2"></canvas>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-sm-8 col-xs-12" ng-show="hideMiddle">
+                                <div jarvis-widget id="chartjs-pie-chart" data-widget-fullscreenbutton="false" data-widget-deletebutton="false" data-widget-sortable="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-editbutton="false">
+                                    <header>
+
+                                        <h2 class="text-center graph-head"></h2>
+                                    </header>
+                                    <div class="widget-body padding-bot">
+                                        <div>
+                                            <div class="no-graph">
+                                                <span style="width:auto; height:250px;" ui-sref="#">No Data Available</span>
+                                            </div>
+                                            <canvas id="pie" style="position: relative; height:30vh;"
+                                                    chart-data="data3" chart-labels="labels3" chart-colors="colors3"></canvas>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!--<div class="col-sm-6 col-xs-12">
+            <div jarvis-widget id="chartjs-pie-chart" data-widget-fullscreenbutton="false" data-widget-deletebutton="false" data-widget-sortable="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-editbutton="false">
+                <header>
+
+                    <h2 class="text-center graph-head">Contribution in Digital Payments </h2>
+                </header>
+
+                <div class="widget-body padding-bot">
+                    <div ng-hide="c3">
+                        <div class="no-graph">
+                            <span style="width:auto; height:250px;" ui-sref="#">No Data Available</span>
+                        </div>
+                        <canvas id="pie" style="position: relative; height:30vh;"
+                                chart-data="data3" chart-labels="labels3" chart-colors="colors3"></canvas>
+                    </div>
+                    <canvas id="bar" class="chart chart-bar" ng-show="c4"
+                            chart-data="data4" chart-labels="labels4" chart-options="options4" chart-colors="colors4" chart-dataset-override="datasetOverride2"></canvas>
+                </div>
+
+            </div>
+        </div>-->
+
+                        </div>
+                    </div>
+
+            
+
+
+                    <div>
+                        <div class="row" style="padding-bottom:20px;">
+                            <div class="col-sm-12 col-xs-12">
+                                <div ui-grid="gridOptions1" ui-grid-pagination ui-grid-exporter ui-grid-selection ui-grid-resize class="grid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section> <!-- end widget grid -->
+</div> <!-- END MAIN CONTENT --> 

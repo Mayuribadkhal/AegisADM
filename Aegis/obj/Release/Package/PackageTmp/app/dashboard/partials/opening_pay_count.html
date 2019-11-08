@@ -1,0 +1,92 @@
+﻿<!-- MAIN CONTENT -->
+<div id="content">
+    <form name="myForm">
+        <!-- widget grid -->
+        <section id="widget-grid" widget-grid>
+
+
+            <!-- end row -->
+            <!-- row -->
+
+            <div class="row">
+
+                <article class="col-sm-12">
+                    <!-- new widget -->
+                    <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue">
+                        <header>
+                            <div class="basic_top_mar text-center">
+                                <i class="fa fa-credit-card"></i> &nbsp;<h2>Open Pay Count Report</h2>
+                            </div>
+                        </header>
+                        <!-- widget div-->
+                        <div>
+                            <div class="widget-body">
+                                <!-- content goes here -->
+
+                                <div class="row ">
+
+
+                                    <div class="col-sm-2">
+                                        <div class="form-group">
+                                            <label>Distributor Code</label>
+
+                                            <input class="form-control" type="text" ng-model="DistCode" placeholder="Enter Distributor Code" maxlength="8" minlength="6" numericonly="numericonly" numericonly />
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-sm-2 advanced_field small_field" ng-show="divshow">
+                                        <div class="form-group">
+                                            <label>&nbsp;</label>
+                                            <button type="submit" class="btn btn-block btn-primary report_btn get_details" ng-click="getOpeningPayCount()"><i class="fa fa-search"></i> Get Details</button>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2 " ng-show="divhide">
+                                        <div class="form-group">
+                                            <label>&nbsp;</label>
+                                            <button type="button" name="" class=" btn btn-block btn-primary report_btn get_details">
+                                                <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i> Loading
+                                            </button>
+                                        </div>
+                                    </div>                                  
+                                </div>
+                                <hr class="hr-notop" />
+                                <article>
+                                    <!-- Widget ID (each widget will need unique ID)-->
+                                    <div class="jarviswidget jarviswidget-color-blueDark jarviswidget-sortable" id="wid-id-1" data-widget-editbutton="false" role="widget">
+                         
+                                        <div role="content">
+                                            <div class="jarviswidget-editbox">
+                                            </div>
+                                            <div class="widget-body no-padding" style="border-top: 1px solid #ddd;">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="table-responsive">
+                                                            <div ui-grid="gridOptions1" ui-grid-pagination ui-grid-selection ui-grid-exporter class="grid">
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+
+                        </div>
+                        <!-- end widget div -->
+                    </div>
+                    <!-- end widget -->
+                </article>
+
+            </div>
+
+            <!-- end row -->
+        </section>
+    </form>
+    <!-- end widget grid -->
+</div>
+<!-- END MAIN CONTENT -->

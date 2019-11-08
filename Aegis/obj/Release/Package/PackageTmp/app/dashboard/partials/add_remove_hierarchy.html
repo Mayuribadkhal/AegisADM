@@ -1,0 +1,129 @@
+﻿<!-- MAIN CONTENT -->
+<div id="content">
+    <!-- widget grid -->
+    <section id="widget-grid" widget-grid>
+        <!-- end row -->
+        <!-- row -->
+        <form name="frmLicenseValidityReport">
+            <div class="row">
+                <article class="col-sm-12">
+                    <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue">
+                        <header>
+                            <div class="basic_top_mar text-center">
+                                <span class="widget-icon"> <i class="glyphicon glyphicon-user"></i> </span>
+                                <h2>Add Remove Hierarchy </h2>
+                            </div>
+                        </header>
+                        <!-- widget div-->
+                        <div>
+                            <div class="widget-body">
+                                <!-- content goes here -->
+                                <div class="row small-btn">
+                                    <div class="col-sm-2 small_cls pull-right">
+                                        <div class="form-group pull-right">
+                                            <a class="btn btn-default" ui-sref="app.dashboard.update_employee_to_hierarchy">
+                                                <i class="glyphicon glyphicon-arrow-left"></i> &nbsp;&nbsp;Back
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <article>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <h4>Pending</h4><br />
+                                            <article>
+                                                <!-- Widget ID (each widget will need unique ID)-->
+                                                <div class="jarviswidget jarviswidget-color-blueDark jarviswidget-sortable" id="wid-id-1" data-widget-editbutton="false" role="widget">
+
+                                                    <!-- widget div-->
+                                                    <div role="content">
+
+                                                        <!-- widget content -->
+                                                        <div class="widget-body no-padding" style="border-top: 1px solid #ddd;">
+
+                                                            <div class="row">
+                                                                <div class="col-lg-12">
+                                                                    <div class="table-responsive">
+                                                                        <div ui-grid="gridOptions1" ui-grid-pagination ui-grid-selection ui-grid-exporter class="grid">
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                        <!-- end widget content -->
+
+                                                    </div>
+                                                    <!-- end widget div -->
+
+                                                </div>
+                                                <!-- end widget -->
+
+                                            </article><br />
+                                            <div class="row small-btn">
+                                                <div class="col-sm-2 small_cls pull-right">
+                                                    <button class="btn btn-primary pull-right" ng-click="addrowhierarchy()">Add</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <h4>Already Assigned</h4><br />
+                                            <article>
+                                                <!-- Widget ID (each widget will need unique ID)-->
+                                                <div class="jarviswidget jarviswidget-color-blueDark jarviswidget-sortable" id="wid-id-1" data-widget-editbutton="false" role="widget">
+
+                                                    <!-- widget div-->
+                                                    <div role="content">
+
+                                                        <!-- widget content -->
+                                                        <div class="widget-body no-padding" style="border-top: 1px solid #ddd;">
+
+                                                            <div class="row">
+                                                                <div class="col-lg-12">
+                                                                    <div class="table-responsive">
+                                                                        <div ui-grid="gridOptions2" ui-grid-pagination ui-grid-selection ui-grid-exporter class="grid">
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                        <!-- end widget content -->
+
+                                                    </div>
+                                                    <!-- end widget div -->
+
+                                                </div>
+                                                <!-- end widget -->
+
+                                            </article><br />
+                                            <div class="row small-btn">
+                                                <div class="col-sm-2 small_cls pull-right">
+                                                    <button class="btn btn-danger" ng-click="removerowhierarchy()">Remove</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <!-- end s1 tab pane -->
+                                <!-- end content -->
+                            </div>
+
+                        </div>
+                        <!-- end widget div -->
+                    </div>
+                    <!-- end widget -->
+
+                </article>
+
+            </div>
+        </form>
+        <!-- end row -->
+    </section>
+    <!-- end widget grid -->
+</div>
+<!-- END MAIN CONTENT -->

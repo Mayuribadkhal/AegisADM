@@ -1,0 +1,113 @@
+﻿<!-- MAIN CONTENT -->
+<div id="content" ng-controller="DashboardCtrl">
+
+    <!-- widget grid -->
+    <section id="widget-grid" widget-grid>
+        <form name="myForm">
+            <div class="row">
+                <article class="col-sm-offset-3 col-sm-6">
+                    <!-- new widget -->
+                    <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue">
+                        <header>
+                            <div class="basic_top_mar text-center">
+                                <span class="widget-icon"> <i class="fa fa-database"></i> </span>
+                                <h2>Exclude RO Master</h2>
+                            </div>
+                        </header>
+                        <!-- widget div-->
+                        <div>
+                            <div class="widget-body">
+                                <!-- content goes here -->
+                                <div class="row">
+                                    <div class="col-sm-8 col-sm-offset-2">
+                                        <div class="form-group">
+                                            <label for="sel1">Zone<span class="errorMessage" style="color:red;">*</span></label>
+                                            <select class="form-control" ng-model="ero.ZoneId" ng-options="z.ZoneId as z.ZoneDesc for z in Zonedata" ng-change="GetRegion()" title="Select your option" ng-disabled="disabled" required>
+                                                <option value="" selected> --Select Zone-- </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-8 col-sm-offset-2">
+                                        <div class="form-group">
+                                            <label for="sel1">Region<span class="errorMessage" style="color:red;">*</span></label>
+                                            <select class="form-control" ng-model="ero.RegionId" ng-options="r.RegionId as r.Region for r in Regiondata" ng-change="gethierarchy()" title="Select your option" ng-disabled="disabled" required>
+                                                <option value="" selected> --Select Region-- </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-8 col-sm-offset-2">
+                                        <div class="form-group">
+                                            <label for="sel1">Sales Area<span class="errorMessage" style="color:red;" ng-show="drdSalesArea">*</span></label>
+                                            <select class="form-control" ng-model="ero.HsId" ng-options="h.HsId as h.HsDesc for h in Heararchydata" title="Select your option" ng-disabled="saDisabled" ng-required="drdSalesArea">
+                                                <option value="" selected>--Select Sales Area-- </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div  ng-show="allSalesArea" style="margin-top:30px;margin-left:-10px;">
+                                       
+                                            <label>&nbsp;</label>
+                                            <input type="checkbox" ng-model="ero.IsAll" ng-true-value="'Y'" ng-false-value="'N'" ng-click="isAllSalesArea()"> All Sales Area
+                                       
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-8 col-sm-offset-2">
+                                        <div class="form-group">
+                                            <label>Remark</label>
+                                                <input type="text" class="form-control" ng-model="ero.Remark" placeholder="Enter your remark">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4 col-sm-offset-2">
+                                        <div class="form-group">
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" value="" ng-true-value="'Y'" ng-model="ero.IsActive" ng-false-value="'N'">Is Active?
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <hr class="hr_basic" />
+                                <div class="row ">
+                                    <div class="col-sm-10" ng-show="divshow">
+                                        <button class="pull-right btn btn-primary" type="submit" ng-click="saveData(myForm.$valid)" >
+                                            <i class="glyphicon glyphicon-send"></i> &nbsp;&nbsp;Submit
+                                        </button>
+                                    </div>
+                                    <div class="col-sm-10" ng-show="divhide">
+                                        <button type="button" name="" class="pull-right btn btn-primary">
+                                            <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i> Loading
+                                        </button>
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <a class="btn btn-default" ui-sref="app.dashboard.exclude_ro_grid">
+                                            <i class="glyphicon glyphicon-arrow-left"></i> &nbsp;&nbsp;Back
+                                        </a>
+                                    </div>
+
+                                </div>
+
+                                <!-- end content -->
+                            </div>
+
+                        </div>
+                        <!-- end widget div -->
+                    </div>
+                    <!-- end widget -->
+
+                </article>
+
+            </div>
+
+            <!-- end row -->
+        </form>
+    </section>
+    <!-- end widget grid -->
+
+</div>
+<!-- END MAIN CONTENT -->

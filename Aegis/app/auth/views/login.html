@@ -1,0 +1,96 @@
+﻿
+<div>
+   <!--<meta http-equiv="{{refresh}}" content="1" />-->
+    <header class="outer_wrap clearfix animated fadeInDown" style="width:100%;">
+        <div id="logo-group" class="content__left">
+
+            <span id="logo"> <img src="{{loginimage}}" alt="SmartAdmin"> </span>
+        </div>
+        <div class="content__right">
+            <!--<span class="need_acc hidden-mobile hiddex-xs" style="position:relative;top:50%;transform:translateY(-50%)">Need an account?</span> <a ui-sref="distributor_authentification" class="btn btn-danger">Create account</a>-->
+
+        </div>
+        <div class="tollfree_wrapper1 content__middle pull-right ">
+            <div class="mid_toll_free">
+                <i class="fa fa-phone color-orange phone fleft"></i> <div class="fright toll_number"> Toll Free Number <span class="toll_number num login_toll"> 00000000</span></div>
+            </div>
+        </div>
+    </header>
+
+
+    <div id="main1" role="main" ng-controller="loginctrl" class=" animated fadeInDown">
+        <meta http-equiv="{{refresh}}" content="2" />
+        <div id="content" class="container">
+            <div class="row">
+
+                <div class="col-xs-12 col-sm-12 col-md-5 col-lg-4 col-lg-offset-4">
+                    <div class="well no-padding log_padd">
+
+                        <form id="login-form" name="myForm" class="smart-form client-form" data-smart-validate-form>
+                            <header>
+                                Sign in
+                            </header>
+                            <fieldset>
+                                <section>
+                                    <label class="label">Company Name<span class="errorMessage" style="color:red;">*</span></label>
+                                    <select ng-options="c.Panel as c.PanelName for c in GetCompany" class="form-control" ng-model="LoginAdmin.Panel" required>
+                                        <option value="" selected>--Select Company--</option>
+                                      
+                                    </select>
+                                </section>
+                                <section>
+                                    <label class="label">E-mail<span class="errorMessage" style="color:red">*</span></label>
+                                    <label class="input">
+                                        <i class="icon-append fa fa-user"></i>
+                                        <input type="email" id="loginemail" name="emailid" ng-model="LoginAdmin.EmailAddress" required ng-blur="myFunction()" pattern='[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'>
+                                    </label>
+                                </section>
+                                <section>
+                                    <label class="label">Password<span class="errorMessage" style="color:red">*</span></label>
+                                    <label class="input">
+                                        <i class="icon-append fa fa-lock"></i>
+                                        <input type="password" name="password" ng-model="LoginAdmin.UserPWD" required />
+                                    </label>
+                                </section>
+                                <section>
+                                    <a ui-sref="forgotPassword">
+                                        <small>Forgot password?</small>
+                                    </a>
+                                </section>
+                            </fieldset>
+                            <footer>
+                                <div >
+                                    <button type="submit" class="btn btn-primary btn_padding" value="Sign in" ng-click="AdminLogin(myForm.$valid,LoginAdmin)" ng-show="divshow"><i class="fa fa-sign-in" aria-hidden="true"></i> &nbsp;Sign in</button>
+                                    <button type="submit" name="" class="btn btn-primary btn_padding" ng-show="divhide">
+                                        <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i> Loading
+                                    </button>
+                                </div>
+
+                                <!--<div class="row" ng-show="divhide">
+                                    <div class="col-sm-12 ">
+                                        <button type="button" name="" class=" btn btn-default pull-right modal-submit login-btn btn-large1 btn-large waves-effect waves-light btn-primary">
+                                            <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i> Loading
+                                        </button>
+                                    </div>
+                                </div>-->
+
+                            </footer>
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+            <!-- End Row -->
+
+
+
+
+        </div>
+
+    </div>
+
+
+
+</div>
+

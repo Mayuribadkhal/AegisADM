@@ -1,0 +1,380 @@
+
+<style>
+    .smart-form fieldset {
+        padding: 10px 14px 5px;
+        margin: 5px;
+    }
+    .bootstrapWizard li {
+        display: block;
+        float: left;
+        width: 33% !important;
+        text-align: center;
+        padding-left: 0;
+    }
+    </style>
+
+<!-- MAIN CONTENT --> <div id="content">
+    <!-- widget grid --> <div id="widget-grid" widget-grid>
+        <!-- end row --> <!-- row --> <div class="row">
+            <article class="col-sm-12 col-sm-offset-2 col-sm-8">
+                <!-- new widget --> <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue">
+                    <header> <div class="basic_top_mar text-center"> <span class="widget-icon"> <i class="fa fa-cog"></i> </span> <h2> User Accounts Aegis</h2> </div> </header> <!-- widget div-->
+
+
+                    <div class="widget-body">
+
+                        <form name="UserHPCLForm">
+                            <div class="smart-form client-form">
+
+                            <div class="row">
+                                <!-- <form name="onboardForm" data-smart-validate-form>-->
+                                <div class="col-sm-12" data-smart-wizard data-smart-wizard-callback="wizard1CompleteCallback">
+                                    <div id="tabs" class="form-bootstrapWizard clearfix">
+                                        <ul class="bootstrapWizard">
+                                            <li data-smart-wizard-tab="1">
+                                                <a href="#" ng-click="getDistributorInformation(distinfo.DistCode)">
+                                                    <span class="step"><i class="fa fa-user fa-2x"></i></span> <span class="title">User information</span>
+                                                </a>
+                                            </li>
+                                            <li data-smart-wizard-tab="2">
+                                                <a href="#" ng-click="setStep(2)">
+                                                    <span class="step"><i class="fa fa-map-marker fa-2x"></i></span> <span class="title">Address Details</span>
+                                                </a>
+                                            </li>
+                                            <li data-smart-wizard-tab="3">
+                                                <a href="#" ng-click="getOwnerDetails()">
+                                                    <span class="step"><i class="fa fa-file fa-2x"></i></span> <span class="title">Document Details</span>
+                                                </a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                    <div class="tab-content">
+                                        <div class="tab-pane" data-smart-wizard-pane="1">
+                                            <br><br>
+                                            <div class="row">
+                                                <div class="col col-12">
+                                                    <h3 style="margin-left:18px;"><strong>Step 1</strong> - User Information</h3>
+                                                </div>
+                                            </div>
+                                            <fieldset>
+                                                <section>
+                                                    <div class="row">
+                                                        <div class="col col-4">
+                                                            <label class="label">Role<span class="errorMessage" style="color:red">*</span></label> <label class="input">
+                                                                <i class="icon-append fa fa-shield"></i>
+                                                                <select class="cleanSelect form-control" name="role" id="sel1" ng-options="r.RoleCode as r.RoleDesc for r in getRoleValue" ng-model="HPCLPushpam.RoleCode" ng-change="GetPlant(HPCLPushpam.RoleCode)" required>
+                                                                    <option value="" selected>--Select Role--</option>
+                                                                </select>
+                                                            </label>
+                                                        </div>
+                                                        <div class="col col-4">
+                                                            <label class="label">First Name<span class="errorMessage" style="color:red">*</span></label>
+                                                            <input type="text" name="fname" class="form-control" ng-model="HPCLPushpam.FirstName" alphaonly="alphaonly" required>
+                                                        </div>
+                                                        <div class="col col-4">
+                                                            <label class="label">Last Name<span class="errorMessage" style="color:red">*</span></label>
+                                                            <input type="text" name="lname" class="form-control" ng-model="HPCLPushpam.LastName" alphaonly="alphaonly" required>
+                                                        </div>
+                                                        <!--<div class="col col-6">
+                                                            <label class="label">Default Language<span class="errorMessage" style="color:red">*</span></label> <label class="input">
+                                                                <i class="icon-append fa fa-shield"></i>
+                                                                <select class="cleanSelect form-control" name="language" ng-options="l.LangCode as l.LangDesc for l in getLanguageValue" ng-model="HPCLPushpam.LangCode" required> <option value="" selected>--Select Language--</option> </select>
+                                                            </label>
+                                                        </div>-->
+                                                    </div>
+                                                </section>
+                                                <div class="clearfix"></div>
+                                                <!--<section>
+                                                    <div class="row">
+                                                        <div class="col col-4">
+                                                            <label class="label">First Name<span class="errorMessage" style="color:red">*</span></label>
+                                                            <input type="text" name="fname" class="form-control" ng-model="HPCLPushpam.FirstName" alphaonly="alphaonly" required>
+                                                        </div>
+                                                        <div class="col col-4">
+                                                            <label class="label">Last Name<span class="errorMessage" style="color:red">*</span></label>
+                                                            <input type="text" name="lname" class="form-control" ng-model="HPCLPushpam.LastName" alphaonly="alphaonly" required>
+                                                        </div>
+                                                    </div>
+                                                </section>-->
+                                                <section>
+                                                    <div class="row">
+                                                        <div class="col col-3">
+                                                            <label class="label">State<span class="errorMessage" style="color:red">*</span></label>
+                                                            <select name="plan" ng-options="m.PlantId as m.PlantName for m in PlantData" class="form-control" ng-model="HPCLPushpam.PlantId" ng-required="Plant">
+                                                                <option value="" selected hidden>--Select State--</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col col-3">
+                                                            <label class="label">City<span class="errorMessage" style="color:red">*</span></label>
+                                                            <select name="plan" ng-options="m.PlantId as m.PlantName for m in PlantData" class="form-control" ng-model="HPCLPushpam.PlantId" ng-required="Plant">
+                                                                <option value="" selected hidden>--Select City--</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col col-3">
+                                                            <label class="label">Gender<span class="errorMessage" style="color:red">*</span></label>
+                                                            <select class="form-control" name="gender" ng-model="HPCLPushpam.Gender" ng-options="g.GenderCode as g.GenderType for g in getGender" title="Select your gender" required>
+                                                                <option value="" selected> -- Select Gender -- </option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col col-3">
+                                                            <label class="label">Birth Date<span class="errorMessage" style="color:red">*</span></label>
+                                                            <input type="text" name="bday" id="birthdate" class="form-control" name="bday" ng-model="HPCLPushpam.BirthDate" title="Select your birth date" birthdatepicker required>
+                                                        </div>
+                                                        <!--<div class="col col-3" ng-show="Plant">
+                                                            <label class="label">Plant<span class="errorMessage" style="color:red;">*</span></label>
+                                                            <select name="plan" ng-options="m.PlantId as m.PlantName for m in PlantData" class="form-control" ng-model="HPCLPushpam.PlantId" ng-required="Plant">
+                                                                <option value="" selected hidden>--Select Plant--</option>
+                                                            </select>
+
+                                                        </div>-->
+                                                    </div>
+                                                </section> <section>
+                                                    <div class="row">
+                                                        <div class="col col-3" ng-show="Plant">
+                                                            <label class="label">Plant<span class="errorMessage" style="color:red;">*</span></label>
+                                                            <select name="plan" ng-options="m.PlantId as m.PlantName for m in PlantData" class="form-control" ng-model="HPCLPushpam.PlantId" ng-required="Plant">
+                                                                <option value="" selected hidden>--Select Plant--</option>
+                                                            </select>
+
+                                                        </div>
+                                                        <!--<div class="col col-3">
+                                                            <label class="label">Reporting To<span class="errorMessage" style="color:red">*</span></label>
+                                                            <select class="form-control" name="gender" >
+                                                                <option value="" selected> -- Select -- </option>
+                                                            </select>
+                                                        </div>-->
+                                                        <div class="col col-3">
+                                                            <label class="label">Mobile No.<span class="errorMessage" style="color:red">*</span></label>
+                                                            <input type="text" name="mobile" class="form-control" id="mbn" ng-model="HPCLPushpam.MobileNo" ng-pattern="/^(?:\s*\d{10}\s*(?:,|$))+$/" minlength="10" maxlength="10" title="Enter your mobile number" oninvalid="this.setCustomValidity('Enter 10 digits mobile number')" onchange="setCustomValidity('')" oninput="setCustomValidity(' ')" numericonly required>
+                                                        </div>
+                                                        <div class="col col-3">
+                                                            <label class="label">Mobile No. (Optional)</label>
+                                                            <input type="text" name="optmobile" class="form-control" id="mbno" ng-model="HPCLPushpam.MobileNoe" ng-pattern="/^(?:\s*\d{10}\s*(?:,|$))+$/" minlength="10" maxlength="10" title="Enter your mobile number" oninvalid="this.setCustomValidity('Enter 10 digits mobile number')" onchange="setCustomValidity('')" oninput="setCustomValidity(' ')" numericonly>
+                                                        </div>
+                                                        <div class="col col-3">
+                                                            <label class="label">Reporting To<span class="errorMessage" style="color:red">*</span></label>
+                                                            <select class="form-control" name="gender">
+                                                                <option value="" selected> -- Select -- </option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </section> <section>
+                                                    <div class="row">
+                                                        <div class="col col-6">
+                                                            <label class="checkbox-inline">
+                                                                <input name="remember" id="enablecheckid" ng-true-value="'y'" ng-false-value="'n'" ng-model="enableCheck" type="checkbox" ng-click="IsLoginCred(enableCheck)" ng-checked="{{checked1}}"> Enable Login Credentials
+                                                            </label>
+                                                        </div>
+                                                        <div class="col col-6">
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" id="smsid" ng-model="HPCLPushpam.AlertSMS" ng-true-value="'Y'" ng-false-value="'N'" value="SMS"> SMS Alert
+                                                            </label>
+                                                            <label class="checkbox-inline"> <input type="checkbox" id="emailid" ng-model="HPCLPushpam.AlertMail" ng-checked="{{mailalertcheck}}" ng-click="IsEmail(HPCLPushpam.AlertMail)" ng-true-value="'Y'" ng-false-value="'N'" value="EMAIL"> Email Alert </label>
+                                                        </div>
+                                                    </div>
+                                                </section>
+                                                <section class="clearfix" ng-show="value">
+                                                    <div class="row">
+                                                        <div class="col col-4">
+                                                            <label class="label">Email Address<span class="errorMessage" style="color:red">*</span></label>
+                                                            <input type="email" id="emailid1" name="emailid1" class="form-control" ng-required="value" ng-model="HPCLPushpam.EmailAddress" ng-blur="myFunction()" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
+                                                        </div>
+                                                        <div class="col col-4" ng-show="isPasswordShow">
+                                                            <label class="label">New Password<span class="errorMessage" style="color:red">*</span></label>
+                                                            <label class="input">
+                                                                <input type="{{inputTypeOne}}" id="pass1" name="password" class="form-control" ng-required="value" minlength="6" ng-model="HPCLPushpam.UserPwd" alphanumericonly> <span class="showPass glyphicon {{classNameOne}} form-control-feedback" ng-click="HideShowPasswordOne()" style="cursor: pointer; pointer-events: all"> </span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="col col-4" ng-show="isPasswordShow">
+                                                            <label class="label">Re-enter Password<span class="errorMessage" style="color:red">*</span></label>
+                                                            <label class="input">
+                                                                <input type="{{inputTypeTwo}}" name="confirmpass" id="pass2" ng-required="value" class="form-control" ng-model="HPCLPushpam.ConfirmUserPwd" minlength="6" alphanumericonly ng-change="ConfirmPassword(HPCLPushpam)"> <span class="showPass glyphicon {{classNameTwo}} form-control-feedback" ng-click="HideShowPasswordTwo()" style="cursor: pointer; pointer-events: all"> </span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </section>
+                                                <section>
+                                                    <div class="row">
+                                                        <div class="col col-6">
+                                                            <label class="checkbox-inline">
+                                                                <input name="remember" ng-model="HPCLPushpam.IsActive" ng-true-value="'Y'" ng-false-value="'N'" ng-checked="{{checkisactive}}" type="checkbox"> Is Active?<label class="checkbox-inline">
+                                                                    &nbsp;
+                                                                    <input name="remember" ng-model="HPCLPushpam.IsSendAllMail" ng-true-value="'Y'" ng-false-value="'N'" type="checkbox"> Allow PAN India Data?
+                                                                </label>
+                                                            </label>
+                                                        </div> <div class="col col-6"> <div class="errorMessage"> <div class="errorMsg" id="errormsg" ng-show="CheckIsLoginCred">{{errorMessage}}</div> </div> </div>
+                                                    </div>
+                                                </section>
+                                            </fieldset> <footer style="margin: 0px 16px -10px 6px;"> <div class="row"> <div class="col-sm-12" ng-show="divshow"> <button class="pull-right btn btn-primary pad-btn" type="submit"> <i class="glyphicon glyphicon-send"></i> &nbsp;{{submit}} </button> </div> <div class="col-sm-2" ng-show="divshow"> </div> <div class="col-sm-10" ng-show="divhide">
+                                             </div> </div> </footer> <!-- end content -->
+                                        </div>
+                                        <div class="tab-pane" data-smart-wizard-pane="2">
+                                            <form name="tab4Form">
+                                                <br><br>
+                                                <div class="row">
+                                                    <div class="col col-12">
+                                                        <h3 style="margin-left:18px;"><strong>Step 2</strong> - Address Details</h3>
+                                                        </div>
+                                                    </div>
+                                                        <br>
+                                                        <fieldset>
+                                                            <section>
+                                                                <div class="row">
+                                                                    <div class="col col-2">
+                                                                        <label class="label">Address Type<span class="errorMessage" style="color:red">*</span></label> <label class="input">
+                                                                            <i class="icon-append fa fa-shield"></i>
+                                                                            <select class="cleanSelect form-control" name="role" id="sel1" required>
+                                                                                <option value="" selected>--Select --</option>
+                                                                            </select>
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="col col-5">
+                                                                        <label class="label">Address 1<span class="errorMessage" style="color:red">*</span></label>
+                                                                        <input type="text" name="fname" class="form-control" ng-model="HPCLPushpam.FirstName" alphaonly="alphaonly" required>
+                                                                    </div>
+                                                                    <div class="col col-5">
+                                                                        <label class="label">Address 2<span class="errorMessage" style="color:red">*</span></label>
+                                                                        <input type="text" name="lname" class="form-control" ng-model="HPCLPushpam.LastName" alphaonly="alphaonly" required>
+                                                                    </div>
+
+                                                                </div>
+                                                            </section>
+                                                            <div class="clearfix"></div>
+                                                            <section>
+                                                                <div class="row">
+                                                                    <div class="col col-5">
+                                                                        <label class="label">Address 3<span class="errorMessage" style="color:red">*</span></label>
+                                                                        <input type="text" name="lname" class="form-control" ng-model="HPCLPushpam.LastName" alphaonly="alphaonly" required>
+                                                                    </div>
+                                                                    <div class="col col-2">
+                                                                        <label class="label">Pin Code<span class="errorMessage" style="color:red">*</span></label>
+                                                                        <input type="text" name="lname" class="form-control" ng-model="HPCLPushpam.LastName" alphaonly="alphaonly" required>
+                                                                    </div>
+                                                                    <div class="col col-4" style="margin-top:26px;">
+                                                                        <button class=" btn btn-primary pad-btn" style="padding: 5px 13px !important;">Add</button>
+                                                                    </div>
+                                                                </div>
+                                                            </section>
+                                                            <section>
+                                                                <div class="row">
+                                                                    <div class="col col-12">
+                                                                     
+
+                                                                        <div class="dash-box">
+                                                                            <div class="row">
+                                                                                <div class="col-sm-12">
+                                                                                    <div class="table-responsive">
+                                                                                        <table class="table tbl">
+                                                                                            <thead>
+                                                                                                <tr>
+                                                                                                    <td class="text-center" style="width:24%;">Address Type</td>
+                                                                                                    <td class="text-center" style="width:24%;">Address 1</td>
+                                                                                                    <td class="text-center" style="width:24%;">Address 2</td>
+                                                                                                    <td class="text-center" style="width:22%;">Address 3</td>
+                                                                                                    <td class="text-center" style="width:22%;">Pin code</td>
+                                                                                                </tr>
+                                                                                            </thead>
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <td class="text-center">office</td>
+                                                                                                    <td class="text-center">near Canara bank</td>
+                                                                                                    <td class="text-center">Bibvewadi</td>
+                                                                                                    <td class="text-center">pune</td>
+                                                                                                    <td class="text-center">411037</td>
+                                                                                                </tr>
+                                                                                            
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                      </div>
+                                                                 
+                                                                </div>
+                                                            </section>
+                                                            </fieldset>
+                                            </form>
+                                        </div>
+                                        <div class="tab-pane" data-smart-wizard-pane="3">
+                                            <form name="tab3Form">
+                                                <br><br>
+                                                <div class="row">
+                                                    <div class="col col-12">
+                                                        <h3 style="margin-left:18px;"><strong>Step 2</strong> - Document Details</h3>
+                                                    </div>
+                                                </div>
+                                                <fieldset>
+                                                    <section>
+                                                        <div class="row">
+
+                                                            <div class="col col-3">
+                                                                <label class="label">Pan No.<span class="errorMessage" style="color:red">*</span></label>
+                                                                <input type="text" name="fname" class="form-control" ng-model="HPCLPushpam.FirstName" alphaonly="alphaonly" required>
+                                                            </div>
+                                                            <div class="col col-4" style="margin-top:25px;">
+                                                                <!--<label class="label">Select File<span class="errorMessage" style="color:red">*</span></label>-->
+                                                                <input type="file" name="lname" class="form-control" ng-model="HPCLPushpam.LastName" alphaonly="alphaonly" required>
+                                                            </div>
+
+                                                        </div>
+                                                    </section>
+
+                                                    <section>
+                                                        <div class="row">
+
+                                                            <div class="col col-3">
+                                                                <label class="label">Adhar No.<span class="errorMessage" style="color:red">*</span></label>
+                                                                <input type="text" name="fname" class="form-control" ng-model="HPCLPushpam.FirstName" alphaonly="alphaonly" required>
+                                                            </div>
+                                                            <div class="col col-4" style="margin-top:25px;">
+                                                                <!--<label class="label">Select File<span class="errorMessage" style="color:red">*</span></label>-->
+                                                                <input type="file" name="lname" class="form-control" ng-model="HPCLPushpam.LastName" alphaonly="alphaonly" required>
+                                                            </div>
+
+                                                        </div>
+                                                    </section>
+                                                    <section style="margin-bottom:-17px;">
+            <footer>
+                <div class="row">
+                    <div class="col col-12 pull-right">
+                        <button class="pull-right btn btn-primary pad-btn" type="submit" value="{{submit}}">
+                            <i class="glyphicon glyphicon-send"></i> &nbsp;Submit
+                        </button>
+                    </div>
+                </div>
+            </footer>
+        </section>
+                                                <!--</fieldset>
+                                                 <footer> 
+                                                <div class="row"> 
+                                                <div class="col-sm-12" > 
+                                                    <button class="pull-right btn btn-primary pad-btn" type="submit" > <i class="glyphicon glyphicon-send"></i> &nbsp;&nbsp;{{submit}} </button>
+                                                     </div> 
+                                                     </div>
+                                                     
+                                                </footer>--> <!-- end content -->
+                                           
+                                   
+                                             
+                                                </div>
+                                              
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--</form>-->
+                            </div>
+
+
+                    </div>
+                    </form>
+                </div>
+                <!-- end widget div -->
+        </div> <!-- end widget -->
+        </article>
+    </div> <!-- end row -->
+</div> <!-- end widget grid -->
+</div> <!-- END MAIN CONTENT --> 
