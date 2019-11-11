@@ -1015,7 +1015,267 @@ var appdash = angular.module('app.dashboard', [
              data: {
                  title: tabTitle
              }
-         })
+         })     
+
+
+                .state('app.dashboard.lead_category_list', {
+                    url: '/lead_category_list',
+                    views: {
+                        "content@app": {
+                      
+                            templateUrl: 'app/dashboard/partials/lead_category_list.html'
+                        }
+                    },
+                    data: {
+                        title: tabTitle
+                    }
+                })     
+                       .state('app.dashboard.lead_category', {
+                           url: '/lead_category',
+                           views: {
+                               "content@app": {
+                      
+                                   templateUrl: 'app/dashboard/partials/lead_category.html'
+                               }
+                           },
+                           data: {
+                               title: tabTitle
+                           }
+                       })     
+                                .state('app.dashboard.source_list', {
+                                    url: '/source_list',
+                                    views: {
+                                        "content@app": {
+                      
+                                            templateUrl: 'app/dashboard/partials/source_list.html'
+                                        }
+                                    },
+                                    data: {
+                                        title: tabTitle
+                                    }
+                                })       
+                                     .state('app.dashboard.source', {
+                                         url: '/source',
+                                         views: {
+                                             "content@app": {
+                      
+                                                 templateUrl: 'app/dashboard/partials/source.html'
+                                             }
+                                         },
+                                         data: {
+                                             title: tabTitle
+                                         }
+                                     })      
+                                          .state('app.dashboard.distributor_type_list', {
+                                              url: '/distributor_type_list',
+                                              views: {
+                                                  "content@app": {
+                      
+                                                      templateUrl: 'app/dashboard/partials/distributor_type_list.html'
+                                                  }
+                                              },
+                                              data: {
+                                                  title: tabTitle
+                                              }
+                                          })     
+
+                                                .state('app.dashboard.distributor_type', {
+                                                    url: '/distributor_type',
+                                                    views: {
+                                                        "content@app": {
+                      
+                                                            templateUrl: 'app/dashboard/partials/distributor_type.html'
+                                                        }
+                                                    },
+                                                    data: {
+                                                        title: tabTitle
+                                                    }
+                                                })  
+    
+         .state('app.dashboard.client_type_list', {
+             url: '/client_type_list',
+             views: {
+                 "content@app": {
+
+                     templateUrl: 'app/dashboard/partials/client_type_list.html'
+                 }
+             },
+             data: {
+                 title: tabTitle
+             }
+         })                 
+
+              .state('app.dashboard.client_type', {
+                  url: '/client_type',
+                  views: {
+                      "content@app": {
+
+                          templateUrl: 'app/dashboard/partials/client_type.html'
+                      }
+                  },
+                  data: {
+                      title: tabTitle
+                  }
+              })      
+
+
+                     .state('app.dashboard.client_cunsumption_type_list', {
+                         url: '/client_cunsumption_type_list',
+                         views: {
+                             "content@app": {
+
+                                 templateUrl: 'app/dashboard/partials/client_cunsumption_type_list.html'
+                             }
+                         },
+                         data: {
+                             title: tabTitle
+                         }
+                     })
+             .state('app.dashboard.client_cunsumption_type', {
+                 url: '/client_cunsumption_type',
+                 views: {
+                     "content@app": {
+
+                         templateUrl: 'app/dashboard/partials/client_cunsumption_type.html'
+                     }
+                 },
+                 data: {
+                     title: tabTitle
+                 }
+             })       
+
+                    .state('app.dashboard.category_by_volume_list', {
+                        url: '/category_by_volume_list',
+                        views: {
+                            "content@app": {
+
+                                templateUrl: 'app/dashboard/partials/category_by_volume_list.html'
+                            }
+                        },
+                        data: {
+                            title: tabTitle
+                        }
+                    })  
+                           .state('app.dashboard.category_by_volume', {
+                               url: '/category_by_volume',
+                               views: {
+                                   "content@app": {
+
+                                       templateUrl: 'app/dashboard/partials/category_by_volume.html'
+                                   }
+                               },
+                               data: {
+                                   title: tabTitle
+                               }
+                           })     
+                                .state('app.dashboard.client_service_type_list', {
+                                    url: '/client_service_type_list',
+                                    views: {
+                                        "content@app": {
+
+                                            templateUrl: 'app/dashboard/partials/client_service_type_list.html'
+                                        }
+                                    },
+                                    data: {
+                                        title: tabTitle
+                                    }
+                                })    
+
+
+                                        .state('app.dashboard.client_service_type', {
+                                            url: '/client_service_type',
+                                            views: {
+                                                "content@app": {
+
+                                                    templateUrl: 'app/dashboard/partials/client_service_type.html'
+                                                }
+                                            },
+                                            data: {
+                                                title: tabTitle
+                                            }
+                                        })    
+                                               .state('app.dashboard.contractual_list', {
+                                                   url: '/contractual_list',
+                                                   views: {
+                                                       "content@app": {
+
+                                                           templateUrl: 'app/dashboard/partials/contractual_list.html'
+                                                       }
+                                                   },
+                                                   data: {
+                                                       title: tabTitle
+                                                   }
+                                               })     
+             .state('app.dashboard.contractual', {
+                 url: '/contractual',
+                 views: {
+                     "content@app": {
+
+                         templateUrl: 'app/dashboard/partials/contractual.html'
+                     }
+                 },
+                 data: {
+                     title: tabTitle
+                 }
+             })     
+                    .state('app.dashboard.pos_type_list', {
+                        url: '/pos_type_list',
+                        views: {
+                            "content@app": {
+
+                                templateUrl: 'app/dashboard/partials/pos_type_list.html'
+                            }
+                        },
+                        data: {
+                            title: tabTitle
+                        }
+                    })   
+                           .state('app.dashboard.pos_type', {
+                               url: '/pos_type',
+                               views: {
+                                   "content@app": {
+
+                                       templateUrl: 'app/dashboard/partials/pos_type.html'
+                                   }
+                               },
+                               data: {
+                                   title: tabTitle
+                               }
+                           })    
+                                  .state('app.dashboard.ro_type_list', {
+                                      url: '/ro_type_list',
+                                      views: {
+                                          "content@app": {
+
+                                              templateUrl: 'app/dashboard/partials/ro_type_list.html'
+                                          }
+                                      },
+                                      data: {
+                                          title: tabTitle
+                                      }
+                                  })    
+
+                                         .state('app.dashboard.ro_type', {
+                                             url: '/ro_type',
+                                             views: {
+                                                 "content@app": {
+
+                                                     templateUrl: 'app/dashboard/partials/ro_type.html'
+                                                 }
+                                             },
+                                             data: {
+                                                 title: tabTitle
+                                             }
+                                         }) 
+
+
+
+
+
+
+
+
+         
 
 
           //     masters
