@@ -279,14 +279,23 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="app/dashboard/module.js">
       <publishTime>08/20/2017 13:09:10</publishTime>
     </File>
+    <File Include="app/dashboard/partials/action_taken.html">
+      <publishTime>11/11/2019 12:28:28</publishTime>
+    </File>
+    <File Include="app/dashboard/partials/action_taken_grid.html">
+      <publishTime>11/11/2019 12:28:28</publishTime>
+    </File>
     <File Include="app/dashboard/partials/actual_product.html">
       <publishTime>09/20/2019 17:23:36</publishTime>
     </File>
     <File Include="app/dashboard/partials/actual_product_grid.html">
-      <publishTime>06/25/2019 16:38:56</publishTime>
+      <publishTime>11/11/2019 15:05:22</publishTime>
     </File>
     <File Include="app/dashboard/partials/add_channel_partner.html">
       <publishTime>11/06/2019 11:02:32</publishTime>
+    </File>
+    <File Include="app/dashboard/partials/add_leads.html">
+      <publishTime>08/11/2019 16:47:39</publishTime>
     </File>
     <File Include="app/dashboard/partials/add_remove_hierarchy.html">
       <publishTime>07/05/2018 18:16:00</publishTime>
@@ -311,6 +320,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="app/dashboard/partials/api_response_log.html">
       <publishTime>05/19/2018 11:57:24</publishTime>
+    </File>
+    <File Include="app/dashboard/partials/appintment_view.html">
+      <publishTime>11/11/2019 15:10:41</publishTime>
+    </File>
+    <File Include="app/dashboard/partials/appoinment_list.html">
+      <publishTime>08/11/2019 16:57:33</publishTime>
     </File>
     <File Include="app/dashboard/partials/appversion_grid.html">
       <publishTime>02/10/2018 14:14:02</publishTime>
@@ -342,6 +357,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="app/dashboard/partials/cancellation_report_grid.html">
       <publishTime>01/02/2019 11:32:02</publishTime>
     </File>
+    <File Include="app/dashboard/partials/category_by_volume.html">
+      <publishTime>11/11/2019 11:23:30</publishTime>
+    </File>
+    <File Include="app/dashboard/partials/category_by_volume_list.html">
+      <publishTime>11/11/2019 15:10:42</publishTime>
+    </File>
     <File Include="app/dashboard/partials/change_password.html">
       <publishTime>11/26/2018 15:18:20</publishTime>
     </File>
@@ -350,6 +371,24 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="app/dashboard/partials/citrus_onboard_grid.html">
       <publishTime>09/25/2017 15:28:18</publishTime>
+    </File>
+    <File Include="app/dashboard/partials/client_cunsumption_type.html">
+      <publishTime>11/11/2019 11:18:41</publishTime>
+    </File>
+    <File Include="app/dashboard/partials/client_cunsumption_type_list.html">
+      <publishTime>11/11/2019 15:10:42</publishTime>
+    </File>
+    <File Include="app/dashboard/partials/client_service_type.html">
+      <publishTime>11/11/2019 11:30:54</publishTime>
+    </File>
+    <File Include="app/dashboard/partials/client_service_type_list.html">
+      <publishTime>11/11/2019 15:10:42</publishTime>
+    </File>
+    <File Include="app/dashboard/partials/client_type.html">
+      <publishTime>11/11/2019 10:46:16</publishTime>
+    </File>
+    <File Include="app/dashboard/partials/client_type_list.html">
+      <publishTime>11/11/2019 15:10:42</publishTime>
     </File>
     <File Include="app/dashboard/partials/connect_distributor.html">
       <publishTime>01/19/2019 16:56:24</publishTime>
@@ -369,8 +408,14 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="app/dashboard/partials/consumer_feedback_report.html">
       <publishTime>05/18/2018 16:38:24</publishTime>
     </File>
+    <File Include="app/dashboard/partials/contractual.html">
+      <publishTime>11/11/2019 11:35:46</publishTime>
+    </File>
+    <File Include="app/dashboard/partials/contractual_list.html">
+      <publishTime>11/11/2019 15:10:42</publishTime>
+    </File>
     <File Include="app/dashboard/partials/cylinder_master.html">
-      <publishTime>09/17/2019 11:09:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="app/dashboard/partials/cylinder_providers.html">
       <publishTime>09/04/2019 12:49:53</publishTime>
@@ -435,6 +480,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="app/dashboard/partials/distributor_payment_gateway_report.html">
       <publishTime>03/01/2019 12:58:04</publishTime>
     </File>
+    <File Include="app/dashboard/partials/distributor_type.html">
+      <publishTime>11/11/2019 10:34:46</publishTime>
+    </File>
+    <File Include="app/dashboard/partials/distributor_type_list.html">
+      <publishTime>11/11/2019 15:10:42</publishTime>
+    </File>
     <File Include="app/dashboard/partials/distributor_wise_feedback_report.html">
       <publishTime>05/18/2018 17:02:12</publishTime>
     </File>
@@ -459,6 +510,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="app/dashboard/partials/dist_verify_payment.html">
       <publishTime>08/20/2017 13:09:10</publishTime>
     </File>
+    <File Include="app/dashboard/partials/dropped_reason.html">
+      <publishTime>11/11/2019 12:28:28</publishTime>
+    </File>
+    <File Include="app/dashboard/partials/dropped_reason_grid.html">
+      <publishTime>11/11/2019 12:28:28</publishTime>
+    </File>
     <File Include="app/dashboard/partials/exclude_ro.html">
       <publishTime>12/10/2018 13:03:14</publishTime>
     </File>
@@ -480,6 +537,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="app/dashboard/partials/ezy_delivery_vr_details.html">
       <publishTime>06/10/2019 10:43:22</publishTime>
     </File>
+    <File Include="app/dashboard/partials/firm_type.html">
+      <publishTime>11/11/2019 12:28:28</publishTime>
+    </File>
+    <File Include="app/dashboard/partials/firm_type_grid.html">
+      <publishTime>11/11/2019 12:28:28</publishTime>
+    </File>
     <File Include="app/dashboard/partials/forms.html">
       <publishTime>12/01/2017 13:35:28</publishTime>
     </File>
@@ -495,6 +558,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="app/dashboard/partials/godown.html">
       <publishTime>11/06/2019 11:27:01</publishTime>
     </File>
+    <File Include="app/dashboard/partials/gst_state.html">
+      <publishTime>11/11/2019 14:54:10</publishTime>
+    </File>
+    <File Include="app/dashboard/partials/gst_state_list.html">
+      <publishTime>11/11/2019 14:52:06</publishTime>
+    </File>
     <File Include="app/dashboard/partials/hierarchy.html">
       <publishTime>07/11/2019 11:06:44</publishTime>
     </File>
@@ -506,6 +575,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="app/dashboard/partials/hierarchy_result.html">
       <publishTime>07/05/2018 11:57:36</publishTime>
+    </File>
+    <File Include="app/dashboard/partials/holiday.html">
+      <publishTime>11/11/2019 15:01:10</publishTime>
+    </File>
+    <File Include="app/dashboard/partials/holiday_list.html">
+      <publishTime>11/11/2019 14:59:01</publishTime>
     </File>
     <File Include="app/dashboard/partials/image_management.html">
       <publishTime>01/10/2018 14:40:14</publishTime>
@@ -536,6 +611,15 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="app/dashboard/partials/language_master_grid.html">
       <publishTime>09/18/2017 12:00:30</publishTime>
+    </File>
+    <File Include="app/dashboard/partials/lead_allocation.html">
+      <publishTime>08/11/2019 17:16:19</publishTime>
+    </File>
+    <File Include="app/dashboard/partials/lead_category.html">
+      <publishTime>11/11/2019 10:25:30</publishTime>
+    </File>
+    <File Include="app/dashboard/partials/lead_category_list.html">
+      <publishTime>11/11/2019 15:10:41</publishTime>
     </File>
     <File Include="app/dashboard/partials/license_validity_report.html">
       <publishTime>05/18/2018 17:04:24</publishTime>
@@ -717,6 +801,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="app/dashboard/partials/photo_upload.html">
       <publishTime>04/03/2018 16:30:58</publishTime>
     </File>
+    <File Include="app/dashboard/partials/pipeline.html">
+      <publishTime>11/11/2019 15:10:41</publishTime>
+    </File>
     <File Include="app/dashboard/partials/place_an_order.html">
       <publishTime>08/20/2017 13:09:10</publishTime>
     </File>
@@ -724,13 +811,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/19/2019 12:14:32</publishTime>
     </File>
     <File Include="app/dashboard/partials/plans_grid.html">
-      <publishTime>07/30/2018 16:24:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="app/dashboard/partials/plant.html">
       <publishTime>07/31/2019 15:39:30</publishTime>
     </File>
     <File Include="app/dashboard/partials/plant_grid.html">
       <publishTime>07/31/2019 11:07:50</publishTime>
+    </File>
+    <File Include="app/dashboard/partials/pos_type.html">
+      <publishTime>11/11/2019 11:43:11</publishTime>
+    </File>
+    <File Include="app/dashboard/partials/pos_type_list.html">
+      <publishTime>11/11/2019 15:10:41</publishTime>
     </File>
     <File Include="app/dashboard/partials/price_allocation.html">
       <publishTime>07/16/2019 12:31:28</publishTime>
@@ -751,7 +844,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/20/2019 17:20:44</publishTime>
     </File>
     <File Include="app/dashboard/partials/product_class_grid.html">
-      <publishTime>06/25/2019 16:22:14</publishTime>
+      <publishTime>11/11/2019 15:04:09</publishTime>
     </File>
     <File Include="app/dashboard/partials/product_grid.html">
       <publishTime>07/31/2018 11:41:36</publishTime>
@@ -760,7 +853,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/25/2019 18:02:26</publishTime>
     </File>
     <File Include="app/dashboard/partials/product_group_grid.html">
-      <publishTime>06/25/2019 16:00:46</publishTime>
+      <publishTime>11/11/2019 15:02:50</publishTime>
     </File>
     <File Include="app/dashboard/partials/push_digital_payment.html">
       <publishTime>04/09/2019 10:42:54</publishTime>
@@ -795,6 +888,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="app/dashboard/partials/role_status.html">
       <publishTime>12/01/2017 14:50:44</publishTime>
     </File>
+    <File Include="app/dashboard/partials/ro_type.html">
+      <publishTime>11/11/2019 11:46:03</publishTime>
+    </File>
+    <File Include="app/dashboard/partials/ro_type_list.html">
+      <publishTime>11/11/2019 15:10:42</publishTime>
+    </File>
     <File Include="app/dashboard/partials/setting_email.html">
       <publishTime>08/20/2017 13:09:10</publishTime>
     </File>
@@ -810,11 +909,35 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="app/dashboard/partials/smart_card_serials.html">
       <publishTime>08/20/2017 13:09:10</publishTime>
     </File>
+    <File Include="app/dashboard/partials/source.html">
+      <publishTime>11/11/2019 10:33:18</publishTime>
+    </File>
+    <File Include="app/dashboard/partials/source_list.html">
+      <publishTime>11/11/2019 15:10:41</publishTime>
+    </File>
+    <File Include="app/dashboard/partials/sp_type.html">
+      <publishTime>11/11/2019 12:28:28</publishTime>
+    </File>
+    <File Include="app/dashboard/partials/sp_type_grid.html">
+      <publishTime>11/11/2019 15:09:58</publishTime>
+    </File>
     <File Include="app/dashboard/partials/state_master.html">
       <publishTime>11/29/2017 14:15:22</publishTime>
     </File>
     <File Include="app/dashboard/partials/state_master_grid.html">
       <publishTime>09/15/2017 13:22:46</publishTime>
+    </File>
+    <File Include="app/dashboard/partials/status.html">
+      <publishTime>11/11/2019 13:31:10</publishTime>
+    </File>
+    <File Include="app/dashboard/partials/status_list.html">
+      <publishTime>11/11/2019 15:18:41</publishTime>
+    </File>
+    <File Include="app/dashboard/partials/status_mapping.html">
+      <publishTime>11/11/2019 15:14:28</publishTime>
+    </File>
+    <File Include="app/dashboard/partials/status_mapping_list.html">
+      <publishTime>11/11/2019 15:13:34</publishTime>
     </File>
     <File Include="app/dashboard/partials/SynchroniseErrorLog.html">
       <publishTime>02/12/2018 16:16:52</publishTime>
@@ -857,6 +980,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="app/dashboard/partials/transsummary_wise_report.html">
       <publishTime>09/03/2018 16:25:10</publishTime>
+    </File>
+    <File Include="app/dashboard/partials/type_of_call.html">
+      <publishTime>11/11/2019 12:28:28</publishTime>
+    </File>
+    <File Include="app/dashboard/partials/type_of_call_grid.html">
+      <publishTime>11/11/2019 12:28:28</publishTime>
     </File>
     <File Include="app/dashboard/partials/update_act_deact.html">
       <publishTime>06/24/2019 10:23:02</publishTime>
@@ -935,6 +1064,18 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="app/dashboard/partials/weight_report.html">
       <publishTime>11/01/2018 11:42:46</publishTime>
+    </File>
+    <File Include="app/dashboard/partials/workrequest_details.html">
+      <publishTime>08/11/2019 17:19:56</publishTime>
+    </File>
+    <File Include="app/dashboard/partials/workrequest_list.html">
+      <publishTime>08/11/2019 17:13:32</publishTime>
+    </File>
+    <File Include="app/dashboard/partials/work_request_nature.html">
+      <publishTime>11/11/2019 12:28:28</publishTime>
+    </File>
+    <File Include="app/dashboard/partials/work_request_nature_grid.html">
+      <publishTime>11/11/2019 12:28:28</publishTime>
     </File>
     <File Include="app/dashboard/partials/xpressg_appgrid.html">
       <publishTime>02/09/2018 16:39:20</publishTime>
@@ -1252,7 +1393,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/25/2019 15:34:08</publishTime>
     </File>
     <File Include="app/layout/partials/navigation.tpl.html">
-      <publishTime>11/06/2019 11:06:07</publishTime>
+      <publishTime>11/11/2019 15:01:42</publishTime>
     </File>
     <File Include="app/layout/partials/sub-header.tpl.html">
       <publishTime>10/11/2017 19:23:50</publishTime>
@@ -1684,7 +1825,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/20/2017 13:09:12</publishTime>
     </File>
     <File Include="bin/Aegis.dll">
-      <publishTime>11/06/2019 12:40:18</publishTime>
+      <publishTime>11/11/2019 15:44:50</publishTime>
     </File>
     <File Include="build/AdminAuthentication/AdminLogin.js">
       <publishTime>09/25/2019 16:16:13</publishTime>
@@ -1693,7 +1834,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/24/2019 10:36:26</publishTime>
     </File>
     <File Include="build/app.js">
-      <publishTime>11/06/2019 11:09:29</publishTime>
+      <publishTime>11/11/2019 14:55:57</publishTime>
     </File>
     <File Include="build/build.min.js">
       <publishTime>04/02/2019 10:48:24</publishTime>
@@ -1834,7 +1975,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/17/2017 15:12:32</publishTime>
     </File>
     <File Include="js/Flot/jquery.sparkline.js">
-      <publishTime>08/17/2017 19:02:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="js/imagebase64.js">
       <publishTime>09/18/2017 15:19:44</publishTime>
@@ -1861,7 +2002,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/24/2017 15:27:38</publishTime>
     </File>
     <File Include="js/re-tree.min.js">
-      <publishTime>02/20/2017 17:19:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="js/SessionManage.js">
       <publishTime>11/27/2017 14:31:08</publishTime>
@@ -9598,7 +9739,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/04/2018 15:08:24</publishTime>
     </File>
     <File Include="styles/css/your_style.css">
-      <publishTime>11/05/2019 17:29:01</publishTime>
+      <publishTime>08/11/2019 10:39:36</publishTime>
     </File>
     <File Include="styles/css/your_style.min.css">
       <publishTime>05/18/2018 17:45:44</publishTime>

@@ -1,0 +1,104 @@
+﻿<!-- MAIN CONTENT -->
+<div id="content" ng-controller="DashboardCtrl">
+
+    <!-- widget grid -->
+    <section id="widget-grid" widget-grid>
+        <form name="myForm">
+            <div class="row">
+                <article class="col-sm-12  col-sm-12">
+                    <!-- new widget -->
+                    <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue" ng-controller="TodoCtrl">
+                        <header>
+                            <div class="basic_top_mar text-center">
+                                <span class="widget-icon"> <i class="fa fa-database"></i> </span>
+                                <h2>Appointment </h2>
+                            </div>
+                        </header>
+                        <!-- widget div-->
+                        <div>
+                            <div class="widget-body">
+                      
+
+                                <div class="dash-box">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <h4 class="text-center" style="margin-bottom:10px;">Summary</h4>
+                                            <div class="table-responsive">
+                                                <table class="table tbl">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="text-center">View</th>
+                                                            <th class="text-center">Date</th>
+                                                            <th class="text-center">Appointment Count</th>
+                                                           
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr >
+                                                            <td class="text-center"><a class="btn btn-primary" style=" padding: 0px 9px;"><i class="fa fa-eye"></i></a></td>
+                                                            <td class="text-center">8/11/2019</td>
+                                                            <td class="text-center">4</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text-center"><a class="btn btn-primary" style=" padding: 0px 9px;"><i class="fa fa-eye"></i></a></td>
+                                                            <td class="text-center">9/11/2019</td>
+                                                            <td class="text-center">4</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-8">
+                                            <h4 class="text-center" style="margin-bottom:10px;"><span class="text-warning">8/11/2019 </span> - Appointment Details</h4>
+                                            <div class="table-responsive">
+                                                <table class="table tbl">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="text-center">Name</th>
+                                                            <th class="text-center">Lead Type</th>
+                                                            <th class="text-center">Appointment Time</th>
+                                                            <th class="text-center">Mobile No.</th>
+                                                            <th class="text-center">Address</th>
+                                                            <th class="text-center">Created By</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                         
+                                                            <td class="text-center">Pravin</td>
+                                                            <td class="text-center">Lead Type</td>
+                                                            <td class="text-center">10.00am</td>
+                                                            <td class="text-center">7894563214</td>
+                                                            <td class="text-center">Bibvewadi</td>
+                                                            <td class="text-center">Pravin</td>
+                                                        </tr>
+                                                   
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                        <!-- end widget div -->
+                    </div>
+                    <!-- end widget -->
+
+                </article>
+
+            </div>
+
+        </form>       <!-- end row -->
+
+    </section>
+    <!-- end widget grid -->
+
+</div>
+<!-- END MAIN CONTENT -->

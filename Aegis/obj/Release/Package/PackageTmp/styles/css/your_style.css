@@ -1701,3 +1701,13 @@ ul.breadcrumb li a:hover {
     text-align: center;
     padding-left: 0;
 }
+
+.menu-on-top .menu-item-parent {
+    max-width: 119px!important;
+    min-width: 50px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    font-size: 13px;
+}

@@ -1266,11 +1266,116 @@ var appdash = angular.module('app.dashboard', [
                                              data: {
                                                  title: tabTitle
                                              }
-                                         }) 
+                                         })    
+         
+                                                .state('app.dashboard.status_list', {
+                                                    url: '/status_list',
+                                                    views: {
+                                                        "content@app": {
+
+                                                            templateUrl: 'app/dashboard/partials/status_list.html'
+                                                        }
+                                                    },
+                                                    data: {
+                                                        title: tabTitle
+                                                    }
+                                                }) 
+
+    
+
+           .state('app.dashboard.status', {
+               url: '/status',
+               views: {
+                   "content@app": {
+
+                       templateUrl: 'app/dashboard/partials/status.html'
+                   }
+               },
+               data: {
+                   title: tabTitle
+               }
+           })    
 
 
+               
+           .state('app.dashboard.status_mapping_list', {
+               url: '/status_mapping_list',
+               views: {
+                   "content@app": {
+
+                       templateUrl: 'app/dashboard/partials/status_mapping_list.html'
+                   }
+               },
+               data: {
+                   title: tabTitle
+               }
+           })    
 
 
+                         
+           .state('app.dashboard.status_mapping', {
+               url: '/status_mapping',
+               views: {
+                   "content@app": {
+
+                       templateUrl: 'app/dashboard/partials/status_mapping.html'
+                   }
+               },
+               data: {
+                   title: tabTitle
+               }
+           })     
+                 .state('app.dashboard.gst_state_list', {
+                     url: '/gst_state_list',
+                     views: {
+                         "content@app": {
+
+                             templateUrl: 'app/dashboard/partials/gst_state_list.html'
+                         }
+                     },
+                     data: {
+                         title: tabTitle
+                     }
+                 })     
+
+                        .state('app.dashboard.gst_state', {
+                            url: '/gst_state',
+                            views: {
+                                "content@app": {
+
+                                    templateUrl: 'app/dashboard/partials/gst_state.html'
+                                }
+                            },
+                            data: {
+                                title: tabTitle
+                            }
+                        })     
+                                 .state('app.dashboard.holiday_list', {
+                                     url: '/holiday_list',
+                                     views: {
+                                         "content@app": {
+
+                                             templateUrl: 'app/dashboard/partials/holiday_list.html'
+                                         }
+                                     },
+                                     data: {
+                                         title: tabTitle
+                                     }
+                                 })        
+
+                                        .state('app.dashboard.holiday', {
+                                            url: '/holiday',
+                                            views: {
+                                                "content@app": {
+
+                                                    templateUrl: 'app/dashboard/partials/holiday.html'
+                                                }
+                                            },
+                                            data: {
+                                                title: tabTitle
+                                            }
+                                        })   
+           
 
 
 

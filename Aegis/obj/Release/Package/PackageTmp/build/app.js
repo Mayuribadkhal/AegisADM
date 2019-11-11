@@ -886,7 +886,49 @@ var appdash = angular.module('app.dashboard', [
                 data: {
                     title: tabTitle
                 }
-            })
+            })   
+
+
+                   .state('app.dashboard.lead_allocation', {
+                       url: '/lead_allocation',
+                       views: {
+                           "content@app": {
+                               templateUrl: 'app/dashboard/partials/lead_allocation.html'
+                           }
+                       },
+                       data: {
+                           title: tabTitle
+                       }
+                   })    
+
+                         .state('app.dashboard.workrequest_list', {
+                             url: '/workrequest_list',
+                             views: {
+                                 "content@app": {
+                                     templateUrl: 'app/dashboard/partials/workrequest_list.html'
+                                 }
+                             },
+                             data: {
+                                 title: tabTitle
+                             }
+                         })   
+
+                               .state('app.dashboard.workrequest_details', {
+                                   url: '/workrequest_details',
+                                   views: {
+                                       "content@app": {
+                                           templateUrl: 'app/dashboard/partials/workrequest_details.html'
+                                       }
+                                   },
+                                   data: {
+                                       title: tabTitle
+                                   }
+                               })
+
+
+
+
+
           .state('app.dashboard.misreport', {
               url: '/mis_report',
               views: {
@@ -973,7 +1015,372 @@ var appdash = angular.module('app.dashboard', [
              data: {
                  title: tabTitle
              }
-         })
+         })     
+
+
+                .state('app.dashboard.lead_category_list', {
+                    url: '/lead_category_list',
+                    views: {
+                        "content@app": {
+                      
+                            templateUrl: 'app/dashboard/partials/lead_category_list.html'
+                        }
+                    },
+                    data: {
+                        title: tabTitle
+                    }
+                })     
+                       .state('app.dashboard.lead_category', {
+                           url: '/lead_category',
+                           views: {
+                               "content@app": {
+                      
+                                   templateUrl: 'app/dashboard/partials/lead_category.html'
+                               }
+                           },
+                           data: {
+                               title: tabTitle
+                           }
+                       })     
+                                .state('app.dashboard.source_list', {
+                                    url: '/source_list',
+                                    views: {
+                                        "content@app": {
+                      
+                                            templateUrl: 'app/dashboard/partials/source_list.html'
+                                        }
+                                    },
+                                    data: {
+                                        title: tabTitle
+                                    }
+                                })       
+                                     .state('app.dashboard.source', {
+                                         url: '/source',
+                                         views: {
+                                             "content@app": {
+                      
+                                                 templateUrl: 'app/dashboard/partials/source.html'
+                                             }
+                                         },
+                                         data: {
+                                             title: tabTitle
+                                         }
+                                     })      
+                                          .state('app.dashboard.distributor_type_list', {
+                                              url: '/distributor_type_list',
+                                              views: {
+                                                  "content@app": {
+                      
+                                                      templateUrl: 'app/dashboard/partials/distributor_type_list.html'
+                                                  }
+                                              },
+                                              data: {
+                                                  title: tabTitle
+                                              }
+                                          })     
+
+                                                .state('app.dashboard.distributor_type', {
+                                                    url: '/distributor_type',
+                                                    views: {
+                                                        "content@app": {
+                      
+                                                            templateUrl: 'app/dashboard/partials/distributor_type.html'
+                                                        }
+                                                    },
+                                                    data: {
+                                                        title: tabTitle
+                                                    }
+                                                })  
+    
+         .state('app.dashboard.client_type_list', {
+             url: '/client_type_list',
+             views: {
+                 "content@app": {
+
+                     templateUrl: 'app/dashboard/partials/client_type_list.html'
+                 }
+             },
+             data: {
+                 title: tabTitle
+             }
+         })                 
+
+              .state('app.dashboard.client_type', {
+                  url: '/client_type',
+                  views: {
+                      "content@app": {
+
+                          templateUrl: 'app/dashboard/partials/client_type.html'
+                      }
+                  },
+                  data: {
+                      title: tabTitle
+                  }
+              })      
+
+
+                     .state('app.dashboard.client_cunsumption_type_list', {
+                         url: '/client_cunsumption_type_list',
+                         views: {
+                             "content@app": {
+
+                                 templateUrl: 'app/dashboard/partials/client_cunsumption_type_list.html'
+                             }
+                         },
+                         data: {
+                             title: tabTitle
+                         }
+                     })
+             .state('app.dashboard.client_cunsumption_type', {
+                 url: '/client_cunsumption_type',
+                 views: {
+                     "content@app": {
+
+                         templateUrl: 'app/dashboard/partials/client_cunsumption_type.html'
+                     }
+                 },
+                 data: {
+                     title: tabTitle
+                 }
+             })       
+
+                    .state('app.dashboard.category_by_volume_list', {
+                        url: '/category_by_volume_list',
+                        views: {
+                            "content@app": {
+
+                                templateUrl: 'app/dashboard/partials/category_by_volume_list.html'
+                            }
+                        },
+                        data: {
+                            title: tabTitle
+                        }
+                    })  
+                           .state('app.dashboard.category_by_volume', {
+                               url: '/category_by_volume',
+                               views: {
+                                   "content@app": {
+
+                                       templateUrl: 'app/dashboard/partials/category_by_volume.html'
+                                   }
+                               },
+                               data: {
+                                   title: tabTitle
+                               }
+                           })     
+                                .state('app.dashboard.client_service_type_list', {
+                                    url: '/client_service_type_list',
+                                    views: {
+                                        "content@app": {
+
+                                            templateUrl: 'app/dashboard/partials/client_service_type_list.html'
+                                        }
+                                    },
+                                    data: {
+                                        title: tabTitle
+                                    }
+                                })    
+
+
+                                        .state('app.dashboard.client_service_type', {
+                                            url: '/client_service_type',
+                                            views: {
+                                                "content@app": {
+
+                                                    templateUrl: 'app/dashboard/partials/client_service_type.html'
+                                                }
+                                            },
+                                            data: {
+                                                title: tabTitle
+                                            }
+                                        })    
+                                               .state('app.dashboard.contractual_list', {
+                                                   url: '/contractual_list',
+                                                   views: {
+                                                       "content@app": {
+
+                                                           templateUrl: 'app/dashboard/partials/contractual_list.html'
+                                                       }
+                                                   },
+                                                   data: {
+                                                       title: tabTitle
+                                                   }
+                                               })     
+             .state('app.dashboard.contractual', {
+                 url: '/contractual',
+                 views: {
+                     "content@app": {
+
+                         templateUrl: 'app/dashboard/partials/contractual.html'
+                     }
+                 },
+                 data: {
+                     title: tabTitle
+                 }
+             })     
+                    .state('app.dashboard.pos_type_list', {
+                        url: '/pos_type_list',
+                        views: {
+                            "content@app": {
+
+                                templateUrl: 'app/dashboard/partials/pos_type_list.html'
+                            }
+                        },
+                        data: {
+                            title: tabTitle
+                        }
+                    })   
+                           .state('app.dashboard.pos_type', {
+                               url: '/pos_type',
+                               views: {
+                                   "content@app": {
+
+                                       templateUrl: 'app/dashboard/partials/pos_type.html'
+                                   }
+                               },
+                               data: {
+                                   title: tabTitle
+                               }
+                           })    
+                                  .state('app.dashboard.ro_type_list', {
+                                      url: '/ro_type_list',
+                                      views: {
+                                          "content@app": {
+
+                                              templateUrl: 'app/dashboard/partials/ro_type_list.html'
+                                          }
+                                      },
+                                      data: {
+                                          title: tabTitle
+                                      }
+                                  })    
+
+                                         .state('app.dashboard.ro_type', {
+                                             url: '/ro_type',
+                                             views: {
+                                                 "content@app": {
+
+                                                     templateUrl: 'app/dashboard/partials/ro_type.html'
+                                                 }
+                                             },
+                                             data: {
+                                                 title: tabTitle
+                                             }
+                                         })    
+         
+                                                .state('app.dashboard.status_list', {
+                                                    url: '/status_list',
+                                                    views: {
+                                                        "content@app": {
+
+                                                            templateUrl: 'app/dashboard/partials/status_list.html'
+                                                        }
+                                                    },
+                                                    data: {
+                                                        title: tabTitle
+                                                    }
+                                                }) 
+
+    
+
+           .state('app.dashboard.status', {
+               url: '/status',
+               views: {
+                   "content@app": {
+
+                       templateUrl: 'app/dashboard/partials/status.html'
+                   }
+               },
+               data: {
+                   title: tabTitle
+               }
+           })    
+
+
+               
+           .state('app.dashboard.status_mapping_list', {
+               url: '/status_mapping_list',
+               views: {
+                   "content@app": {
+
+                       templateUrl: 'app/dashboard/partials/status_mapping_list.html'
+                   }
+               },
+               data: {
+                   title: tabTitle
+               }
+           })    
+
+
+                         
+           .state('app.dashboard.status_mapping', {
+               url: '/status_mapping',
+               views: {
+                   "content@app": {
+
+                       templateUrl: 'app/dashboard/partials/status_mapping.html'
+                   }
+               },
+               data: {
+                   title: tabTitle
+               }
+           })     
+                 .state('app.dashboard.gst_state_list', {
+                     url: '/gst_state_list',
+                     views: {
+                         "content@app": {
+
+                             templateUrl: 'app/dashboard/partials/gst_state_list.html'
+                         }
+                     },
+                     data: {
+                         title: tabTitle
+                     }
+                 })     
+
+                        .state('app.dashboard.gst_state', {
+                            url: '/gst_state',
+                            views: {
+                                "content@app": {
+
+                                    templateUrl: 'app/dashboard/partials/gst_state.html'
+                                }
+                            },
+                            data: {
+                                title: tabTitle
+                            }
+                        })     
+                                 .state('app.dashboard.holiday_list', {
+                                     url: '/holiday_list',
+                                     views: {
+                                         "content@app": {
+
+                                             templateUrl: 'app/dashboard/partials/holiday_list.html'
+                                         }
+                                     },
+                                     data: {
+                                         title: tabTitle
+                                     }
+                                 })        
+
+                                        .state('app.dashboard.holiday', {
+                                            url: '/holiday',
+                                            views: {
+                                                "content@app": {
+
+                                                    templateUrl: 'app/dashboard/partials/holiday.html'
+                                                }
+                                            },
+                                            data: {
+                                                title: tabTitle
+                                            }
+                                        })   
+           
+
+
+
+
+         
 
 
           //     masters
@@ -1543,6 +1950,119 @@ var appdash = angular.module('app.dashboard', [
              }
          })
 
+    //setupmaster start
+        .state('app.dashboard.sp_type_grid', {
+            url: '/sp_type_grid',
+            views: {
+                "content@app": {
+                    templateUrl: 'app/dashboard/partials/sp_type_grid.html',
+                    //controller: 'VersionGridController'
+                }
+            }
+        })
+         .state('app.dashboard.sp_type', {
+             url: '/sp_type',
+             views: {
+                 "content@app": {
+                     templateUrl: 'app/dashboard/partials/sp_type.html',
+                     //controller: 'VersionController'
+                 }
+             }
+         })
+            .state('app.dashboard.firm_type_grid', {
+                url: '/firm_type_grid',
+                views: {
+                    "content@app": {
+                        templateUrl: 'app/dashboard/partials/firm_type_grid.html',
+                        //controller: 'VersionGridController'
+                    }
+                }
+            })
+         .state('app.dashboard.firm_type', {
+             url: '/firm_type',
+             views: {
+                 "content@app": {
+                     templateUrl: 'app/dashboard/partials/firm_type.html',
+                     //controller: 'VersionController'
+                 }
+             }
+         })
+              .state('app.dashboard.type_of_call_grid', {
+                  url: '/type_of_call_grid',
+                  views: {
+                      "content@app": {
+                          templateUrl: 'app/dashboard/partials/type_of_call_grid.html',
+                          //controller: 'VersionGridController'
+                      }
+                  }
+              })
+         .state('app.dashboard.type_of_call', {
+             url: '/type_of_call',
+             views: {
+                 "content@app": {
+                     templateUrl: 'app/dashboard/partials/type_of_call.html',
+                     //controller: 'VersionController'
+                 }
+             }
+         })
+         .state('app.dashboard.action_taken_grid', {
+             url: '/action_taken_grid',
+             views: {
+                 "content@app": {
+                     templateUrl: 'app/dashboard/partials/action_taken_grid.html',
+                     //controller: 'VersionGridController'
+                 }
+             }
+         })
+         .state('app.dashboard.action_taken', {
+             url: '/action_taken',
+             views: {
+                 "content@app": {
+                     templateUrl: 'app/dashboard/partials/action_taken.html',
+                     //controller: 'VersionController'
+                 }
+             }
+         })
+            .state('app.dashboard.dropped_reason_grid', {
+                url: '/dropped_reason_grid',
+                views: {
+                    "content@app": {
+                        templateUrl: 'app/dashboard/partials/dropped_reason_grid.html',
+                        //controller: 'VersionGridController'
+                    }
+                }
+            })
+         .state('app.dashboard.dropped_reason', {
+             url: '/dropped_reason',
+             views: {
+                 "content@app": {
+                     templateUrl: 'app/dashboard/partials/dropped_reason.html',
+                     //controller: 'VersionController'
+                 }
+             }
+         })
+          .state('app.dashboard.work_request_nature_grid', {
+              url: '/work_request_nature_grid',
+              views: {
+                  "content@app": {
+                      templateUrl: 'app/dashboard/partials/work_request_nature_grid.html',
+                      //controller: 'VersionGridController'
+                  }
+              }
+          })
+         .state('app.dashboard.work_request_nature', {
+             url: '/work_request_nature',
+             views: {
+                 "content@app": {
+                     templateUrl: 'app/dashboard/partials/work_request_nature.html',
+                     //controller: 'VersionController'
+                 }
+             }
+         })
+    //    end setup master
+
+
+
 
         //  Payment 
 
@@ -1951,7 +2471,47 @@ var appdash = angular.module('app.dashboard', [
 
                    }
                }
-           })
+           })   
+                 .state('app.dashboard.appoinment_list', {
+                     url: '/appoinment_list',
+                     views: {
+                         "content@app": {
+                             templateUrl: 'app/dashboard/partials/appoinment_list.html'
+
+                         }
+                     }
+                 })   
+                        .state('app.dashboard.appintment_view', {
+                            url: '/appintment_view',
+                            views: {
+                                "content@app": {
+                                    templateUrl: 'app/dashboard/partials/appintment_view.html'
+
+                                }
+                            }
+                        })    
+
+                              .state('app.dashboard.add_leads', {
+                                  url: '/add_leads',
+                                  views: {
+                                      "content@app": {
+                                          templateUrl: 'app/dashboard/partials/add_leads.html'
+
+                                      }
+                                  }
+                              })    
+                                  
+                              .state('app.dashboard.pipeline', {
+                                  url: '/pipeline',
+                                  views: {
+                                      "content@app": {
+                                          templateUrl: 'app/dashboard/partials/pipeline.html'
+
+                                      }
+                                  }
+                              })  
+
+
 
         //  Settings
         .state('app.dashboard.user_accounts_hpcl', {

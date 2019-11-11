@@ -1,0 +1,322 @@
+﻿<!-- MAIN CONTENT -->
+<div id="content" ng-controller="DashboardCtrl">
+
+    <!-- widget grid -->
+    <section id="widget-grid" widget-grid>
+        <form name="myForm">
+            <div class="row">
+                <article class="col-sm-12 col-sm-12">
+                    <!-- new widget -->
+                    <div id="todo-widget" jarvis-widget data-widget-deletebutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-minimize="false" data-widget-color="blue" ng-controller="TodoCtrl">
+                        <header>
+                            <div class="basic_top_mar text-center">
+                                <span class="widget-icon"> <i class="fa fa-database"></i> </span>
+                                <h2>Status</h2>
+                            </div>
+                        </header>
+                        <!-- widget div-->
+                        <div>
+                            <div class="widget-body">
+                                <!-- content goes here -->
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label for="sel1">Lead Type<span class="errorMessage" style="color:red;">*</span></label>
+                                            <select class="form-control" id="sel1" ng-options="s.StateCode as s.StateDesc for s in getState1" ng-model="dist.StateCode" required>
+                                                <option value="" selected>--Select Lead Type--</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>Status Name<span class="errorMessage" style="color:red;">*</span></label>
+                                            <!-- pattern="[a-zA-Z]+" ng-pattern-restrict-->
+                                            <input type="text" class="form-control" placeholder="Enter Status Name" ng-model="dist.DistrictName" required />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="form-group">
+                                            <label>Serial Number<span class="errorMessage" style="color:red;">*</span></label>
+                                            <!-- pattern="[a-zA-Z]+" ng-pattern-restrict-->
+                                            <input type="text" class="form-control" placeholder="Enter Serial Number" ng-model="dist.DistrictName" required />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>Max. Allowed Limit<span class="errorMessage" style="color:red;">*</span></label>
+                                            <!-- pattern="[a-zA-Z]+" ng-pattern-restrict-->
+                                            <input type="text" class="form-control" placeholder="Enter Max. Allowed Limit" ng-model="dist.DistrictName" required />
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <h5>Others</h5>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" value="" ng-true-value="'Y'" ng-false-value="'N'" ng-model="dist.IsActive">Active
+                                        </label>
+
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" value="" ng-true-value="'Y'" ng-false-value="'N'" ng-model="dist.IsActive">Sub Status
+                                        </label>
+
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" value="" ng-true-value="'Y'" ng-false-value="'N'" ng-model="dist.IsActive">Next Action
+                                        </label>
+                                    </div>
+
+                                    <div class="col-sm-2">
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" value="" ng-true-value="'Y'" ng-false-value="'N'" ng-model="dist.IsActive">UPLOAD
+                                        </label>
+
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" value="" ng-true-value="'Y'" ng-false-value="'N'" ng-model="dist.IsActive">Additional Information Required
+                                        </label>
+
+
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <h5>Designation to Allow</h5>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" value="" ng-true-value="'Y'" ng-false-value="'N'" ng-model="dist.IsActive">Active
+                                        </label>
+
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" value="" ng-true-value="'Y'" ng-false-value="'N'" ng-model="dist.IsActive">Admin
+                                        </label>
+
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" value="" ng-true-value="'Y'" ng-false-value="'N'" ng-model="dist.IsActive">TM
+                                        </label>
+                                    </div>
+
+                                    <div class="col-sm-2">
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" value="" ng-true-value="'Y'" ng-false-value="'N'" ng-model="dist.IsActive">ASM
+                                        </label>
+
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" value="" ng-true-value="'Y'" ng-false-value="'N'" ng-model="dist.IsActive">RSM
+                                        </label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" value="" ng-true-value="'Y'" ng-false-value="'N'" ng-model="dist.IsActive">ABC
+                                        </label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" value="" ng-true-value="'Y'" ng-false-value="'N'" ng-model="dist.IsActive">FLC
+                                        </label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" value="" ng-true-value="'Y'" ng-false-value="'N'" ng-model="dist.IsActive">GM
+                                        </label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" value="" ng-true-value="'Y'" ng-false-value="'N'" ng-model="dist.IsActive">HOD
+                                        </label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" value="" ng-true-value="'Y'" ng-false-value="'N'" ng-model="dist.IsActive">LAS
+                                        </label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" value="" ng-true-value="'Y'" ng-false-value="'N'" ng-model="dist.IsActive">SP
+                                        </label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" value="" ng-true-value="'Y'" ng-false-value="'N'" ng-model="dist.IsActive">SE
+                                        </label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" value="" ng-true-value="'Y'" ng-false-value="'N'" ng-model="dist.IsActive">SO
+                                        </label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" value="" ng-true-value="'Y'" ng-false-value="'N'" ng-model="dist.IsActive">Distributor Admin
+                                        </label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" value="" ng-true-value="'Y'" ng-false-value="'N'" ng-model="dist.IsActive">Distributor Manager
+                                        </label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" value="" ng-true-value="'Y'" ng-false-value="'N'" ng-model="dist.IsActive">Distributor
+                                        </label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" value="" ng-true-value="'Y'" ng-false-value="'N'" ng-model="dist.IsActive">ADMIN - FINANCE
+                                        </label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" value="" ng-true-value="'Y'" ng-false-value="'N'" ng-model="dist.IsActive">ADMIN - PROJECTS
+                                        </label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" value="" ng-true-value="'Y'" ng-false-value="'N'" ng-model="dist.IsActive">ADMIN - MAINTANANCE
+                                        </label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" value="" ng-true-value="'Y'" ng-false-value="'N'" ng-model="dist.IsActive">ADMIN - SALES SUPPORT
+
+                                        </label>
+                                    </div>
+                                </div>
+
+
+                                <!--<div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" value="" ng-true-value="'Y'" ng-false-value="'N'" ng-model="dist.IsActive">Is Active?
+                                            </label>
+
+
+                                        </div>
+                                    </div>
+                                </div>-->
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <h5>Select Next Action Sequence</h5>
+                                    </div>
+                                    <div class="col-sm-6 col-sm-offset-3" >
+                                        <div class="row">
+                                            <div class="table-responsive">
+                                                <table class="table tbl">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="text-center" width="150">Action taken</th>
+                                                            <th class="text-center" width="200">Status</th>
+                                                            <th class="text-center">Serial No.</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="text-center">Admin Task</td>
+                                                            <td class="text-center">Not Worked</td>
+                                                            <td class="text-center">122222</td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <hr class="hr_basic" />
+                                <!--<div class="row ">
+            <div class=" col-sm-4 pull-right" ng-show="divshow">
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary" value="{{submit}}" ng-click="SaveDistrictDetails(myForm.$valid,dist)" />&nbsp;&nbsp;
+                </div>
+            </div>
+            <div class="col-sm-4 pull-right" ng-show="divhide">
+                <div class="form-group pull-right">
+                    <span class="input-group-btn">
+                        <button type="button" name="" class=" btn btn-block btn-primary ">
+                            <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i> Loading
+                        </button>
+                    </span>
+                </div>
+            </div>
+            <div class="col-sm-4 pull-right" ng-show="divshow">
+                <div class="form-group">
+
+                    <a ui-sref="app.dashboard.District_master_grid"> <input type="submit" class="btn btn-default " value="Back"></a>
+                </div>
+            </div>
+        </div>-->
+
+                                <div class="row ">
+                                    <!--<div class="col-sm-12 ">
+                <div class="sub-back-btn pull-right" ng-show="divshow">
+                    <input type="submit" class="btn btn-primary" value="{{submit}}" ng-click="SaveDistrictDetails(myForm.$valid,dist)" />&nbsp;&nbsp;
+
+                    <a ui-sref="app.dashboard.District_master_grid"> <input type="submit" class="btn btn-default" value="Back"></a>
+
+                </div>
+                <div class="sub-back-btn pull-right" ng-show="divhide">
+
+                        <button type="button" name="" class=" btn btn-block btn-primary ">
+                            <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i> Loading
+                        </button>
+
+                </div>
+
+            </div>-->
+                                    <div class="col-sm-11" ng-show="divshow">
+                                        <button class="pull-right btn btn-primary" type="submit" value="{{submit}}" ng-click="SaveDistrictDetails(myForm.$valid,dist)">
+                                            <i class="glyphicon glyphicon-send"></i> &nbsp;&nbsp;Submit
+                                        </button>
+                                    </div>
+                                    <div class="col-sm-1" ng-show="divshow">
+                                        <a class="btn btn-default" ui-sref="app.dashboard.distributor_type_list">
+                                            <i class="glyphicon glyphicon-arrow-left"></i> &nbsp;&nbsp;Back
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-10" ng-show="divhide">
+                                        <button type="button" name="" class="pull-right btn btn-primary">
+                                            <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i> Loading
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- end content -->
+                            </div>
+
+                                </div>
+                                <!-- end widget div -->
+                            </div>
+                    <!-- end widget -->
+
+                </article>
+
+            </div>
+
+        </form>       <!-- end row -->
+
+    </section>
+    <!-- end widget grid -->
+
+</div>
+<!-- END MAIN CONTENT -->

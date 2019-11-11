@@ -166,10 +166,10 @@
                         <a  data-ui-sref="app.dashboard.action_taken_grid"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Action Taken</a>
                     </li>
                     <li data-ui-sref-active="active">
-                        <a  data-ui-sref="app.dashboard.pdc_question_grid" ng-click="ManageMTC()"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Status</a>
+                        <a data-ui-sref="app.dashboard.status_list" ng-click="ManageMTC()"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Status</a>
                     </li>
                     <li data-ui-sref-active="active">
-                        <a data-ui-sref="app.dashboard.manufacture_grid"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Status Mapping</a>
+                        <a data-ui-sref="app.dashboard.status_mapping_list"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Status Mapping</a>
                     </li>
                     <li data-ui-sref-active="active">
                         <a  data-ui-sref="app.dashboard.dropped_reason_grid"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Dropped Reason</a>
@@ -178,10 +178,10 @@
                         <a  data-ui-sref="app.dashboard.work_request_nature_grid"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Work Request Nature</a>
                     </li>
                     <li data-ui-sref-active="active">
-                        <a data-ui-sref="app.dashboard.godown-list"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> GST State</a>
+                        <a data-ui-sref="app.dashboard.gst_state_list"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> GST State</a>
                     </li>
                     <li data-ui-sref-active="active">
-                        <a data-ui-sref="app.dashboard.godown-list"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Holiday Master</a>
+                        <a data-ui-sref="app.dashboard.holiday_list"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Holiday Master</a>
                     </li>
                 </ul>
             </li>
@@ -256,13 +256,13 @@
                         <a data-ui-sref="#"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Product</a>
                         <ul>
                             <li>
-                                <a ui-sref-if="CL" class="nav-menu-disable" data-ui-sref="app.dashboard.product_group_grid"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Product Group</a>
+                                <a ui-sref-if="CL" class="nav-menu-disable" data-ui-sref="app.dashboard.product_group_grid"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Product Category</a>
                             </li>
                             <li>
-                                <a ui-sref-if="CM" class="nav-menu-disable" data-ui-sref="app.dashboard.product_class_grid"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Product Class</a>
+                                <a ui-sref-if="CM" class="nav-menu-disable" data-ui-sref="app.dashboard.product_class_grid"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Product Subcategory</a>
                             </li>
                             <li data-ui-sref-active="active">
-                                <a ui-sref-if="CN" class="nav-menu-disable" data-ui-sref="app.dashboard.actual_product_grid"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Actual Product</a>
+                                <a ui-sref-if="CN" class="nav-menu-disable" data-ui-sref="app.dashboard.actual_product_grid"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> Product</a>
                             </li>
                         </ul>
                     </li>
