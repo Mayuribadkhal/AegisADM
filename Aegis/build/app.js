@@ -1585,6 +1585,119 @@ var appdash = angular.module('app.dashboard', [
              }
          })
 
+    //setupmaster start
+        .state('app.dashboard.sp_type_grid', {
+            url: '/sp_type_grid',
+            views: {
+                "content@app": {
+                    templateUrl: 'app/dashboard/partials/sp_type_grid.html',
+                    //controller: 'VersionGridController'
+                }
+            }
+        })
+         .state('app.dashboard.sp_type', {
+             url: '/sp_type',
+             views: {
+                 "content@app": {
+                     templateUrl: 'app/dashboard/partials/sp_type.html',
+                     //controller: 'VersionController'
+                 }
+             }
+         })
+            .state('app.dashboard.firm_type_grid', {
+                url: '/firm_type_grid',
+                views: {
+                    "content@app": {
+                        templateUrl: 'app/dashboard/partials/firm_type_grid.html',
+                        //controller: 'VersionGridController'
+                    }
+                }
+            })
+         .state('app.dashboard.firm_type', {
+             url: '/firm_type',
+             views: {
+                 "content@app": {
+                     templateUrl: 'app/dashboard/partials/firm_type.html',
+                     //controller: 'VersionController'
+                 }
+             }
+         })
+              .state('app.dashboard.type_of_call_grid', {
+                  url: '/type_of_call_grid',
+                  views: {
+                      "content@app": {
+                          templateUrl: 'app/dashboard/partials/type_of_call_grid.html',
+                          //controller: 'VersionGridController'
+                      }
+                  }
+              })
+         .state('app.dashboard.type_of_call', {
+             url: '/type_of_call',
+             views: {
+                 "content@app": {
+                     templateUrl: 'app/dashboard/partials/type_of_call.html',
+                     //controller: 'VersionController'
+                 }
+             }
+         })
+         .state('app.dashboard.action_taken_grid', {
+             url: '/action_taken_grid',
+             views: {
+                 "content@app": {
+                     templateUrl: 'app/dashboard/partials/action_taken_grid.html',
+                     //controller: 'VersionGridController'
+                 }
+             }
+         })
+         .state('app.dashboard.action_taken', {
+             url: '/action_taken',
+             views: {
+                 "content@app": {
+                     templateUrl: 'app/dashboard/partials/action_taken.html',
+                     //controller: 'VersionController'
+                 }
+             }
+         })
+            .state('app.dashboard.dropped_reason_grid', {
+                url: '/dropped_reason_grid',
+                views: {
+                    "content@app": {
+                        templateUrl: 'app/dashboard/partials/dropped_reason_grid.html',
+                        //controller: 'VersionGridController'
+                    }
+                }
+            })
+         .state('app.dashboard.dropped_reason', {
+             url: '/dropped_reason',
+             views: {
+                 "content@app": {
+                     templateUrl: 'app/dashboard/partials/dropped_reason.html',
+                     //controller: 'VersionController'
+                 }
+             }
+         })
+          .state('app.dashboard.work_request_nature_grid', {
+              url: '/work_request_nature_grid',
+              views: {
+                  "content@app": {
+                      templateUrl: 'app/dashboard/partials/work_request_nature_grid.html',
+                      //controller: 'VersionGridController'
+                  }
+              }
+          })
+         .state('app.dashboard.work_request_nature', {
+             url: '/work_request_nature',
+             views: {
+                 "content@app": {
+                     templateUrl: 'app/dashboard/partials/work_request_nature.html',
+                     //controller: 'VersionController'
+                 }
+             }
+         })
+    //    end setup master
+
+
+
 
         //  Payment 
 

@@ -10,3 +10,9 @@ D:\PROJECTS\Aegis\Admin\Aegis\Aegis\bin\Aegis.pdb
 D:\PROJECTS\Aegis\Admin\Aegis\Aegis\obj\Debug\Aegis.csprojResolveAssemblyReference.cache
 D:\PROJECTS\Aegis\Admin\Aegis\Aegis\obj\Debug\Aegis.dll
 D:\PROJECTS\Aegis\Admin\Aegis\Aegis\obj\Debug\Aegis.pdb
+D:\dmask\Aegis Admin\AegisADM\AegisADM\Aegis\bin\Aegis.dll.config
+D:\dmask\Aegis Admin\AegisADM\AegisADM\Aegis\bin\Aegis.dll
+D:\dmask\Aegis Admin\AegisADM\AegisADM\Aegis\bin\Aegis.pdb
+D:\dmask\Aegis Admin\AegisADM\AegisADM\Aegis\obj\Debug\Aegis.csprojResolveAssemblyReference.cache
+D:\dmask\Aegis Admin\AegisADM\AegisADM\Aegis\obj\Debug\Aegis.dll
+D:\dmask\Aegis Admin\AegisADM\AegisADM\Aegis\obj\Debug\Aegis.pdb
